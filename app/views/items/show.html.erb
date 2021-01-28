@@ -4,4 +4,4 @@
 <%= @item.title %>
 
 
-<%= button_to 'Ajouter au panier', '#'  %>
+<%= button_to 'Ajouter au panier', cart_items_path(item_id: @item) %>

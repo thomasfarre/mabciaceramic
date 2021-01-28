@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  before_destroy :not_referenced_by_any_line_item
+
   has_many :cart_items
   has_many_attached :photos
 
@@ -16,4 +18,14 @@ class Item < ApplicationRecord
   def removed?
     status == 'removed'
   end
+
+  private
+
+  def not_refereced_by_any_cart_item
+    unless cart_items.empty?
+      errors.add(:base, "Cart items present")
+      throw :abort
+    end
+  end
+
 end
