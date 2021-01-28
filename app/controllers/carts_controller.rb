@@ -31,7 +31,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
-    redirect_to carts_url, notice: 'Le panier à été détruit'
+    redirect_to root_path, notice: 'Le panier à été détruit'
   end
 
   private
