@@ -1,0 +1,21 @@
+<div class="px-4 py-8">
+
+  <div class="px-8">
+    <input class="w-full px-4 py-2 border-2 border-gray-200" type="text" placeholder="Search by name or demo day project">
+  </div>
+    <div class="pt-16 grid grid-cols-2 gap-4">
+      <% @items.each do |item| %>
+        <%= link_to item_path(item), class:"group" do %>
+        <div class="h-72 flex flex-col shadow-2xl rounded-xl overflow-hidden">
+          <div>
+            <%= cl_image_tag item.photos[0].key, class:'h-48 w-full object-cover '  %>
+          </div>
+          <div class="px-4 py-4">
+            <span class="text-sm"><%= item.title %></span>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
