@@ -22,7 +22,8 @@ class OrdersController < ApplicationController
     redirect_to new_order_payment_path(order)
   end
 
-  def destroy
+  def show
+    @order = Order.find(params[:id])
   end
 end
 
