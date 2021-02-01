@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :carts
   resources :items
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
   devise_for :users, controllers: {
         registrations: 'registrations'

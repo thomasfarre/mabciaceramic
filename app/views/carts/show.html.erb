@@ -22,4 +22,9 @@
 </div>
 Total : <%= humanized_money_with_symbol(@cart.total_price) %>
 
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'cart_id', @cart.id %>
+  <%= submit_tag 'Payer' %>
+<% end %>
+
 <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" } %>
