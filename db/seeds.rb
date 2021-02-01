@@ -18,6 +18,7 @@ item1 = Item.new(
   width: 130,
   length: 130,
   height: 142,
+  price_cents: 6534,
 )
 
 item1.photos.attach(io: URI.open("https://i.etsystatic.com/23642979/r/il/ec4233/2794915047/il_1140xN.2794915047_8ukw.jpg"), filename: 'item.jpg', content_type: 'image/jpg')
@@ -36,6 +37,7 @@ item2 = Item.new(
   width: 100,
   length: 213,
   height: 65,
+  price_cents: 7243,
 )
 
 item2.photos.attach(io: URI.open("https://i.etsystatic.com/23642979/r/il/d9a75d/2747286072/il_794xN.2747286072_5rev.jpg"), filename: 'item.jpg', content_type: 'image/jpg')
@@ -54,6 +56,7 @@ item3 = Item.new(
   width: 110,
   length: 150,
   height: 110,
+  price_cents: 6790,
 )
 
 item3.photos.attach(io: URI.open("https://i.etsystatic.com/23642979/r/il/5a8e54/2748356144/il_794xN.2748356144_ojn9.jpg"), filename: 'item.jpg', content_type: 'image/jpg')

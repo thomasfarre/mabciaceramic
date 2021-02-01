@@ -2,20 +2,24 @@
 
 <div class="px-4 py-8">
   <div class="pt-16 grid grid-cols-2 gap-4">
-    <% @cart.cart_items.each do |item| %>
+    <% @cart.cart_items.each do |cartItem| %>
       <div class="flex flex-col shadow-2xl rounded-xl overflow-hidden">
         <div class="relative" style="padding-bottom: 80%">
-          <%= cl_image_tag item.item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
+          <%= cl_image_tag cartItem.item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
         </div>
         <div class="px-4 py-4 h-24">
-          <span class="text-sm"><%= item.item.title %></span>
+          <span class="text-sm"><%= cartItem.item.title %></span>
         </div>
         <div>
-          <%= link_to 'Remove item', item, method: :delete, data:{ confirm: "are you sure?" } %>
+          <span><%= humanized_money_with_symbol(cartItem.item.price) %></span>
+        </div>
+        <div>
+          <%= link_to 'Remove item', cartItem, method: :delete, data:{ confirm: "are you sure?" } %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+Total : <%= humanized_money_with_symbol(@cart.total_price) %>
 
 <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" } %>
