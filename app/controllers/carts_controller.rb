@@ -31,8 +31,8 @@ class CartsController < ApplicationController
     if !current_user.nil?
       @cart.destroy
     else
-      @cart.destroy if @cart.id == session[:cart]
-      session[:cart] = nil
+      @cart.destroy if @cart.id == session[:cart_id]
+      session[:cart_id] = nil
     end
     redirect_to root_path, notice: 'Le panier à été détruit'
   end

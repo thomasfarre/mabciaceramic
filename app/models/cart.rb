@@ -8,7 +8,10 @@ class Cart < ApplicationRecord
     current_item = cart_items.find_by(item_id: item.id)
 
     if current_item
-      current_item.increment(:quantity)
+      current_item
+      # put this to implement quantity
+
+      # current_item.increment(:quantity)
     else
       current_item = cart_items.build(item_id: item.id)
     end
