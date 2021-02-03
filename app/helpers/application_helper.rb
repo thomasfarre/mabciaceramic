@@ -1,12 +1,10 @@
 module ApplicationHelper
 
   def cart_count_over_one
-    if @cart.cart_items.count > 0
-      return "#{@cart.cart_items.count}"
-    end
+    "#{@cart.cart_items.count}" unless @cart.cart_items.count.positive?
   end
 
   def cart_has_items
-    return @cart.cart_items.count > 0
+    @cart.cart_items.count.positive?
   end
 end

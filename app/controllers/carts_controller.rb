@@ -2,8 +2,6 @@ class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
-
-
   def index
     @carts = Cart.all
   end
@@ -32,12 +30,11 @@ class CartsController < ApplicationController
   def destroy
     if !current_user.nil?
       @cart.destroy
-      redirect_to root_path, notice: 'Le panier à été détruit'
     else
       @cart.destroy if @cart.id == session[:cart]
       session[:cart] = nil
-      redirect_to root_path, notice: 'Le panier à été détruit'
     end
+    redirect_to root_path, notice: 'Le panier à été détruit'
   end
 
   private
