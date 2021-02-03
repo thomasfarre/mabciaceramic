@@ -2,6 +2,7 @@ puts "Cleaning database..."
 
 Article.destroy_all
 User.destroy_all
+Order.destroy_all
 Cart.destroy_all
 CartItem.destroy_all
 Item.destroy_all

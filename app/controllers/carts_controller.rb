@@ -9,6 +9,7 @@ class CartsController < ApplicationController
   end
 
   def show
+    @cart = Cart.find(params[:id])
   end
 
   def new
@@ -29,9 +30,14 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
-    session[:cart_id] = nil
-    redirect_to root_path, notice: 'Le panier à été détruit'
+    if !current_user.nil?
+      @cart.destroy
+      redirect_to root_path, notice: 'Le panier à été détruit'
+    else
+      @cart.destroy if @cart.id == session[:cart]
+      session[:cart] = nil
+      redirect_to root_path, notice: 'Le panier à été détruit'
+    end
   end
 
   private
@@ -41,7 +47,7 @@ class CartsController < ApplicationController
   end
 
   def cart_params
-    params.fetch(:cart, {})
+    params.require(:cart).permit(:user_id)
   end
 
   def invalid_cart

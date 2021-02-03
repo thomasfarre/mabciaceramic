@@ -1,4 +1,5 @@
 <%= link_to "Continuer mes achats", items_path %>
+<%= link_to "Home", root_path %>
 
 <div class="px-4 py-8">
   <div class="pt-16 grid grid-cols-2 gap-4">
@@ -28,3 +29,5 @@ Total : <%= humanized_money_with_symbol(@cart.total_price) %>
 <% end %>
 
 <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" } %>
+
+
