@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     cart = Cart.find(params[:cart_id])
     order = Order.create!(cart: cart, amount: cart.total_price, state: 'pending')
