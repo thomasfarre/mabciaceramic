@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-
   resources :cart_items
   resources :carts
   resources :items
+  # resources :adresses
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
 
   devise_for :users, controllers: {
-        registrations: 'registrations'
+    registrations: 'registrations'
   }
+
+  resources :users, only: [] do
+    resources :adresses
+  end
 
   root to: 'pages#home'
 
