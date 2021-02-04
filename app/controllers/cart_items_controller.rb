@@ -1,6 +1,5 @@
 class CartItemsController < ApplicationController
   include CurrentCart
-  # skip_before_action :verify_authenticity_token
   before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
 

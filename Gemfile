@@ -70,3 +70,4 @@ gem "administrate", "~> 0.14.0"
 gem 'money-rails'
 
 gem 'stripe'
+gem 'stripe_event'

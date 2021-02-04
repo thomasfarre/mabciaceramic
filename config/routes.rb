@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+  mount StripeEvent::Engine, at: '/stripe-webhooks' # provide a custom path
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
