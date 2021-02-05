@@ -1,0 +1,8 @@
+
+<div>
+  <h1>Carnet de commandes</h1>
+</div>
+
+<% @orders.each do |order| %>
+ <%=  order.id  %>  <%=order.state %>
+<% end %>

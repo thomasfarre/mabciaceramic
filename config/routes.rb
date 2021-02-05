@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :items
   # resources :adresses
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: [:show, :create, :index] do
     resources :payments, only: :new
   end
 
