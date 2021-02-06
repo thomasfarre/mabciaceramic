@@ -1,4 +1,4 @@
-<div data-menu-target="toggleable" class="hidden flex flex-col px-2 py-4 bg-gray-100">
+<div data-menu-target="toggleable" class="hidden flex flex-col py-4 bg-gray-100">
 
   <% if cart_has_items %>
     <div>
@@ -24,6 +24,11 @@
       <span class="text-lg font-semibold text-gray-700 ">Magasin</span>
     <% end %>
   </div>
+  <div>
+      <%= link_to about_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
+      <svg class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8 2.4a2.4 2.4 0 00-2.4 2.4V18a3.6 3.6 0 107.2 0V4.8a2.4 2.4 0 00-2.4-2.4H4.8zM6 19.2a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4zm6-2.108l5.88-5.88a2.4 2.4 0 000-3.394L16.182 6.12a2.4 2.4 0 00-3.394 0L12 6.908v10.184zm7.2 4.508h-8.315l7.2-7.2H19.2a2.4 2.4 0 012.4 2.4v2.4a2.4 2.4 0 01-2.4 2.4z" fill="#D97862"/></svg>        <span class="text-lg font-semibold text-gray-700 ">A propos</span>
+      <% end %>
+    </div>
   <div>
     <%= link_to  new_user_session_path, class:"flex items-center space-x-4 hover:bg-white rounded px-2 py-2" do %>
       <svg class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 16v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1m-5 8l-4-4 4 4zm-4-4l4-4-4 4zm0 0h14H7z" stroke="#D97862" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
