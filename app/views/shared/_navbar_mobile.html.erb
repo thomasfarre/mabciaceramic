@@ -1,5 +1,5 @@
 <header data-controller="menu">
-  <div class="flex items-center justify-between bg-gray-400 py-1 px-2">
+  <div class="flex items-center justify-between bg-gray-50 py-1 px-2">
     <div>
       <%= link_to root_path do %>
         <%= image_tag "Logo.png" %>
@@ -7,11 +7,11 @@
     </div>
 
     <div>
-      <h2 class="text-white font-bold text-2xl">MabciaCeramic</h2>
+      <h2 class="text-gray-600 font-bold text-2xl">MabciaCeramic</h2>
     </div>
 
     <div  class="flex items-center outline-none">
-      <button data-action="click->menu#toggle" id="options-menu" class="focus:outline-none hover:text-gray-600 focus:text-gray-600">
+      <button data-action="click->menu#toggle" id="options-menu" class="text-gray-600 focus:outline-none hover:text-gray-400 focus:text-gray-400">
         <svg class="w-8 z-40" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
 
