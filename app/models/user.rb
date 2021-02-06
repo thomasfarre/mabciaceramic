@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 25 }
 
   def name
-    "#{first_name} #{last_name}"
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def profil_pic

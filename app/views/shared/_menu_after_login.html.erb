@@ -1,5 +1,15 @@
-<div data-menu-target="toggleable" class="hidden flex flex-col px-2 py-2 bg-gray-100">
-  <div>
+<div data-menu-target="toggleable" class="hidden flex flex-col py-2 bg-gray-100">
+  <!-- <div class="border-b border-gray-800"> -->
+
+  <% if cart_has_items %>
+    <div>
+      <%= link_to cart_path(@cart), class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
+        <svg class="w-8 text-japonica-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" /></svg>
+        <span class="text-lg font-semibold text-gray-700 ">Votre panier(<%= cart_count_over_one %>)</span>
+      <% end %>
+    </div>
+  <% end %>
+
     <div>
       <%= link_to items_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
         <svg  class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 6a3.6 3.6 0 016-2.683A3.6 3.6 0 0117.796 7.2H19.2a2.4 2.4 0 010 4.8h-6v-1.2a1.2 1.2 0 10-2.4 0V12h-6a2.4 2.4 0 010-4.8h1.404A3.615 3.615 0 016 6zm4.8 1.2V6a1.2 1.2 0 10-1.2 1.2h1.2zm3.6 0A1.2 1.2 0 1013.2 6v1.2h1.2z" fill="#D97862"/><path d="M10.8 13.2H3.6v6A2.4 2.4 0 006 21.6h4.8v-8.4zm2.4 8.4H18a2.4 2.4 0 002.4-2.4v-6h-7.2v8.4z" fill="#D97862"/></svg>
@@ -12,5 +22,14 @@
         <span class="text-lg font-semibold text-gray-700 ">Se déconnecter</span>
       <% end %>
     </div>
-  </div>
+  <!-- </div> -->
+  <!-- <div class="px-6 py-4">
+    <div class="flex items-center  space-x-4">
+      <%#= cl_image_tag current_user.profil_pic, class:"h-12 rounded-full border-4 border-japonica-500" %>
+      <span class="text-lg font-semibold text-gray-700 "> <%#= current_user.name %> </span>
+    </div>
+    <div>
+      <button>Account settings</button>
+    </div>
+  </div> -->
 </div>
