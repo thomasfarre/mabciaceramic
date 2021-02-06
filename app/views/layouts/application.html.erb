@@ -23,6 +23,9 @@
   </head>
 
   <body>
+    <% if !current_page?(controller: 'devise/sessions', action: 'new') && !current_page?(controller: 'registrations', action: 'new') %>
+      <%= render "shared/navbar_mobile" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
