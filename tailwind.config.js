@@ -30,6 +30,18 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      'japonica': {
+          '50': '#fdf8f7',
+          '100': '#fbf2ef',
+          '200': '#f6ddd8',
+          '300': '#f0c9c0',
+          '400': '#e4a191',
+          '500': '#d97862',
+          '600': '#c36c58',
+          '700': '#a35a4a',
+          '800': '#82483b',
+          '900': '#6a3b30'
+      },
     },
     spacing: {
       px: '1px',

@@ -17,7 +17,7 @@
 
     </div>
   </div>
-  <div>
+  <div class="sticky">
     <%= current_user.nil? ? (render 'shared/menu_before_login') : (render 'shared/menu_after_login') %>
   </div>
 </header>
