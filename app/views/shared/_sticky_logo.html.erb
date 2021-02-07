@@ -1,0 +1,7 @@
+<div data-controller="stickylogo" data-action="scroll@window->stickylogo#onScroll">
+  <div data-stickylogo-target="stickylogo" class="hidden sticky px-2 top-0 z-40">
+    <%= link_to root_path do %>
+      <%= image_tag "Logo_sticky.png", class:'h-12' %>
+    <% end %>
+  </div>
+

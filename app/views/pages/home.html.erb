@@ -1,77 +1,74 @@
-<div data-controller="stickylogo" data-action="scroll@window->stickylogo#onScroll" class=" h-screen bg-cover bg-center text-center" style="background-image:url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80);">
-  <div data-stickylogo-target="stickylogo" class="opacity-0 sticky inset-0 px-4">
-    <%= link_to root_path do %>
-      <%= image_tag "Logo_sticky.png" %>
-    <% end %>
+
+  <%= render "shared/sticky_logo" %>
+
+  <div class=" h-screen bg-cover bg-center text-center" style="background-image:url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80);">
+    <div class="pt-32 px-12">
+      <h1 class="text-white text-3xl font-semibold ">Objets en céramique faits main</h1>
+    </div>
+    <div class="pt-48">
+      <%= link_to items_path do %>
+        <button class="px-6 py-4 rounded-xl text-white border-2 border-white font-semibold hover:bg-white hover:text-japonica-500">Découvrir</button>
+      <% end %>
+    </div>
   </div>
-  <div class="pt-32 px-12">
-    <h1 class="text-white text-3xl font-semibold ">Objets en céramique faits main</h1>
-  </div>
-  <div class="pt-48">
-    <%= link_to items_path do %>
-      <button class="px-6 py-4 rounded-xl text-white border-2 border-white font-semibold hover:bg-white hover:text-japonica-500">Découvrir</button>
-    <% end %>
+  <div class="px-4 bg-gray-100">
+    <div class="pt-12">
+      <h2 class="text-center text-2xl font-semibold">Mon atelier en quelques lignes</h2>
+    </div>
+
+    <div class="flex flex-col pt-8 px-8 space-y-8">
+
+      <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
+        <div class="relative" style="padding-bottom: 80%;">
+          <%= image_tag "licorne.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
+        </div>
+        <div class="px-4 py-4">
+          <div class="pt-1">
+            <span class="text-gray-700 text-xl font-bold">Des objects uniques</span>
+          </div>
+          <div class="pt-1">
+            <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Sur-mesure</span>
+          </div>
+          <div class="pt-3">
+            <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
+        <div class="relative" style="padding-bottom: 80%;">
+          <%= image_tag "faitmain.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
+        </div>
+        <div class="px-4 py-4">
+          <div class="pt-1">
+            <span class="text-gray-700 text-xl font-bold">Fait à la main</span>
+          </div>
+          <div class="pt-1">
+            <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Meilleurs materiaux</span>
+          </div>
+          <div class="pt-3">
+            <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
+        <div class="relative" style="padding-bottom: 80%;">
+          <%= image_tag "livraison.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
+        </div>
+        <div class="px-4 py-4">
+          <div class="pt-1">
+            <span class="text-gray-700 text-xl font-bold">Livraison gratuite et rapide</span>
+          </div>
+          <div class="pt-1">
+            <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Lorem ipsum</span>
+          </div>
+          <div class="pt-3">
+            <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-<div class="px-4 bg-gray-100">
-  <div class="pt-12">
-    <h2 class="text-center text-2xl font-semibold">Mon atelier en quelques lignes</h2>
-  </div>
-
-  <div class="flex flex-col pt-8 px-6 space-y-8">
-
-    <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
-      <div class="relative" style="padding-bottom: 80%;">
-        <%= image_tag "licorne.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
-      </div>
-      <div class="px-4 py-4">
-        <div class="pt-1">
-          <span class="text-gray-700 text-xl font-bold">Des objects uniques</span>
-        </div>
-        <div class="pt-1">
-          <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Sur-mesure</span>
-        </div>
-        <div class="pt-3">
-          <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
-      <div class="relative" style="padding-bottom: 80%;">
-        <%= image_tag "faitmain.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
-      </div>
-      <div class="px-4 py-4">
-        <div class="pt-1">
-          <span class="text-gray-700 text-xl font-bold">Fait à la main</span>
-        </div>
-        <div class="pt-1">
-          <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Meilleurs materiaux</span>
-        </div>
-        <div class="pt-3">
-          <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-t-xl overflow-hidden shadow-2xl">
-      <div class="relative" style="padding-bottom: 80%;">
-        <%= image_tag "livraison.png", class:'absolute h-full w-full inset-0 object-cover object-top shadow' %>
-      </div>
-      <div class="px-4 py-4">
-        <div class="pt-1">
-          <span class="text-gray-700 text-xl font-bold">Livraison gratuite et rapide</span>
-        </div>
-        <div class="pt-1">
-          <span class="text-japonica-500 text-sm uppercase tracking-wide font-bold">Lorem ipsum</span>
-        </div>
-        <div class="pt-3">
-          <span class="font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam porro modi sed, voluptatum</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
