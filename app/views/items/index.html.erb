@@ -1,40 +1,40 @@
 
 
 
-<div class="px-4 py-8">
-  <h2 class="text-3xl font-bold text-center pb-6">Bienvenue dans ma boutique</h2>
+<div class="py-10">
+  <h2 class="text-3xl font-bold text-left pb-2 px-4">Mes créations</h2>
 
-  <%= form_tag items_path, class:'flex items-center border-b-2 border-gray-200', method: :get do %>
-    <div><svg class="w-8 text-gray-500"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></div>
+  <%= form_tag items_path, class:'flex items-center border-b-2 border-gray-200 mx-4', method: :get do %>
+    <div><svg class="w-6 text-gray-500"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></div>
     <%= text_field_tag :query,
       params[:query],
-      placeholder: "Chercher un article(nom, catégories, matériaux...)", class:'px-4 py-4 focus:outline-none'
+      placeholder: "Chercher un article(nom, catégories, matériaux..)", class:'mx-2 text-sm py-4 focus:outline-none w-full'
     %>
     <%= submit_tag "Search", class:'hidden'%>
 
   <% end %>
 
 
-  <div class="overflow-x-auto mt-6 bg-gray-300">
+  <div class="overflow-x-auto mt-3 ml-4 bg-gray-300">
     <div class="inline-flex space-x-3 items-center">
-      <%= link_to 'Tout voir', items_path, class:'pl-4 w-28 py-4 font-bold' %>
-      <%= link_to 'Aquarium', items_path(category: 'Aquarium'), class:'pl-4 w-28 py-4 font-bold text-gray-600' %>
-      <%= link_to 'Photophores', items_path(category: 'Photophores'), class:'pl-4 py-4 w-28 font-bold text-gray-600' %>
-      <%= link_to 'Sculptures', items_path(category: 'Sculptures'), class:'pl-4 w-28 py-4 font-bold text-gray-600' %>
-      <%= link_to 'Pots, coupes', items_path(category: 'Pots, coupes'), class:'pl-4 py-4 w-28 font-bold text-gray-600' %>
-      <%= link_to 'Cuisine', items_path(category: 'Cuisine'), class:'pl-4 w-28 py-4 font-bold text-gray-600' %>
-      <%= link_to 'Décoration', items_path(category: 'Décoration'), class:'pl-4 py-4 w-28 font-bold text-gray-600' %>
-      <%= link_to 'Extérieur', items_path(category: 'Extérieur'), class:'pl-4 py-4 w-28 font-bold text-gray-600' %>
+      <%= link_to 'Tout voir', items_path, class:'pl-4 w-28 py-4 font-bold text-japonica-500 ' %>
+      <%= link_to 'Aquarium', items_path(category: 'Aquarium'), class:'pl-4 w-28 py-4 font-medium text-gray-600' %>
+      <%= link_to 'Photophores', items_path(category: 'Photophores'), class:'pl-4 py-4 w-28 font-medium text-gray-600' %>
+      <%= link_to 'Sculptures', items_path(category: 'Sculptures'), class:'pl-4 w-28 py-4 font-medium text-gray-600' %>
+      <%= link_to 'Pots, coupes', items_path(category: 'Pots, coupes'), class:'pl-4 py-4 w-28 font-medium text-gray-600' %>
+      <%= link_to 'Cuisine', items_path(category: 'Cuisine'), class:'pl-4 w-28 py-4 font-medium text-gray-600' %>
+      <%= link_to 'Décoration', items_path(category: 'Décoration'), class:'pl-4 py-4 w-28 font-medium text-gray-600' %>
+      <%= link_to 'Extérieur', items_path(category: 'Extérieur'), class:'pl-4 py-4 w-28 font-medium text-gray-600' %>
     </div>
   </div>
-  <div class="pt-8 grid grid-cols-2 gap-4">
+  <div class="pt-8 grid grid-cols-2 gap-4 px-4">
     <% @items.each do |item| %>
       <%= link_to item_path(item), class:"group" do %>
-      <div class="flex flex-col shadow-2xl rounded-xl overflow-hidden">
+      <div class="flex flex-col shadow-3xl rounded-t-xl overflow-hidden">
         <div class="relative" style="padding-bottom: 80%">
           <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
         </div>
-        <div class="px-4 py-4 h-20">
+        <div class="px-4 py-2">
           <span class="text-sm"><%= item.title %></span>
         </div>
         <div>
