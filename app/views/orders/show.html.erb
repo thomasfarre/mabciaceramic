@@ -1,14 +1,28 @@
 
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.status %></span></small></h1>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
-      <% @order.cart.cart_items.each do |cart_item| %>
-        <li><strong>ITEM</strong> <%= cart_item.item.title %> <strong> PRICE</strong> <%= humanized_money_with_symbol cart_item.item.price %></li>
-      <% end %>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-    </div>
+<div class="px-4 pt-10">
+  <h2 class="font-bold text-xl">Commande n°<%= @order.id %>(<%= @order.status %>)</h2>
+  <div class="pt-4">
+    <span>Votre colis est en route ! Le délai de livraison est estimé à quelques jours...</span>
   </div>
+  <div class="pt-2">
+   <span>Date : <%= @order.updated_at.strftime("%d/%m/%Y") %></span>
+  </div>
+
+  <% @cart.cart_items.each do |cart_item| %>
+    <div class="px-16 flex flex-col items-start">
+      <div class="pt-8">
+        <%= cl_image_tag cart_item.item.photos[0].key, class:"w-full h-36 object-cover rounded-xl" %>
+      </div>
+      <span class="font-bold pt-2"><%= cart_item.item.title %></span>
+      <div class="flex justify-between w-full">
+        <span class="text-japonica-500"> <%= cart_item.item.category %></span>
+        <span><%= humanized_money_with_symbol cart_item.item.price %> </span>
+      </div>
+    </div>
+  <% end %>
+  <div class="pt-10 font-medium text-gray-700">TOTAL : <%= humanized_money_with_symbol @order.amount %></div>
 </div>
 
-<%= link_to "Go back", cart_path(@cart) %>
+
+
+<%#= link_to "Go back", cart_path(@cart) %>
