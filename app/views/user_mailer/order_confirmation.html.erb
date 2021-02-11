@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey, <%= @user.name %></h1>
+    <p>
+      You have successfully Ordered :
+      <% @baught_items.each do |item| %>
+      <%= item.title %>
+      <% end %>.<br>
+    </p>
+    <p>
+      The items will arrived soon
+    </p>
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>
