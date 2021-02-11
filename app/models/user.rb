@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,5 +18,12 @@ class User < ApplicationRecord
 
   def profil_pic
     photo.attached? ? photo.key : '1_W35QUSvGpcLuxPo3SRTH4w_lzy6tr'
+  end
+
+  private
+
+  def send_welcome_email
+    raise
+    UserMailer.welcome(self).deliver_now
   end
 end
