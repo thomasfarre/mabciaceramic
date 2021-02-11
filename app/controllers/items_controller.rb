@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :disable_nav
+
 
   def show
   end
@@ -18,6 +20,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def disable_nav
+    @disable_nav = true
+  end
 
   def set_item
     @item = Item.find(params[:id])

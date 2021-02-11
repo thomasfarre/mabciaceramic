@@ -1,4 +1,5 @@
 class AdressesController < ApplicationController
+  before_action :disable_nav
 
   def edit
     if current_user.adresses.empty?
@@ -25,6 +26,12 @@ class AdressesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  private
+
+  def disable_nav
+    @disable_nav = true
   end
 
   def adress_params
