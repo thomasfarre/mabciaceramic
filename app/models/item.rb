@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many_attached :photos
 
+  CATEGORY = ["Aquarium", "Photophores", "Sculptures", "Pots, coupes", "Cuisine", "Décoration", "Extérieur"]
+
   monetize :price_cents
   validates :title, :description, :status, presence: true
   validates :status, inclusion: { in: ['pending', 'transit', 'removed'] }

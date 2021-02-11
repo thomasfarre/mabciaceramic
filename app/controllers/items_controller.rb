@@ -5,7 +5,16 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR category ILIKE :query"
+      @items = Item.where(sql_query, query: "%#{params[:query]}%")
+    else
+      if(params.key?(:category))
+        @items = Item.where(category: params[:category]).order("created_at desc")
+      else
+        @items = Item.all.order("created_at desc")
+      end
+    end
   end
 
   private

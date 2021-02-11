@@ -1,26 +1,44 @@
 
 
+
 <div class="px-4 py-8">
 
-  <div class="px-8">
-    <input class="w-full px-4 py-2 border-2 border-gray-200" type="text" placeholder="Search by name or demo day project">
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a movie"
+    %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+
+
+  <div class="inline-flex space-x-12">
+    <%= link_to 'All', items_path %>
+    <%= link_to 'Aquarium', items_path(category: 'Aquarium') %>
+    <%= link_to 'Photophores', items_path(category: 'Photophores') %>
+    <%= link_to 'Sculptures', items_path(category: 'Sculptures') %>
+    <%= link_to 'Pots, coupes', items_path(category: 'Pots, coupes') %>
+    <%= link_to 'Cuisine', items_path(category: 'Cuisine') %>
+    <%= link_to 'Décoration', items_path(category: 'Décoration') %>
+    <%= link_to 'Extérieur', items_path(category: 'Extérieur') %>
   </div>
-    <div class="pt-16 grid grid-cols-2 gap-4">
-      <% @items.each do |item| %>
-        <%= link_to item_path(item), class:"group" do %>
-        <div class="flex flex-col shadow-2xl rounded-xl overflow-hidden">
-          <div class="relative" style="padding-bottom: 80%">
-            <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
-          </div>
-          <div class="px-4 py-4 h-24">
-            <span class="text-sm"><%= item.title %></span>
-          </div>
-          <div>
-            <span> <%= humanized_money_with_symbol(item.price) %> </span>
-          </div>
+  <div class="pt-16 grid grid-cols-2 gap-4">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item), class:"group" do %>
+      <div class="flex flex-col shadow-2xl rounded-xl overflow-hidden">
+        <div class="relative" style="padding-bottom: 80%">
+          <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
         </div>
-        <% end %>
+        <div class="px-4 py-4 h-24">
+          <span class="text-sm"><%= item.title %></span>
+        </div>
+        <div>
+          <span> <%= humanized_money_with_symbol(item.price) %> </span>
+        </div>
+      </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
