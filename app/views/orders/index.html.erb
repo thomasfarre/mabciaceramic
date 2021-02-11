@@ -1,8 +1,22 @@
 
-<div>
-  <h1>Carnet de commandes</h1>
+<div class="px-4 py-6">
+  <h1 class="text-center font-bold text-xl">Carnet de commandes</h1>
+
+  <div class="pt-4">
+    <span class="text-gray-500"> <strong class="text-black">1</strong> Commande en cours</span>
+  </div>
+
+  <div>
+    <% @orders.each do |order| %>
+      <%= link_to order_path(order) do %>
+        <div class="pt-8 px-3 flex flex-col">
+          <span>Commande n°<%=  order.id  %>(<%=order.status %>)</span>
+          <span><%= order.updated_at.strftime("%d/%m/%Y") %> </span>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>
 
-<% @orders.each do |order| %>
- <%=  order.id  %>  <%=order.status %>
-<% end %>
+
