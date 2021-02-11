@@ -12,6 +12,6 @@ class StripeCheckoutSessionService
 
     order.cart.update(status: 'inactive')
 
-    UserMailer.order_confirmation(@user, @baught_items).deliver_now
+    # UserMailer.order_confirmation(@user, @baught_items).deliver_now
   end
 end
