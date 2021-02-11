@@ -1,13 +1,13 @@
 class StripeCheckoutSessionService
   def call(event)
-    @user = order.user
 
     order = Order.find_by(checkout_session_id: event.data.object.id)
-    order.update!(status: 'paid')
+    # @user = order.user
+    order.update(status: 'paid')
 
-    @bought_items = []
+    # @bought_items = []
     order.cart.cart_items.each do |cart_item|
-      @bought_items << cart_item.item.update(status: 'removed')
+      cart_item.item.update(status: 'removed')
     end
 
     order.cart.update(status: 'inactive')
