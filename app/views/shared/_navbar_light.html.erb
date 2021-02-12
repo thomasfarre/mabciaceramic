@@ -1,5 +1,5 @@
 <header data-controller="menu">
-  <div class="flex items-center justify-between py-4 px-2">
+  <div class="flex items-center justify-between pt-4 px-2">
 
 
     <div class="px-2">
@@ -9,10 +9,10 @@
     </div>
 
 
-    <div>
-      <%= link_to root_path do %>
-        <%= image_tag "Logo.png", class:"rounded-3xl w-8" %>
-      <% end %>
+  <!--   <div>
+      <%#= link_to root_path do %>
+        <%#= image_tag "Logo.png", class:"rounded-3xl w-8" %>
+      <%#end %>
     </div>
 
 
@@ -22,9 +22,9 @@
         <svg data-menu-target="close" class="w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
-    </div>
+    </div> -->
   </div>
-  <div class="sticky">
-    <%= current_user.nil? ? (render 'shared/menu_before_login') : (render 'shared/menu_after_login') %>
-  </div>
+  <!-- <div class="sticky">
+    <%#= current_user.nil? ? (render 'shared/menu_before_login') : (render 'shared/menu_after_login') %>
+  </div> -->
 </header>
