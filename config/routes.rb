@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  resources :contacts, only: [:create, :new]
+
   devise_for :users, controllers: {
     registrations: 'registrations'
   }

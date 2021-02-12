@@ -74,3 +74,5 @@ gem 'stripe'
 gem 'stripe_event'
 
 gem 'postmark-rails'
+
+gem 'mail_form'
