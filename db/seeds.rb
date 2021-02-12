@@ -142,3 +142,26 @@ user2 = User.create(
   password: '123456',
   admin: true
 )
+
+puts "Creating articles..."
+
+article1 = Article.new(
+  title: "Oeuvre en Raku",
+  category: "Article",
+  content: "Ceci est une œuvre en Raku. Il s’agit d’un terme japonais désignant un certain type de cuisson. Ici, la pièce est sortie chaude du four, puis mise dans de la sciure et enfumée. Cette cuisson est plus délicate à réaliser et moins accessible que celle standard. Plus tard, j’espère que j’aurais l’opportunité de faire plus de pièces en raku, car les effets sont vraiment dingues !",
+  description: "Ceci est une œuvre en Raku. Il s’agit d’un terme japonais désignant un certain type de cuisson. Ici, la pièce est sortie chaude du four, puis mise dans de la sciure et enfumée. Cette cuisson est plus délicate à réaliser et moins accessible que celle standard. Plus tard, j’espère que j’aurais l’opportunité de faire plus de pièces en raku, car les effets sont vraiment dingues !")
+
+article1.photo.attach(io: URI.open('https://external-cdt1-1.xx.fbcdn.net/safe_image.php?d=AQEv-0Z9qsVnNEW4&w=476&h=476&url=https%3A%2F%2Fscontent-cdg2-1.cdninstagram.com%2Fv%2Ft51.29350-15%2F135397006_402464920987052_2921371750696373388_n.jpg%3F_nc_cat%3D100%26ccb%3D3%26_nc_sid%3D8ae9d6%26_nc_ohc%3DwPubiTqNbHkAX_1BTw2%26_nc_ht%3Dscontent-cdg2-1.cdninstagram.com%26oh%3D22e236f7e6a079cffbc61d9c707bf86c%26oe%3D604AF5D4&cfs=1&_nc_cb=1&_nc_hash=AQHg9aJ6vT4JoFwz'), filename: 'item.jpg', content_type: 'image/jpg')
+
+article1.save
+
+article2 = Article.new(
+  title: "Personnages en céramique",
+  category: "Article",
+  content: "Les personnages en céramique sont plutôt durs à réaliser. Cela dépend aussi de la taille de la pièce, mais le degré de précision qu’autorise la terre et ensuite l’application de l’émail est faible. Certaines personnes très douées, avec beaucoup de patience, arrivent à faire des choses vraiment sympas. Personnellement, j’aime bien les personnages sans visage, ça rend la tâche plus facile et je trouve aussi que ça apporte une certaine modernité.",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim eu turpis egestas pretium aenean pharetra magna ac. Sed vulputate mi sit amet mauris commodo quis. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Fermentum posuere urna nec tincidunt praesent semper. Volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lectus nulla at volutpat diam. Risus at ultrices mi tempus imperdiet nulla malesuada. Nibh praesent tristique magna sit amet purus gravida quis blandit. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Pretium lectus quam id leo in. Vivamus arcu felis bibendum ut tristique et egestas quis. Egestas sed tempus urna et. Tincidunt arcu non sodales neque sodales ut. Adipiscing elit ut aliquam purus sit amet. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Sed viverra ipsum nunc aliquet bibendum enim. Volutpat blandit aliquam etiam erat velit scelerisque. Ultricies leo integer malesuada nunc vel risus commodo viverra. Integer malesuada nunc vel risus commodo. Amet mauris commodo quis imperdiet massa tincidunt nunc. Interdum velit euismod in pellentesque. Amet risus nullam eget felis eget nunc. Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis. Quisque non tellus orci ac auctor augue mauris augue. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Nunc pulvinar sapien et ligula. Nunc faucibus a pellentesque sit amet porttitor eget dolor. Mauris nunc congue nisi vitae suscipit tellus. Nibh mauris cursus mattis molestie a iaculis at. Eu mi bibendum neque egestas. At urna condimentum mattis pellentesque id nibh. Volutpat est velit egestas dui. Lectus vestibulum mattis ullamcorper velit. Elit pellentesque habitant morbi tristique senectus.")
+
+article2.photo.attach(io: URI.open('https://external-cdt1-1.xx.fbcdn.net/safe_image.php?d=AQE0rpveKkay4nB7&w=476&h=476&url=https%3A%2F%2Fscontent-cdt1-1.cdninstagram.com%2Fv%2Ft51.29350-15%2F137287053_426976048655025_2366191825158427362_n.jpg%3F_nc_cat%3D103%26ccb%3D3%26_nc_sid%3D8ae9d6%26_nc_ohc%3DtuM3FVe3nNUAX-PO2DJ%26_nc_ht%3Dscontent-cdt1-1.cdninstagram.com%26oh%3D74446ffe60d77d740761807a4125bb50%26oe%3D604A7AE9&cfs=1&_nc_cb=1&_nc_hash=AQFCpIV7WcL4230I'), filename: 'item.jpg', content_type: 'image/jpg')
+
+article2.save
+

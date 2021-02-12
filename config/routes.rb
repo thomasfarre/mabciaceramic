@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :carts
   resources :items
+  resources :articles
   # resources :adresses
   resources :orders, only: [:show, :create, :index] do
     resources :payments, only: :new
