@@ -2,9 +2,9 @@
 
 
 <div class="py-10">
-  <h2 class="text-3xl font-bold text-left px-4 text-gray-800">Mes créations du moment</h2>
+  <h2 class="text-3xl font-bold text-left px-2 text-gray-800">Mes créations du moment</h2>
 
-  <%= form_tag items_path, class:'flex items-center border-b-2 border-gray-200 mx-4', method: :get do %>
+  <%= form_tag items_path, class:'flex items-center border-b-2 border-gray-200 mx-2', method: :get do %>
     <div><svg class="w-6 text-gray-500"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></div>
     <%= text_field_tag :query,
       params[:query],
@@ -15,7 +15,7 @@
   <% end %>
 
 
-  <div class="overflow-x-auto mt-3 ml-4 bg-gray-300">
+  <div class="overflow-x-auto mt-3 ml-2 bg-gray-300">
     <div class="inline-flex space-x-3 items-center text-center">
       <%= link_to 'Tout voir', items_path, class:'pl-4 w-28 py-4 font-bold text-japonica-500 ' %>
       <%= link_to 'Aquarium', items_path(category: 'Aquarium'), class:'pl-4 w-28 py-4 font-medium text-gray-600' %>
@@ -27,19 +27,21 @@
       <%= link_to 'Extérieur', items_path(category: 'Extérieur'), class:'pl-4 py-4 w-28 font-medium text-gray-600' %>
     </div>
   </div>
-  <div class="pt-8 grid grid-cols-2 gap-4 px-4">
+  <div class="pt-4 grid grid-cols-2 gap-2 px-2">
     <% @items.each do |item| %>
       <%= link_to item_path(item), class:"group" do %>
-      <div class="flex flex-col shadow-3xl rounded-t-xl overflow-hidden pb-2 h-64">
+      <div class="shadow-3xl rounded-t-xl pb-2">
         <div class="relative" style="padding-bottom: 80%">
           <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
         </div>
-        <div class="px-2 py-2 flex-grow">
-          <span class="text-sm"><%= item.title %></span>
+        <div class="px-2 pt-2">
+          <div class="truncate "><%= item.title %></div>
         </div>
-        <div class="px-2 flex justify-between items-center">
-          <span class="font-bold"> <%= humanized_money_with_symbol(item.price) %> </span>
-          <span class="rounded-full py-1 px-2 bg-japonica-500 text-white text-xs font-bold">Objet unique</span>
+        <div class="px-2">
+          <span class="font-bold"> <%= item.price %>€ </span>
+        </div>
+        <div class="px-2">
+          <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
         </div>
       </div>
       <% end %>
