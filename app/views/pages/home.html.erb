@@ -71,10 +71,10 @@
 
     <!-- last articles section -->
     <div class="py-8 overflow-x-auto scrollbars-hidden">
-      <div class="px-4 flex space-x-2">
+      <div class="px-4 inline-flex space-x-2">
         <% @items.first(4).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
-          <div class="shadow-3xl rounded-t-xl pb-2 w-48">
+          <div class="shadow-3xl rounded-t-xl pb-2 w-60">
             <div class="relative h-64" style="padding-bottom: 80%">
               <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
             </div>
@@ -97,7 +97,7 @@
   </section>
 
 <!--   blog section -->
-  <section class="px-4 pt-12 bg-gray-200">
+  <section class="px-4 py-12 bg-gray-200">
     <div class="flex justify-center">
       <svg class="w-16 h-16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24 12.506v26m0-26C21.664 10.954 18.492 10 15 10s-6.664.954-9 2.506v26C8.336 36.954 11.508 36 15 36s6.664.954 9 2.506m0-26C26.336 10.954 29.508 10 33 10c3.494 0 6.664.954 9 2.506v26C39.664 36.954 36.494 36 33 36c-3.492 0-6.664.954-9 2.506" stroke="#D97862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
@@ -106,8 +106,106 @@
       <h2 class="text-center text-2xl font-bold tracking-tight">Vous voulez en apprendre plus sur la céramique ?</h2>
     </div>
 
-    <div>
 
+
+<!--     grid des articles(3 pour l'instant) -->
+    <div class="pt-8 grid grid-cols-2 gap-2">
+
+<!--       premier article le plus récent en gros -->
+      <div class="col-span-2 bg-white overflow-hidden shadow-2xl">
+        <div class="relative" style="padding-bottom: 80%;">
+          <span> <%= cl_image_tag Article.last.photo.key, class:'absolute h-full w-full inset-0 object-cover object-top shadow' %> </span>
+        </div>
+        <div class="flex flex-col px-2">
+          <div class="pt-2">
+            <span class="text-japonica-500 font-medium text-base"> <%= Article.last.category %> </span>
+          </div>
+          <div class="">
+            <span class="font-bold text-lg tracking-tight "><%= Article.last.title %></span>
+          </div>
+          <div class="pt-4">
+            <span class="text-gray-500"><%= Article.last.content %></span>
+          </div>
+          <div class="pb-2 space-x-2">
+            <span class="text-gray-600 font-thin text-xs"><%= (Article.last.created_at).strftime("%b %d, %Y") %></span>
+            <span class="text-gray-600 font-thin text-xs">6 min de lecture</span>
+          </div>
+        </div>
+      </div>
+
+<!-- deux autres article les plus récent après celui au dessus en petit en dessous -->
+      <% @articles[1..2].each do |article| %>
+      <div class="bg-white overflow-hidden shadow-2xl">
+        <div class="relative" style="padding-bottom: 80%;">
+          <span> <%= cl_image_tag article.photo.key, class:'absolute h-full w-full inset-0 object-cover object-top shadow' %> </span>
+        </div>
+        <div class="flex flex-col px-2 h-36">
+          <div class="pt-2">
+            <span class="text-japonica-500 font-medium text-sm"> <%= article.category %> </span>
+          </div>
+          <div class="flex-grow">
+            <span class="font-bold text-base tracking-tight "><%= article.title %></span>
+          </div>
+          <div class="pb-2 space-x-2">
+            <span class="text-gray-600 font-thin text-xs"><%= (article.created_at).strftime("%b %d, %Y") %></span>
+            <span class="text-gray-600 font-thin text-xs">6 min de lecture</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </section>
+
+ <!--  section sur les "features" avec icones et petit texte explicatif -->
+  <section class="px-2 py-6 bg-black" style="background-color: #222020;">
+
+    <div class="flex flex-col items-center">
+      <div>
+        <svg class="w-20 h-20" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58"><path d="M29 36.25v4.833M14.5 50.75h29a4.833 4.833 0 004.833-4.833v-14.5a4.833 4.833 0 00-4.833-4.834h-29a4.833 4.833 0 00-4.834 4.834v14.5A4.833 4.833 0 0014.5 50.75zm24.166-24.167v-9.666a9.667 9.667 0 10-19.333 0v9.666h19.334z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="pt-2">
+        <h2 class="uppercase text-white font-bold text-2xl">paiement sécurisé</h2>
+      </div>
+    </div>
+
+<!-- grid des features -->
+    <div class="pt-8 grid grid-cols-2 gap-y-4 gap-x-8">
+      <div class="flex flex-col items-center">
+        <div class="">
+          <svg class="w-16 h-16 rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#D97862" d="M0 0h48v48H0z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M21.571 11.125c0-.564.256-1.104.712-1.503A2.615 2.615 0 0124 9c.644 0 1.262.224 1.717.622.456.399.712.94.712 1.503v11.688a1 1 0 00.355.75c.228.2.537.312.859.312.322 0 .63-.112.858-.311a1 1 0 00.356-.752V13.25c0-.564.256-1.104.712-1.503a2.615 2.615 0 011.717-.622c.644 0 1.261.224 1.717.622.455.399.711.94.711 1.503v9.563a1 1 0 00.356.75c.228.2.536.312.859.312.322 0 .63-.112.858-.311a1 1 0 00.356-.752V17.5c0-.564.256-1.104.711-1.503a2.615 2.615 0 011.717-.622c.645 0 1.262.224 1.718.622.455.399.711.94.711 1.503v10.625c0 1.953-.44 3.888-1.294 5.692-.854 1.805-2.107 3.445-3.685 4.826-1.579 1.382-3.453 2.477-5.515 3.225A19.129 19.129 0 0124 43c-2.233 0-4.443-.385-6.506-1.132-2.062-.748-3.936-1.843-5.515-3.225-1.578-1.381-2.83-3.02-3.685-4.826A13.278 13.278 0 017 28.125v-4.25c0-.564.256-1.104.711-1.503a2.615 2.615 0 011.718-.622c.644 0 1.261.224 1.717.622.455.399.711.94.711 1.503v5.313a1 1 0 00.356.75c.228.2.536.312.858.312.322 0 .631-.112.86-.311a1 1 0 00.355-.752V13.25c0-.564.256-1.104.711-1.503a2.615 2.615 0 011.717-.622c.644 0 1.262.224 1.718.622.455.399.71.94.71 1.503v9.563a1 1 0 00.357.75c.227.2.536.312.858.312.322 0 .631-.112.859-.311a1 1 0 00.355-.752V11.126z" fill="#fff"/></svg>        </div>
+        <div class="pt-2 text-center">
+          <span class="text-white font-semibold ">Je réalise seule et de façon artisanale</span>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="">
+          <svg class="w-16 h-16 rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#D97862" d="M0 0h48v48H0z"/><path d="M18 34a4 4 0 11-8 0 4 4 0 018 0v0zm20 0a4 4 0 11-8 0 4 4 0 018 0v0z" fill="#fff" stroke="#fff"/><path d="M30 34a4 4 0 118 0m-12-2V12a2 2 0 00-2-2H8a2 2 0 00-2 2v20a2 2 0 002 2h2l16-2zm0 0a2 2 0 01-2 2h-6l8-2zm0 0V16a2 2 0 012-2h5.172a2 2 0 011.414.586l6.828 6.828A2 2 0 0142 22.828V32a2 2 0 01-2 2h-2l-12-2zm0 0a2 2 0 002 2h2l-4-2zm-16 2a4 4 0 108 0h-8zm0 0a4 4 0 118 0h-8zm20 0a4 4 0 108 0h-8z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>        </div>
+        <div class="pt-2 text-center">
+          <span class="text-white font-semibold">Livraison à domicile et 100% gratuite</span>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="">
+          <svg class="w-16 h-16 rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#D97862" d="M0 0h48v48H0z"/><path d="M36.728 11.272l-7.072 7.072 7.072-7.072zm-7.072 18.384l7.072 7.072-7.072-7.072zM18.344 18.344l-7.072-7.072 7.072 7.072zm0 11.312l-7.072 7.072 7.072-7.072zM42 24a18 18 0 11-36 0 18 18 0 0136 0zm-10 0a8 8 0 11-16.001 0A8 8 0 0132 24v0z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>        </div>
+        <div class="pt-2 text-center">
+          <span class="text-white font-semibold">14 jours pour retourner un article</span>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="">
+          <svg class="w-16 h-16 rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#D97862" d="M0 0h48v48H0z"/><path d="M30.464 10.464l7.072 7.072-7.072-7.072zm3-3a5 5 0 117.072 7.072L13 42.072H6v-7.144L33.464 7.464v0z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="pt-2 text-center">
+          <span class="text-white font-semibold">Réalisation sûr-mesure, contactez-moi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--   instagram section avec la gallery de post -->
+  <section class="py-12">
+    <div>
+      <h2 class="text-center text-2xl font-bold tracking-tight">Quelques photos...</h2>
     </div>
   </section>
 </main>
