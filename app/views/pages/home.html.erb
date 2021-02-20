@@ -2,9 +2,9 @@
 <!-- Sticky logo -->
 <%#= render "shared/sticky_logo" %>
 
-<!-- main with background and CTA-->
+<!-- header with background and CTA-->
 
-<main class="h-screen">
+<header class="h-screen">
   <div class="h-9/10 bg-cover bg-center text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80);">
     <div class="pt-32 px-2">
       <h1 class="text-white text-3xl font-semibold tracking-tight">Objets en céramique fait mains</h1>
@@ -15,58 +15,95 @@
       <% end %>
     </div>
   </div>
-</main>
+</header>
 
+<main>
 
-<!-- second main section with shop category buttons and last articles -->
-<main data-controller="category-buttons" class="px-4 pt-4">
-  <div class="px-4">
-    <h2 class="text-center text-2xl font-bold tracking-tight">Les dernières créations de mon atelier</h2>
-  </div>
-
-  <div class="py-12">
-
-   <!--  buttons visible at all times -->
-    <div class="flex flex-wrap gap-x-2 gap-y-4 justify-center">
-      <%= link_to items_path(category: "Aquarium"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Aquarium</button>
-      <% end %>
-
-      <%= link_to items_path(category: "Décoration"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Décoration</button>
-      <% end %>
-
-      <%= link_to items_path(category: "Cuisine"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Cuisine</button>
-      <% end %>
-
-      <%= link_to items_path(category: "Sculptures"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Sculptures</button>
-      <% end %>
-
-      <%= link_to items_path(category: "Photophores"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Photophores</button>
-      <% end %>
+  <!-- first section with shop category buttons and last articles -->
+  <section data-controller="category-buttons" class="px-4 pt-4 pb-12">
+    <div class="px-4">
+      <h2 class="text-center text-2xl font-bold tracking-tight">Les dernières créations de mon atelier</h2>
     </div>
 
-    <!-- buttons visible when "see more" is on -->
-    <div data-category-buttons-target="toggleable" class="hidden pt-4 flex flex-wrap gap-x-2 gap-y-4 justify-center">
-      <%= link_to items_path(category: "Pots, coupes"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Pots, coupes</button>
-      <% end %>
+    <!--   category buttons link_to section -->
+    <div class="pt-8">
 
-      <%= link_to items_path(category: "Extérieur"), class:'group' do %>
-        <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Extérieur</button>
-      <% end %>
+     <!--  buttons visible at all times -->
+      <div class="flex flex-wrap gap-x-2 gap-y-4 justify-center">
+        <%= link_to items_path(category: "Aquarium"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Aquarium</button>
+        <% end %>
+
+        <%= link_to items_path(category: "Décoration"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Décoration</button>
+        <% end %>
+
+        <%= link_to items_path(category: "Cuisine"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Cuisine</button>
+        <% end %>
+
+        <%= link_to items_path(category: "Sculptures"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Sculptures</button>
+        <% end %>
+
+        <%= link_to items_path(category: "Photophores"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Photophores</button>
+        <% end %>
+      </div>
+
+      <!-- buttons visible when "see more" is on -->
+      <div data-category-buttons-target="toggleable" class="hidden pt-4 flex flex-wrap gap-x-2 gap-y-4 justify-center">
+        <%= link_to items_path(category: "Pots, coupes"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Pots, coupes</button>
+        <% end %>
+
+        <%= link_to items_path(category: "Extérieur"), class:'group' do %>
+          <button class="px-2 py-2 text-gray-500 rounded-full shadow-3xl font-bold bg-gray-100 border border-gray-300 focus:outline-none">Extérieur</button>
+        <% end %>
+      </div>
+
+      <div class="pt-4 flex justify-center">
+        <button data-action="click->category-buttons#toggle" class="text-gray-600 underline text-sm focus:outline-none">Voir plus</button>
+        <svg data-category-buttons-target="open" class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        <svg data-category-buttons-target="close" class="hidden w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+      </div>
     </div>
 
-    <div class="pt-4 flex justify-center">
-      <button data-action="click->category-buttons#toggle" class="text-gray-600 underline text-sm focus:outline-none">Voir plus</button>
-      <svg data-category-buttons-target="open" class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-      <svg data-category-buttons-target="close" class="hidden w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <!-- last articles section -->
+    <div class="py-8 overflow-x-auto scrollbars-hidden">
+      <div class="flex space-x-2">
+        <% @items.first(4).each do |item| %>
+          <%= link_to item_path(item), class:"group" do %>
+          <div class="shadow-3xl rounded-t-xl pb-2 w-48">
+            <div class="relative h-64" style="padding-bottom: 80%">
+              <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
+            </div>
+            <div>
+              <div class="px-2 pt-4">
+                <div class="truncate "><%= item.title %></div>
+              </div>
+              <div class="pt-1 px-2">
+                <span class="font-bold"> <%= item.price %>€ </span>
+              </div>
+              <div class="py-2 px-2">
+                <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  </section>
 
-
+<!--   blog section -->
+  <section class="pt-12 bg-gray-200">
+    <div class="flex justify-center">
+      <svg class="w-16 h-16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24 12.506v26m0-26C21.664 10.954 18.492 10 15 10s-6.664.954-9 2.506v26C8.336 36.954 11.508 36 15 36s6.664.954 9 2.506m0-26C26.336 10.954 29.508 10 33 10c3.494 0 6.664.954 9 2.506v26C39.664 36.954 36.494 36 33 36c-3.492 0-6.664.954-9 2.506" stroke="#D97862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="pt-4">
+      <h2 class="text-center text-2xl font-bold tracking-tight">Vous voulez en apprendre plus sur la céramique ?</h2>
+    </div>
+  </section>
 </main>
 

@@ -1,4 +1,4 @@
-<header data-controller="menu">
+<nav data-controller="menu">
   <div class="flex items-center justify-between bg-gray-100 py-2 px-2 shadow">
     <div>
       <%= link_to root_path do %>
@@ -22,4 +22,4 @@
   <div class="sticky">
     <%= current_user.nil? ? (render 'shared/menu_before_login') : (render 'shared/menu_after_login') %>
   </div>
-</header>
+</nav>

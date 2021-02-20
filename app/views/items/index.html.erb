@@ -15,38 +15,38 @@
   <% end %>
 
 
-  <div class="overflow-x-auto mt-3 ml-2 bg-gray-300">
-    <div class="inline-flex space-x-3 items-center text-center">
+  <div class="overflow-x-auto scrollbars-hidden py-4 mt-3 ml-2 bg-gray-300">
+    <div class="px-4 inline-flex space-x-6 items-center text-center">
 
-      <div class="<%= params[:category] == nil ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == nil ? ' font-bold text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Tout voir', items_path %>
       </div>
 
-      <div class="<%= params[:category] == 'Aquarium' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Aquarium' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Aquarium', items_path(category: 'Aquarium') %>
       </div>
 
-      <div class="<%= params[:category] == 'Photophores' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Photophores' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Photophores', items_path(category: 'Photophores') %>
       </div>
 
-      <div class="<%= params[:category] == 'Sculptures' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Sculptures' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Sculptures', items_path(category: 'Sculptures') %>
       </div>
 
-      <div class="<%= params[:category] == 'Pots, coupes' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Pots, coupes' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Pots, coupes', items_path(category: 'Pots, coupes') %>
       </div>
 
-      <div class="<%= params[:category] == 'Cuisine' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Cuisine' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Cuisine', items_path(category: 'Cuisine') %>
       </div>
 
-      <div class="<%= params[:category] == 'Décoration' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Décoration' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Décoration', items_path(category: 'Décoration') %>
       </div>
 
-      <div class="<%= params[:category] == 'Extérieur' ? 'w-28 py-4 font-bold text-japonica-500' : 'pl-4 w-28 py-4 font-medium text-gray-600' %>">
+      <div class="<%= params[:category] == 'Extérieur' ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
         <%= link_to 'Extérieur', items_path(category: 'Extérieur') %>
       </div>
     </div>
