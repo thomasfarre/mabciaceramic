@@ -20,13 +20,13 @@
 <main>
 
   <!-- first section with shop category buttons and last articles -->
-  <section data-controller="category-buttons" class="px-4 pt-4 pb-12">
+  <section data-controller="category-buttons" class="pt-4 pb-12">
     <div class="px-4">
       <h2 class="text-center text-2xl font-bold tracking-tight">Les dernières créations de mon atelier</h2>
     </div>
 
     <!--   category buttons link_to section -->
-    <div class="pt-8">
+    <div class="px-4 pt-8">
 
      <!--  buttons visible at all times -->
       <div class="flex flex-wrap gap-x-2 gap-y-4 justify-center">
@@ -71,7 +71,7 @@
 
     <!-- last articles section -->
     <div class="py-8 overflow-x-auto scrollbars-hidden">
-      <div class="flex space-x-2">
+      <div class="px-4 flex space-x-2">
         <% @items.first(4).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
           <div class="shadow-3xl rounded-t-xl pb-2 w-48">
@@ -97,12 +97,17 @@
   </section>
 
 <!--   blog section -->
-  <section class="pt-12 bg-gray-200">
+  <section class="px-4 pt-12 bg-gray-200">
     <div class="flex justify-center">
       <svg class="w-16 h-16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24 12.506v26m0-26C21.664 10.954 18.492 10 15 10s-6.664.954-9 2.506v26C8.336 36.954 11.508 36 15 36s6.664.954 9 2.506m0-26C26.336 10.954 29.508 10 33 10c3.494 0 6.664.954 9 2.506v26C39.664 36.954 36.494 36 33 36c-3.492 0-6.664.954-9 2.506" stroke="#D97862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
+
     <div class="pt-4">
       <h2 class="text-center text-2xl font-bold tracking-tight">Vous voulez en apprendre plus sur la céramique ?</h2>
+    </div>
+
+    <div>
+
     </div>
   </section>
 </main>

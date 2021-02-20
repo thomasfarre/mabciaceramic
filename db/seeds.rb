@@ -165,3 +165,12 @@ article2.photo.attach(io: URI.open('https://external-cdt1-1.xx.fbcdn.net/safe_im
 
 article2.save
 
+article3 = Article.new(
+  title: "Habitat Aquarium",
+  category: "Article",
+  content: "Toi aussi tu aimerais une décoration moderne et unique pour l’habitat de tes animaux ? N’hésites pas à aller voir mes créations, et aussi, à me faire des suggestions ! (Cet animal incroyable dans sa maison à couper le souffle est un axolotl!)",
+  description: "Toi aussi tu aimerais une décoration moderne et unique pour l’habitat de tes animaux ? N’hésites pas à aller voir mes créations, et aussi, à me faire des suggestions ! (Cet animal incroyable dans sa maison à couper le souffle est un axolotl!)")
+
+article3.photo.attach(io: URI.open('https://scontent.fcdg1-1.fna.fbcdn.net/v/t1.0-0/p526x296/151463579_195666168679303_1985670903166105713_o.jpg?_nc_cat=101&ccb=3&_nc_sid=9267fe&_nc_ohc=C8dXudQaNusAX9_U0TP&_nc_ht=scontent.fcdg1-1.fna&tp=6&oh=95a64f79f69553c6e6e96a05c28d7be2&oe=60552E50'), filename: 'item.jpg', content_type: 'image/jpg')
+
+article3.save
