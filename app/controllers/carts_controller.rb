@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :disable_footer, only: [:show]
 
   def index
     @carts = Cart.all
@@ -41,6 +42,10 @@ class CartsController < ApplicationController
 
   def set_cart
     @cart = Cart.find(params[:id])
+  end
+
+  def disable_footer
+    @disable_footer = true
   end
 
   def cart_params

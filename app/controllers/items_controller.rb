@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :disable_nav, only: [:show]
+  before_action :disable_nav, :disable_footer, only: [:show]
 
 
   def show
@@ -23,6 +23,10 @@ class ItemsController < ApplicationController
 
   def disable_nav
     @disable_nav = true
+  end
+
+  def disable_footer
+    @disable_footer = true
   end
 
   def set_item

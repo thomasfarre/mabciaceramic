@@ -1,5 +1,5 @@
 class AdressesController < ApplicationController
-  before_action :disable_nav
+  before_action :disable_nav, :disable_footer
 
   def edit
     if current_user.adresses.empty?
@@ -32,6 +32,10 @@ class AdressesController < ApplicationController
 
   def disable_nav
     @disable_nav = true
+  end
+
+  def disable_footer
+    @disable_footer = true
   end
 
   def adress_params
