@@ -54,9 +54,9 @@
   <div class="pt-4 grid grid-cols-2 gap-2 px-2">
     <% @items.each do |item| %>
       <%= link_to item_path(item), class:"group" do %>
-      <div class="shadow-3xl rounded-t-xl pb-2">
+      <div class="shadow-3xl rounded pb-2">
         <div class="relative" style="padding-bottom: 80%">
-          <%= cl_image_tag item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover shadow'  %>
+          <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
         </div>
         <div class="px-2 pt-2">
           <div class="truncate "><%= item.title %></div>
