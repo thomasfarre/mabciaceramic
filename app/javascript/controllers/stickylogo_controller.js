@@ -7,9 +7,9 @@ export default class extends Controller {
    onScroll() {
     var y = window.scrollY;
     if (y >= 60) {
-     this.stickylogoTarget.classList.remove('hidden')
+     this.stickylogoTarget.classList.add('lg:block')
     } else {
-        this.stickylogoTarget.classList.add('hidden')
+        this.stickylogoTarget.classList.remove('lg:block')
     }
    };
 }
