@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :disable_nav, :disable_footer, only: [:show]
+  ITEMS_PER_PAGE = 2
 
 
   def show
@@ -17,6 +18,8 @@ class ItemsController < ApplicationController
         @items = Item.all.order("created_at desc")
       end
     end
+    @page = params.fetch(:page, 0).to_i
+    @items = @items.offset(@page * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
   end
 
   private
