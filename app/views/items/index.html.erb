@@ -20,67 +20,45 @@
       <% end %>
     </div>
 
+
+
     <div class="py-4 mt-3 mx-2 overflow-x-auto scrollbars-hidden bg-gray-200 md:mx-4">
-      <div class="px-4 inline-flex items-center text-center">
+      <div class="px-4 inline-flex items-center text-center space-x-4">
 
-        <div class="<%= params[:category] == nil ? 'font-bold text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-2' %>">
-          <%= link_to 'Tout voir', items_path %>
-        </div>
+        <button data-action="click->item-categories#displayToutVoir" data-item-categories-target="ToutVoirButton" class="text-japonica-500 font-bold whitespace-nowrap focus:outline-none">Tout voir</button>
+        <% categories = ["Aquarium", "Photophores", "Sculptures", "Pots, coupes", "Cuisine", "Décoration", "Extérieur"] %>
+        <% categories.each do |category| %>
+          <button data-action="click->item-categories#display<%= category %>" data-item-categories-target="<%= category %>Button" class="font-medium text-gray-600 whitespace-nowrap focus:outline-none"> <%= category %> </button>
+        <% end %>
 
-        <div class="<%= params[:category] == 'Aquarium' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-3' %>">
-          <%= link_to 'Aquarium', items_path(category: 'Aquarium') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Photophores' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-4' %>">
-          <%= link_to 'Photophores', items_path(category: 'Photophores') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Sculptures' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-5' %>">
-          <%= link_to 'Sculptures', items_path(category: 'Sculptures') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Pots, coupes' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-6' %>">
-          <%= link_to 'Pots, coupes', items_path(category: 'Pots, coupes') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Cuisine' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-7' %>">
-          <%= link_to 'Cuisine', items_path(category: 'Cuisine') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Décoration' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-8' %>">
-          <%= link_to 'Décoration', items_path(category: 'Décoration') %>
-        </div>
-
-        <div class="<%= params[:category] == 'Extérieur' ? 'font-bold  text-japonica-500 whitespace-nowrap order-1 mx-4' : 'mx-4 font-medium text-gray-600 whitespace-nowrap order-9' %>">
-          <%= link_to 'Extérieur', items_path(category: 'Extérieur') %>
-        </div>
       </div>
     </div>
 
-    <button data-action="click->item-categories#display" data-item-categories-target="category" id="Aquarium" class="toto">Aquarium</button>
-
-    <div data-item-categories-target="cards" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
-      <% @items.where(category: "Aquarium").each do |item| %>
-        <%= link_to item_path(item), class:"group" do %>
-        <div class="shadow-3xl rounded pb-2">
-          <div class="relative" style="padding-bottom: 80%">
-            <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
+    <% categories.each do |category| %>
+      <div data-item-categories-target="Aquarium" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+        <% @items.where(category: category).each do |item| %>
+          <%= link_to item_path(item), class:"group" do %>
+          <div class="shadow-3xl rounded pb-2">
+            <div class="relative" style="padding-bottom: 80%">
+              <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
+            </div>
+            <div class="px-2 pt-2">
+              <div class="truncate "><%= item.title %></div>
+            </div>
+            <div class="px-2">
+              <span class="font-bold"> <%= item.price %>€ </span>
+            </div>
+            <div class="px-2">
+              <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+            </div>
           </div>
-          <div class="px-2 pt-2">
-            <div class="truncate "><%= item.title %></div>
-          </div>
-          <div class="px-2">
-            <span class="font-bold"> <%= item.price %>€ </span>
-          </div>
-          <div class="px-2">
-            <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
-          </div>
-        </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
 
-    <div class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+
+    <div data-item-categories-target="ToutVoir" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
         <%= link_to item_path(item), class:"group" do %>
         <div class="shadow-3xl rounded pb-2">
@@ -102,7 +80,7 @@
     </div>
 
     <%= link_to "Next page", items_path(page: @page + 1) %>
-    <%= link_to "Last Page", items_path(page: @page - 1) %>
+    <%= link_to "Last Page", items_path(page: @page > 0 ? @page - 1 : @page) %>
 
   </div>
 </div>
