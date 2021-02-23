@@ -1,21 +1,21 @@
-<div class="px-4 pt-8">
+<div class="px-4 pt-8 max-w-6xl mx-auto lg:py-16">
   <h2 class="font-bold text-gray-700 text-2xl text-center">Blog</h2>
   <p class="pt-2 text-gray-500 text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.</p>
 
-  <div class="pt-6 space-y-6">
+  <div class="pt-6 space-y-6 lg:grid lg:grid-cols-3 lg:gap-4 lg:space-y-0">
     <% @articles.each do |article| %>
     <div class="bg-white rounded-xl overflow-hidden shadow-2xl">
       <div class="relative" style="padding-bottom: 80%;">
         <span> <%= cl_image_tag article.photo.key, class:'absolute h-full w-full inset-0 object-cover object-top shadow' %> </span>
       </div>
-      <div class="flex flex-col px-4">
+      <div class="flex flex-col px-4 h-96">
         <div class="pt-2">
           <span class="text-japonica-500 font-medium "> <%= article.category %> </span>
         </div>
         <div class="">
           <span class="font-bold text-xl"><%= article.title %></span>
         </div>
-        <div class="pt-4">
+        <div class="pt-4 flex-grow">
           <span class="text-gray-500"><%= article.content %></span>
         </div>
         <div class="pt-6 pb-2 flex space-x-2">
