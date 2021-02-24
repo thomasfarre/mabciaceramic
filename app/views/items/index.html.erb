@@ -32,23 +32,23 @@
       </div>
     </div>
 
-    <div data-item-categories-target="toutVoir" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+    <div data-item-categories-target="toutVoir" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
-        <%= link_to item_path(item), class:"group" do %>
-        <div class="shadow-3xl rounded pb-2">
-          <div class="relative" style="padding-bottom: 80%">
-            <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
-          </div>
-          <div class="px-2 pt-2">
-            <div class="truncate "><%= item.title %></div>
-          </div>
-          <div class="px-2">
-            <span class="font-bold"> <%= item.price %>€ </span>
-          </div>
-          <div class="px-2">
-            <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
-          </div>
-        </div>
+        <%= link_to item_path(item), data:{"item-categories-target": "items"},class:"group" do %>
+            <div class="shadow-3xl rounded pb-2">
+              <div class="relative" style="padding-bottom: 80%">
+                <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
+              </div>
+              <div class="px-2 pt-2">
+                <div class="truncate "><%= item.title %></div>
+              </div>
+              <div class="px-2">
+                <span class="font-bold"> <%= item.price %>€ </span>
+              </div>
+              <div class="px-2">
+                <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
@@ -76,10 +76,19 @@
       </div>
     <% end %>
 
+    <div id="table" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
 
 
-    <%= link_to "Next page", items_path(page: @page + 1) %>
-    <%= link_to "Last Page", items_path(page: @page > 0 ? @page - 1 : @page) %>
+    </div>
+
+
+
+    <div data-item-categories-target="toto">
+      <p>"toto"</p>
+    </div>
+
+    <%#= link_to "Next page", items_path(page: @page + 1) %>
+    <%#= link_to "Last Page", items_path(page: @page > 0 ? @page - 1 : @page) %>
 
   </div>
 </div>
