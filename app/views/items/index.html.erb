@@ -1,7 +1,6 @@
 
 <div data-controller="item-categories">
 
-
   <div class="py-10 lg:py-20 max-w-6xl mx-auto">
     <div class="px-2 md:px-4">
       <h2 class="text-3xl font-bold text-left text-gray-900 lg:text-4xl">Mes créations du moment</h2>
@@ -20,6 +19,26 @@
       <% end %>
     </div>
 
+
+<!-- Catégories filtrer par query -->
+<!-- <div class="overflow-x-auto scrollbars-hidden py-4 mt-3 ml-2 bg-gray-300">
+  <div class="px-4 inline-flex space-x-6 items-center text-center">
+    <div class="<%#= params[:category] == nil ? ' font-bold text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
+      <%#= link_to 'Tout voir', items_path %>
+    </div>
+
+    <%# categories = ["Aquarium", "Photophores", "Sculptures", "Pots, coupes", "Cuisine", "Décoration", "Extérieur"] %>
+    <%# categories.each do |category| %>
+      <div class="<%#= params[:category] == category ? 'font-bold  text-japonica-500 whitespace-nowrap' : ' font-medium text-gray-600 whitespace-nowrap' %>">
+        <%#= link_to category, items_path(category: category) %>
+      </div>
+    <%# end %>
+  </div>
+</div> -->
+
+
+<!-- Catégories filtrer en front en JS  -->
+
     <div class="py-4 mt-3 mx-2 overflow-x-auto scrollbars-hidden bg-gray-200 md:mx-4">
       <div class="px-4 inline-flex items-center text-center space-x-4">
 
@@ -32,9 +51,10 @@
       </div>
     </div>
 
+
     <div data-item-categories-target="toutVoir" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
-        <%= link_to item_path(item), data:{"item-categories-target": "items"},class:"group" do %>
+        <%= link_to item_path(item), class:"group" do %>
             <div class="shadow-3xl rounded pb-2">
               <div class="relative" style="padding-bottom: 80%">
                 <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
@@ -53,10 +73,13 @@
       <% end %>
     </div>
 
+
+    <!-- Filtrage des items par category  -->
+
     <% categories.each do |category| %>
       <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
         <% @items.where(category: category).each do |item| %>
-          <%= link_to item_path(item), class:"group" do %>
+          <%= link_to item_path(item), data:{"item-categories-target": "items"}, class:"group" do %>
           <div class="shadow-3xl rounded pb-2">
             <div class="relative" style="padding-bottom: 80%">
               <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
@@ -76,20 +99,24 @@
       </div>
     <% end %>
 
-    <div id="table" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
 
+    <div id="table" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
 
     </div>
 
 
 
-    <div data-item-categories-target="toto">
+    <div data-item-categories-target="pageButtons">
       <p>"toto"</p>
     </div>
 
+<!--     Pagination en back-->
     <%#= link_to "Next page", items_path(page: @page + 1) %>
     <%#= link_to "Last Page", items_path(page: @page > 0 ? @page - 1 : @page) %>
 
   </div>
 </div>
+
+
+<meta name="data" content="<%= @items.to_json %>">
 
