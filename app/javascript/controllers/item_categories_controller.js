@@ -127,118 +127,216 @@ export default class extends Controller {
 }
 
 
-  // displayAll() {
+  displayAll() {
 
-  //   // this.toutVoirTarget.classList.remove('hidden')
-  //   this.toutVoirButtonTarget.classList.add('text-japonica-500', 'font-bold')
+    // this.toutVoirTarget.classList.remove('hidden')
+    this.toutVoirButtonTarget.classList.add('text-japonica-500', 'font-bold')
 
-  //   this.buttonTargets.forEach(button => {
-  //     button.classList.remove('text-japonica-500', 'font-bold')
-  //   })
+    this.buttonTargets.forEach(button => {
+      button.classList.remove('text-japonica-500', 'font-bold')
+    })
 
-  //   this.categoryTargets.forEach(category => {
-  //     category.classList.add('hidden')
-  //   })
-  // }
+    // this.categoryTargets.forEach(category => {
+    //   category.classList.add('hidden')
+    // })
 
+    let categoryContainer = this.toutVoirTarget
+    var clone = categoryContainer.cloneNode(true)
+    let itemsFiltered = clone.children
+    let arr = [].slice.call(itemsFiltered)
 
+    var state = {
+      'querySet': arr,
+      'page': 1,
+      'rows': 2,
+      'window': 5,
+    }
 
+    var pagesContainer = this.pageButtonsTarget
+    // var table = this.toutVoirTarget
 
+    $('#table').empty()
+    buildTable()
 
-  // connect() {
+    function pagination(querySet, page, rows) {
 
-  //   let categoryContainer = this.itemsTargets
-  //   console.log(categoryContainer)
+      var trimStart = (page - 1) * rows
+      var trimEnd = trimStart + rows
 
-  //   var state = {
-  //     'querySet': categoryContainer,
-  //     'page': 1,
-  //     'rows': 2,
-  //     'window': 5,
-  //   }
+      var trimmedData = querySet.slice(trimStart, trimEnd)
 
-  //   var pagesContainer = this.pageButtonsTarget
-  //   // var table = this.toutVoirTarget
+      var pages = Math.round(querySet.length / rows);
 
-  //   buildTable()
-
-  //   function pagination(querySet, page, rows) {
-
-  //     var trimStart = (page - 1) * rows
-  //     var trimEnd = trimStart + rows
-
-  //     var trimmedData = querySet.slice(trimStart, trimEnd)
-
-  //     var pages = Math.round(querySet.length / rows);
-
-  //     return {
-  //         'querySet': trimmedData,
-  //         'pages': pages,
-  //     }
-  //   }
+      return {
+          'querySet': trimmedData,
+          'pages': pages,
+      }
+    }
 
 
-  //   function pageButtons(pages) {
+    function pageButtons(pages) {
 
-  //       var wrapper = pagesContainer
+        var wrapper = pagesContainer
 
-  //       wrapper.innerHTML = ``
+        wrapper.innerHTML = ``
 
-  //       var maxLeft = (state.page - Math.floor(state.window / 2))
-  //       var maxRight = (state.page + Math.floor(state.window / 2))
+        var maxLeft = (state.page - Math.floor(state.window / 2))
+        var maxRight = (state.page + Math.floor(state.window / 2))
 
-  //       if (maxLeft < 1) {
-  //           maxLeft = 1
-  //           maxRight = state.window
-  //       }
+        if (maxLeft < 1) {
+            maxLeft = 1
+            maxRight = state.window
+        }
 
-  //       if (maxRight > pages) {
-  //           maxLeft = pages - (state.window - 1)
+        if (maxRight > pages) {
+            maxLeft = pages - (state.window - 1)
 
-  //           if (maxLeft < 1){
-  //             maxLeft = 1
-  //           }
-  //           maxRight = pages
-  //       }
+            if (maxLeft < 1){
+              maxLeft = 1
+            }
+            maxRight = pages
+        }
 
-  //       for (var page = maxLeft; page <= maxRight; page++) {
-  //         wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-japonica-500 text-white font-bold">${page}</button>`
-  //       }
+        for (var page = maxLeft; page <= maxRight; page++) {
+          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-japonica-500 text-white font-bold">${page}</button>`
+        }
 
-  //       if (state.page != 1) {
-  //           wrapper.innerHTML = `<button value=${1} class="page px-2 py-1 bg-japonica-500 text-white font-bold"> First </button>` + wrapper.innerHTML
-  //       }
+        if (state.page != 1) {
+            wrapper.innerHTML = `<button value=${1} class="page px-2 py-1 bg-japonica-500 text-white font-bold"> First </button>` + wrapper.innerHTML
+        }
 
-  //       if (state.page != pages) {
-  //           wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-japonica-500 text-white font-bold">Last </button>`
-  //       }
+        if (state.page != pages) {
+            wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-japonica-500 text-white font-bold">Last </button>`
+        }
 
-  //       $('.page').on('click', function() {
-  //           $('#table').empty()
+        $('.page').on('click', function() {
+            $('#table').empty()
 
-  //           state.page = Number($(this).val())
+            state.page = Number($(this).val())
 
-  //           buildTable()
-  //       })
+            buildTable()
+        })
 
-  //   }
+    }
 
-  //   function buildTable() {
+    function buildTable() {
 
-  //       var table = $('#table')
+        var table = $('#table')
 
-  //       var data = pagination(state.querySet, state.page, state.rows)
+        var data = pagination(state.querySet, state.page, state.rows)
 
-  //       var myList = data.querySet
+        var myList = data.querySet
 
-  //       for (var i in myList) {
+        for (var i in myList) {
 
-  //               table.append(myList)
-  //           }
+                table.append(myList)
+            }
 
-  //       pageButtons(data.pages)
-  //   }
+        pageButtons(data.pages)
+    }
 
-  // }
+  }
+
+
+
+
+
+  connect() {
+
+    let categoryContainer = this.toutVoirTarget
+    var clone = categoryContainer.cloneNode(true)
+    let itemsFiltered = clone.children
+    let arr = [].slice.call(itemsFiltered)
+
+    var state = {
+      'querySet': arr,
+      'page': 1,
+      'rows': 2,
+      'window': 5,
+    }
+
+    var pagesContainer = this.pageButtonsTarget
+    // var table = this.toutVoirTarget
+
+    buildTable()
+
+    function pagination(querySet, page, rows) {
+
+      var trimStart = (page - 1) * rows
+      var trimEnd = trimStart + rows
+
+      var trimmedData = querySet.slice(trimStart, trimEnd)
+
+      var pages = Math.round(querySet.length / rows);
+
+      return {
+          'querySet': trimmedData,
+          'pages': pages,
+      }
+    }
+
+
+    function pageButtons(pages) {
+
+        var wrapper = pagesContainer
+
+        wrapper.innerHTML = ``
+
+        var maxLeft = (state.page - Math.floor(state.window / 2))
+        var maxRight = (state.page + Math.floor(state.window / 2))
+
+        if (maxLeft < 1) {
+            maxLeft = 1
+            maxRight = state.window
+        }
+
+        if (maxRight > pages) {
+            maxLeft = pages - (state.window - 1)
+
+            if (maxLeft < 1){
+              maxLeft = 1
+            }
+            maxRight = pages
+        }
+
+        for (var page = maxLeft; page <= maxRight; page++) {
+          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-japonica-500 text-white font-bold">${page}</button>`
+        }
+
+        if (state.page != 1) {
+            wrapper.innerHTML = `<button value=${1} class="page px-2 py-1 bg-japonica-500 text-white font-bold"> First </button>` + wrapper.innerHTML
+        }
+
+        if (state.page != pages) {
+            wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-japonica-500 text-white font-bold">Last </button>`
+        }
+
+        $('.page').on('click', function() {
+            $('#table').empty()
+
+            state.page = Number($(this).val())
+
+            buildTable()
+        })
+
+    }
+
+    function buildTable() {
+
+        var table = $('#table')
+
+        var data = pagination(state.querySet, state.page, state.rows)
+
+        var myList = data.querySet
+
+        for (var i in myList) {
+
+                table.append(myList)
+            }
+
+        pageButtons(data.pages)
+    }
+
+  }
 
 }
