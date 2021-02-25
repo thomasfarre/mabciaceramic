@@ -6,10 +6,18 @@
       <h2 class="text-3xl font-bold text-left text-gray-900 lg:text-4xl">Mes créations du moment</h2>
     </div>
 
-    <div class="mx-2 md:mx-4 lg:pt-2">
-      <%= form_tag items_path, class:'flex items-center border-b-2 border-gray-200', method: :get do %>
+
+    <!-- Search section with search bar submit and reset button -->
+    <div class="mx-2 md:mx-4 lg:pt-2 flex items-center ">
+
+      <%= link_to items_path do %>
+        <button class="px-6 py-4 uppercase tracking-tight text-sm font-semibold border-2 border-white rounded-xl hover:bg-white hover:text-japonica-500">Reset</button>
+      <% end %>
+
+      <%= form_tag items_path, class:'flex items-center  border-b-2 border-gray-200', method: :get do %>
 
         <div><svg class="w-6 text-gray-500"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></div>
+
         <%= text_field_tag :query,
           params[:query],
           placeholder: "Chercher par nom, catégories, matériaux..", class:'mx-2 text-base py-4 focus:outline-none w-full tracking-tighter'
@@ -42,17 +50,18 @@
     <div class="py-4 mt-3 mx-2 overflow-x-auto scrollbars-hidden bg-gray-200 md:mx-4">
       <div class="px-4 inline-flex items-center text-center space-x-4">
 
-        <button data-action="click->item-categories#displayAll" data-item-categories-target="toutVoirButton" class=" <%= params[:category] == nil ? "text-japonica-500 font-bold whitespace-nowrap focus:outline-none" : "font-medium text-gray-600 whitespace-nowrap focus:outline-none" %> ">Tout voir</button>
-        <% categories = ["Aquarium", "Photophores", "Sculptures", "Pots, coupes", "Cuisine", "Décoration", "Extérieur"] %>
-        <% categories.each do |category| %>
-          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="button" class="<%= params[:category] == category ? "text-japonica-500 font-bold whitespace-nowrap focus:outline-none" : "font-medium text-gray-600 whitespace-nowrap focus:outline-none" %>"> <%= category %> </button>
-        <% end %>
+        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="text-japonica-500 font-bold whitespace-nowrap focus:outline-none">Tout voir</button>
 
+        <% @categories.each do |category| %>
+          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="font-medium text-gray-600 whitespace-nowrap focus:outline-none"> <%= category %> </button>
+        <% end %>
       </div>
     </div>
 
 
-    <div data-item-categories-target="toutVoir" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+    <!-- All items reserve grid -->
+
+    <div data-item-categories-target="allCategory" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
         <%= link_to item_path(item), class:"group" do %>
             <div class="shadow-3xl rounded pb-2">
@@ -74,12 +83,12 @@
     </div>
 
 
-    <!-- Filtrage des items par category  -->
+    <!-- Filtrage des items par category reserve grid  -->
 
-    <% categories.each do |category| %>
+    <% @categories.each do |category| %>
       <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
         <% @items.where(category: category).each do |item| %>
-          <%= link_to item_path(item), data:{"item-categories-target": "items"}, class:"group" do %>
+          <%= link_to item_path(item), class:"group" do %>
           <div class="shadow-3xl rounded pb-2">
             <div class="relative" style="padding-bottom: 80%">
               <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
@@ -100,14 +109,14 @@
     <% end %>
 
 
+ <!--    My display grid is here, it is where cards finish their course  -->
     <div id="table" class="px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
 
     </div>
 
+<!--     container where dynamic pagination button are displayed   -->
+    <div data-item-categories-target="pageButtons" class="pt-8 px-4">
 
-
-    <div data-item-categories-target="pageButtons">
-      <p>"toto"</p>
     </div>
 
 <!--     Pagination en back-->
@@ -116,7 +125,3 @@
 
   </div>
 </div>
-
-
-<meta name="data" content="<%= @items.to_json %>">
-

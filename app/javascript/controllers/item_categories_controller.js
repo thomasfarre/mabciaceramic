@@ -2,16 +2,16 @@ import { Controller } from "stimulus";
 
 export default class extends Controller {
 
-   static targets = [ "category", "button", "toutVoir", "toutVoirButton", "items", "pageButtons" ]
+   static targets = [ "category", "categoryButton", "allCategory", "allButton", "pageButtons" ]
 
 
 
   display(event) {
     let type = event.target.getAttribute("data-type")
     event.currentTarget.classList.add('text-japonica-500', 'font-bold')
-    this.buttonTargets.filter(button => {
-     if (button.getAttribute("data-type") != type){
-      button.classList.remove('text-japonica-500', 'font-bold') }})
+    this.categoryButtonTargets.filter(categoryButton => {
+     if (categoryButton.getAttribute("data-type") != type){
+      categoryButton.classList.remove('text-japonica-500', 'font-bold') }})
 
     // this.categoryTargets.filter(category => {
     //  if (category.getAttribute("data-type") != type){
@@ -21,9 +21,9 @@ export default class extends Controller {
     //   if (category.getAttribute("data-type") == type){
     //    category.classList.remove('hidden') }})
 
-    this.toutVoirTarget.classList.add('hidden')
-    this.toutVoirButtonTarget.classList.remove('text-japonica-500', 'font-bold')
-    this.toutVoirButtonTarget.classList.add('text-gray-600', 'font-medium')
+    this.allCategoryTarget.classList.add('hidden')
+    this.allButtonTarget.classList.remove('text-japonica-500', 'font-bold')
+    this.allButtonTarget.classList.add('text-gray-600', 'font-medium')
 
     let categoryContainer = this.categoryTargets.filter(category => category.getAttribute("data-type") == type)
     var clone = categoryContainer[0].cloneNode(true)
@@ -129,18 +129,18 @@ export default class extends Controller {
 
   displayAll() {
 
-    // this.toutVoirTarget.classList.remove('hidden')
-    this.toutVoirButtonTarget.classList.add('text-japonica-500', 'font-bold')
+    // this.allCategoryTarget.classList.remove('hidden')
+    this.allButtonTarget.classList.add('text-japonica-500', 'font-bold')
 
-    this.buttonTargets.forEach(button => {
-      button.classList.remove('text-japonica-500', 'font-bold')
+    this.categoryButtonTargets.forEach(categoryButton => {
+      categoryButton.classList.remove('text-japonica-500', 'font-bold')
     })
 
     // this.categoryTargets.forEach(category => {
     //   category.classList.add('hidden')
     // })
 
-    let categoryContainer = this.toutVoirTarget
+    let categoryContainer = this.allCategoryTarget
     var clone = categoryContainer.cloneNode(true)
     let itemsFiltered = clone.children
     let arr = [].slice.call(itemsFiltered)
@@ -153,7 +153,7 @@ export default class extends Controller {
     }
 
     var pagesContainer = this.pageButtonsTarget
-    // var table = this.toutVoirTarget
+    // var table = this.allCategoryTarget
 
     $('#table').empty()
     buildTable()
@@ -243,7 +243,7 @@ export default class extends Controller {
 
   connect() {
 
-    let categoryContainer = this.toutVoirTarget
+    let categoryContainer = this.allCategoryTarget
     var clone = categoryContainer.cloneNode(true)
     let itemsFiltered = clone.children
     let arr = [].slice.call(itemsFiltered)
@@ -256,7 +256,7 @@ export default class extends Controller {
     }
 
     var pagesContainer = this.pageButtonsTarget
-    // var table = this.toutVoirTarget
+    // var table = this.allCategoryTarget
 
     buildTable()
 
