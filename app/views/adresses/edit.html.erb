@@ -15,6 +15,13 @@
     <%= simple_form_for [current_user, @adress] do |f| %>
       <div class="space-y-3">
 
+      <%= f.input :name,
+                  required: false,
+                  label: false,
+                  placeholder: "Toto L'Asticot",
+                  input_html: { class: "px-2 py-4 border-2 border-gray-200 w-full rounded-lg"} %>
+
+
       <%= f.input :street,
                   required: false,
                   autofocus: true,
@@ -40,17 +47,11 @@
                   placeholder: "Paris",
                   input_html: { class: "px-2 py-4 border-2 border-gray-200 w-full rounded-lg"} %>
 
-      <%= f.input :country,
+      <%#= f.input :country,
                   collection: ['France(métropolitaine)'],
                   required: false,
                   label: false,
                   input_html: { class: "px-2 py-4 border-2 w-full rounded-lg"} %>
-
-      <%= f.input :phone,
-                  required: false,
-                  label: false,
-                  placeholder: "0601020304",
-                  input_html: { class: "px-2 py-4 border-2 border-gray-200 w-full rounded-lg"} %>
 
 
       <div class="pt-2">
