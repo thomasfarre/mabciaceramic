@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR category ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
-      @items = Item.where("title ILIKE ? OR category ILIKE ?", params[:query], params[:query])
+      # @items = Item.where("title ILIKE ? OR category ILIKE ?", params[:query], params[:query])
     else
       # if(params.key?(:category))
       #   @items = Item.where(category: params[:category]).order("created_at desc")
