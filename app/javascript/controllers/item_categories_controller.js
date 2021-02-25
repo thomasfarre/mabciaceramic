@@ -4,8 +4,13 @@ export default class extends Controller {
 
    static targets = [ "category", "categoryButton", "allCategory", "allButton", "pageButtons" ]
 
-
+// my 3 way of displaying items, first is when i arrived on the page you see all items, second is when you click on a category and last when you click back to all items
   connect() {
+
+    this.allButtonTarget.classList.add('text-japonica-500', 'font-bold')
+    this.categoryButtonTargets.forEach(categoryButton => {
+      categoryButton.classList.remove('text-japonica-500', 'font-bold')
+    })
 
     let state = this.setupPagination(this.getAll())
     this.pagination(state)
@@ -21,10 +26,8 @@ export default class extends Controller {
     this.categoryButtonTargets.filter(categoryButton => {
      if (categoryButton.getAttribute("data-type") != type){
       categoryButton.classList.remove('text-japonica-500', 'font-bold') }})
-
-    this.allCategoryTarget.classList.add('hidden')
     this.allButtonTarget.classList.remove('text-japonica-500', 'font-bold')
-    this.allButtonTarget.classList.add('text-gray-600', 'font-medium')
+
 
 
     let state = this.setupPagination(this.getByCategory(type))
@@ -33,18 +36,11 @@ export default class extends Controller {
   }
 
   displayAll() {
-
-    this.allButtonTarget.classList.add('text-japonica-500', 'font-bold')
-
-    this.categoryButtonTargets.forEach(categoryButton => {
-      categoryButton.classList.remove('text-japonica-500', 'font-bold')
-    })
-
-    let state = this.setupPagination(this.getAll())
-    this.pagination(state)
-
+    this.connect()
   }
 
+
+// this is somes methods to set pagination logic to work
 
   getByCategory(type) {
 
@@ -81,6 +77,8 @@ export default class extends Controller {
 
   }
 
+
+// this is my pagination logic
 
   pagination(state) {
 
