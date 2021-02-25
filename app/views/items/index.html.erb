@@ -50,8 +50,7 @@
     <div class="py-4 mt-3 mx-2 overflow-x-auto scrollbars-hidden bg-gray-200 md:mx-4">
       <div class="px-4 inline-flex items-center text-center space-x-4">
 
-        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="text-japonica-500 font-bold whitespace-nowrap focus:outline-none">Tout voir</button>
-
+        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="font-medium text-gray-600 whitespace-nowrap focus:outline-none">Tout voir</button>
         <% @categories.each do |category| %>
           <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="font-medium text-gray-600 whitespace-nowrap focus:outline-none"> <%= category %> </button>
         <% end %>
