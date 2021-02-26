@@ -65,7 +65,6 @@ gem "simple_form", "~> 5.0"
 
 gem "cloudinary", "~> 1.18"
 
-gem "administrate", "~> 0.14.0"
 
 gem 'money-rails'
 
