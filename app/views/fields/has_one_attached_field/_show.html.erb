@@ -1,0 +1,9 @@
+<% if field.data.attached? %>
+  <% if field.data.variable? %>
+    <%= image_tag(url_for(field.data.variant(auto_orient: true))) %>
+  <% else %>
+    <%= image_tag(url_for(field.data)) %>
+  <% end %>
+<% else %>
+  No file attached
+<% end %>

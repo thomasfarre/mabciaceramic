@@ -1,0 +1,15 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+  <% if field.data.attached? %>
+    <small class="hint">
+      Adding a new <%= field.attribute %> will erase the existing one
+    </small>
+  <% end %>
+</div>
+<div class="field-unit__field">
+  <div class="dropzone-container">
+    <div class="dropzone">Click or drop file here</div>
+    <%= f.file_field field.attribute, direct_upload: true, class: 'dropzone-input' %>
+  </div>
+  <div class="dropzone-files"></div>
+</div>

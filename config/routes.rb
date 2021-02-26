@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
-  mount ForestLiana::Engine => '/forest'
+  namespace :admin do
+      resources :users
+      resources :adresses
+      resources :carts
+      resources :orders
+      resources :articles
+      resources :items
+      resources :cart_items
+
+      root to: "users#index"
+    end
   resources :cart_items
   resources :carts
   resources :items
