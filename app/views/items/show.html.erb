@@ -7,6 +7,7 @@
   <%= render "shared/navbar" %>
 </div>
 
+
 <div class="px-2 lg:py-8 lg:max-w-4xl 2xl:max-w-5xl mx-auto">
   <div class="flex justify-between lg:flex-col-reverse">
     <span class="font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl "><%= @item.title %></span>
@@ -25,6 +26,9 @@
         </div>
       <% end %>
     </div>
+  </div>
+  <div class="flex justify-end pt-1 lg:hidden">
+    <svg class="w-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
   </div>
 
 <!-- grid de photos sur desktop -->
@@ -68,7 +72,7 @@
 
   <div class="md:flex md:flex-row-reverse md:justify-between">
     <div class="md:flex md:flex-col max-w-lg md:ml-2 md:w-2/5">
-      <div class="pt-4">
+      <div class="-mt-4 lg:pt-4 lg:mt-0">
         <span class="font-bold text-2xl"><%= @item.price %>€</span>
       </div>
       <div class="pt-2">
@@ -84,7 +88,7 @@
 
     <div class="md:flex md:flex-col max-w-2xl md:mr-2 md:w-3/5">
       <div data-controller="item-descriptions">
-        <div class="mt-6 py-2 px-2 flex justify-between items-center bg-gray-100 lg:mt-4">
+        <div class="-mt-4 py-2 px-2 flex justify-between items-center bg-gray-100 lg:mt-4">
           <button data-action="click->item-descriptions#descriptionToggle" class="flex justify-between w-full focus:outline-none">
             <span>Détail de l'article</span>
             <svg data-item-descriptions-target="descriptionClose" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
