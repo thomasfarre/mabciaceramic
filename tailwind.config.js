@@ -466,6 +466,11 @@ module.exports = {
     maxHeight: (theme) => ({
       ...theme('spacing'),
       full: '100%',
+      '1/4': '25%',
+      '1/3': '33%',
+      '1/2': '50%',
+      '2/3': '66%',
+      '3/4': '75%',
       screen: '100vh',
     }),
     maxWidth: (theme, { breakpoints }) => ({

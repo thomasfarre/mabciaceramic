@@ -58,12 +58,12 @@
         <button data-action="slideshow#next" class="absolute inset-y-1/2 right-1 px-4 pt-4 pb-12 focus:outline-none xl:right-5">
           <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </button>
-        <div class="flex justify-center">
+        <div class="flex justify-center 2xl:-mt-8">
           <span data-slideshow-target="counter" class="text-xl">1&nbsp</span><span class="text-xl">/ <%= @item.photos.length %> </span>
         </div>
         <% @item.photos.each do |photo| %>
-          <div data-slideshow-target="slide" class="mt-4 relative max-w-4xl mx-auto 2xl:mt-24" style="padding-bottom: 80%">
-            <%= cl_image_tag photo.key, class:'absolute w-full inset-0 object-cover object-center shadow rounded-xl'  %>
+          <div data-slideshow-target="slide" class="mt-4 relative max-w-4xl h-20 mx-auto" style="padding-bottom: 80%">
+            <%= cl_image_tag photo.key, class:'absolute w-full h-2/3 inset-0 object-cover object-center shadow rounded-xl xl:max-h-1/2'  %>
           </div>
         <% end %>
       </div>
@@ -88,7 +88,7 @@
 
     <div class="md:flex md:flex-col max-w-2xl md:mr-2 md:w-3/5">
       <div data-controller="item-descriptions">
-        <div class="-mt-4 py-2 px-2 flex justify-between items-center bg-gray-100 lg:mt-4">
+        <div class="mt-4 md:-mt-4 py-2 px-2 flex justify-between items-center bg-gray-100 lg:mt-4">
           <button data-action="click->item-descriptions#descriptionToggle" class="flex justify-between w-full focus:outline-none">
             <span>Détail de l'article</span>
             <svg data-item-descriptions-target="descriptionClose" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
