@@ -75,3 +75,6 @@ gem 'stripe_event'
 gem 'postmark-rails'
 
 gem 'mail_form'
+
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
