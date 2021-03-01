@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     resources :adresses
   end
 
+  require "sidekiq/web"
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   root to: 'pages#home'
   get '/about/', to: 'pages#about'
