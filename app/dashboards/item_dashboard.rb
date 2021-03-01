@@ -64,15 +64,14 @@ class ItemDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     photos
     title
-    description
+    price_cents
     category
-    status
     materials
     width
     length
     height
-    price_cents
     diameter
+    description
     content
   ].freeze
 
