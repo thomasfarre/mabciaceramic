@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: {
+    registrations: 'registrations'
+  }
+
   namespace :admin do
       resources :users
       resources :adresses
@@ -21,10 +25,6 @@ Rails.application.routes.draw do
   end
 
   resources :contacts, only: [:create, :new]
-
-  devise_for :users, controllers: {
-    registrations: 'registrations'
-  }
 
   resources :users, only: [] do
     resources :adresses
