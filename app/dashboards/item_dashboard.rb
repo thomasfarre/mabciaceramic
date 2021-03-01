@@ -35,6 +35,7 @@ class ItemDashboard < Administrate::BaseDashboard
     title
     status
     cart_items
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

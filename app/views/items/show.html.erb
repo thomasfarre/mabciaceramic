@@ -8,7 +8,7 @@
 </div>
 
 
-<div class="px-2 lg:py-8 lg:max-w-4xl 2xl:max-w-5xl mx-auto">
+<div class="px-2 pb-8 lg:py-8 lg:max-w-4xl 2xl:max-w-5xl mx-auto">
   <div class="flex justify-between lg:flex-col-reverse">
     <span class="font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl "><%= @item.title %></span>
     <span class="text-japonica-500 font-medium lg:text-lg"><%= @item.category %></span>
@@ -36,7 +36,7 @@
     <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 80%">
       <%= cl_image_tag @item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-xl'  %>
     </div>
-    <% @item.photos.drop(2).each do |photo| %>
+    <% @item.photos[2..3].each do |photo| %>
       <div class="relative h-full col-span-1" style="padding-bottom: 80%">
         <%= cl_image_tag photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-xl'  %>
       </div>
@@ -110,9 +110,20 @@
             </div>
 
             <div class="pt-6 flex flex-col">
-              <span>Largeur: <%= @item.width / 10 %> cm</span>
-              <span>Longueur: <%= @item.length / 10 %> cm</span>
-              <span>Hauteur: <%= @item.height / 10 %> cm</span>
+              <% if @item.width %>
+                <span>Largeur: <%= @item.width / 10 %> cm</span>
+              <% end %>
+              <% if @item.length %>
+                <span>Longueur: <%= @item.length / 10 %> cm</span>
+              <% end %>
+              <% if @item.height %>
+                <span>Hauteur: <%= @item.height / 10 %> cm</span>
+              <% end %>
+              <% if @item.diameter %>
+                <span>Diamètre: <%= @item.diameter / 10 %> cm</span>
+              <% end %>
+
+
             </div>
 
             <div class="pt-6">
