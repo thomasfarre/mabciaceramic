@@ -1,1 +1,7 @@
-<%= field.to_s %>
+<% if field.data.attached? %>
+  <% field.data.each do |photo| %>
+    <%= cl_image_tag photo.key, style:"max-height: 200px; max-width: 200px" %>
+  <% end %>
+<% else %>
+  No file attached
+<% end %>

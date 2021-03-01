@@ -1,6 +1,6 @@
 <% if field.data.attached? %>
   <% if field.data.variable? %>
-    <%= image_tag(url_for(field.data.variant(auto_orient: true))) %>
+    <%= cl_image_tag field.data.key %>
   <% else %>
     <%= image_tag(url_for(field.data)) %>
   <% end %>

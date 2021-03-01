@@ -32,49 +32,47 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  cart_items
-  photos
-  id
+    title
+    status
+    cart_items
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  cart_items
-  photos
-  id
-  title
-  description
-  category
-  status
-  materials
-  width
-  length
-  height
-  created_at
-  updated_at
-  price_cents
-  diameter
-  content
+    cart_items
+    photos
+    title
+    category
+    status
+    materials
+    width
+    length
+    height
+    diameter
+    created_at
+    updated_at
+    price_cents
+    description
+    content
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  cart_items
-  photos
-  title
-  description
-  category
-  status
-  materials
-  width
-  length
-  height
-  price_cents
-  diameter
-  content
+    photos
+    title
+    description
+    category
+    status
+    materials
+    width
+    length
+    height
+    price_cents
+    diameter
+    content
   ].freeze
 
   # COLLECTION_FILTERS

@@ -14,7 +14,6 @@ class AdressDashboard < Administrate::BaseDashboard
     street: Field::String,
     street_detail: Field::String,
     zipcode: Field::Number,
-    phone: Field::Number,
     city: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -27,40 +26,38 @@ class AdressDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  user
-  id
-  country
-  street
+    user
+    name
+    street
+    zipcode
+    city
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  user
-  id
-  country
-  street
-  street_detail
-  zipcode
-  phone
-  city
-  created_at
-  updated_at
-  name
+    user
+    id
+    country
+    street
+    street_detail
+    zipcode
+    city
+    created_at
+    updated_at
+    name
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  user
-  country
-  street
-  street_detail
-  zipcode
-  phone
-  city
-  name
+    user
+    street
+    street_detail
+    zipcode
+    city
+    name
   ].freeze
 
   # COLLECTION_FILTERS

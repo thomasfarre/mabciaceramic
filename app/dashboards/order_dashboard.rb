@@ -24,34 +24,27 @@ class OrderDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  cart
-  user
-  id
-  status
+    status
+    user
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  cart
-  user
-  id
-  status
-  amount_cents
-  checkout_session_id
-  created_at
-  updated_at
+    status
+    user
+    cart
+    amount_cents
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  cart
-  user
-  status
-  amount_cents
-  checkout_session_id
+    status
+    user
+    cart
+    amount_cents
   ].freeze
 
   # COLLECTION_FILTERS

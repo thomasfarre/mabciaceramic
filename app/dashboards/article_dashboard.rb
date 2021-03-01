@@ -24,32 +24,34 @@ class ArticleDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  title
+    title
+    category
+    description
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  photo
-  id
-  title
-  category
-  content
-  description
-  created_at
-  updated_at
+    photo
+    id
+    title
+    category
+    content
+    description
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  photo
-  title
-  category
-  content
-  description
+    photo
+    title
+    category
+    content
+    description
   ].freeze
 
   # COLLECTION_FILTERS
