@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :items
       resources :cart_items
 
-      root to: "users#index"
+      root to: "orders#index"
     end
   resources :cart_items
   resources :carts
