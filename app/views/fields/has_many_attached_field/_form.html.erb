@@ -1,11 +1,5 @@
 <div class="field-unit__label">
   <%= f.label field.attribute %>
-
-  <% if field.data.attached? %>
-    <small class="hint">
-      <%= render 'admin/shared/modal_photos', field: field %>
-    </small>
-  <% end %>
 </div>
 <div class="field-unit__field">
   <div class="dropzone-container">
