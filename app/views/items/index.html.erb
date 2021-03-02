@@ -69,17 +69,17 @@
                 <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
               </div>
               <div class="px-2 pt-2">
-                <div class="truncate "><%= item.title %></div>
+                <div class=""><%= item.title %></div>
               </div>
-              <div class="px-2">
-                <span class="font-bold"> <%= item.price %>€ </span>
+              <div class="px-2 pt-1">
+                <span class="font-medium"> <%= item.price %>€ </span>
               </div>
               <% if item.sold? %>
-                <div class="px-2 py-2">
-                  <span class="rounded px-2 py-1 bg-japonica-900 text-white text-xs font-bold">Vendu</span>
+                <div class="px-2 py-1">
+                  <span class="rounded px-2 py-1 bg-gray-800 text-white text-xs font-bold">Vendu</span>
                 </div>
               <% else %>
-                <div class="px-2 py-2">
+                <div class="px-2 py-1">
                   <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
                 </div>
               <% end %>
@@ -100,17 +100,17 @@
               <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
             </div>
             <div class="px-2 pt-2">
-              <div class="truncate "><%= item.title %></div>
+              <div class=""><%= item.title %></div>
             </div>
-            <div class="px-2">
-              <span class="font-bold"> <%= item.price %>€ </span>
+            <div class="px-2 pt-1">
+              <span class="font-medium"> <%= item.price %>€ </span>
             </div>
             <% if item.sold? %>
-              <div class="px-2 py-2">
-                <span class="rounded px-2 py-1 bg-japonica-900 text-white text-xs font-bold">Vendu</span>
+              <div class="px-2 py-1">
+                <span class="rounded px-2 py-1 bg-gray-800 text-white text-xs font-bold">Vendu</span>
               </div>
             <% else %>
-              <div class="px-2 py-2">
+              <div class="px-2 py-1">
                 <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
               </div>
             <% end %>
@@ -127,7 +127,7 @@
     </div>
 
 <!--     container where dynamic pagination button are displayed   -->
-    <div data-item-categories-target="pageButtons" class="pt-8 px-4">
+    <div data-item-categories-target="pageButtons" class="pt-12 px-2">
 
     </div>
 
