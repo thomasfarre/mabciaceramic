@@ -19,12 +19,16 @@ class CartItemsController < ApplicationController
 
   def create
     item = Item.find(params[:item_id])
-    @cart_item = @cart.add_item(item)
+    @cart_item = @cart.add_item(item) unless item.sold?
 
-    if @cart_item.save
-      redirect_to @cart_item.cart, notice: 'Objet à été ajouté au panier'
+    if @cart_item.nil?
+      redirect_to item_path(item)
     else
-      render :new
+      if @cart_item.save
+        redirect_to @cart_item.cart, notice: 'Objet à été ajouté au panier'
+      else
+        redirect_to item_path(item)
+      end
     end
   end
 
