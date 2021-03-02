@@ -7,13 +7,13 @@
 <header class="h-screen">
   <div class="flex flex-col items-center justify-evenly bg-cover bg-center h-95/100 max-w-7xl mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80);">
     <div class="px-2 text-center md:px-8 max-w-sm lg:px-0 lg:max-w-md xl:max-w-lg 2xl:max-w-xl">
-      <h1 class="text-white font-semibold tracking-tight text-3xl lg:text-4xl xl:text-5xl">Objets en céramiques fait main</h1>
+      <h1 class="text-white font-bold font-cursive tracking-tight text-3xl lg:text-4xl xl:text-5xl">Objets en céramiques fait main</h1>
     </div>
     <div>
 
 
       <%= link_to items_path do %>
-        <button class="px-6 py-4 uppercase tracking-tight text-sm text-white font-semibold border-2 border-white rounded-xl hover:bg-white hover:text-japonica-500">Découvrir</button>
+        <button class="px-6 py-4 uppercase tracking-tight text-sm text-white font-semibold border-2 border-white rounded-xl hover:bg-white hover:text-japonica-500 focus:outline-none">Découvrir</button>
       <% end %>
     </div>
   </div>
@@ -24,7 +24,7 @@
   <!-- first section with shop category buttons and last articles -->
   <section data-controller="category-buttons" class="pt-4 pb-12 lg:pb-12 xl:pt-0 max-w-7xl mx-auto">
     <div class="px-4">
-      <h2 class="text-center text-2xl font-bold tracking-tight lg:text-3xl lg:pt-12 xl:text-4xl">Les dernières créations de mon atelier</h2>
+      <h2 class="text-center text-2xl font-black text-gray-800 font-cursive tracking-tight lg:text-3xl lg:pt-12 xl:text-4xl">Les dernières créations de mon atelier</h2>
     </div>
 
 
@@ -80,32 +80,28 @@
       <div class="px-4 inline-flex space-x-2 md:px-8 lg:justify-center lg:grid lg:grid-cols-3 lg:space-x-0 lg:gap-3 lg:px-16 xl:px-0.5">
         <% @items.first(6).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
-          <% if item.sold? %>
-            <div class="shadow-3xl rounded pb-2 w-60 lg:w-full opacity-60 focus:outline-none">
-          <% else %>
             <div class="shadow-3xl rounded pb-2 w-60 lg:w-full hover:opacity-80 focus:outline-none">
-          <% end %>
-            <div class="relative h-64 lg:h-72 xl:h-60" style="padding-bottom: 80%">
-              <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
-            </div>
-            <div>
-              <div class="px-2 pt-4">
-                <div class="truncate "><%= item.title %></div>
+              <div class="relative h-64 lg:h-72 xl:h-60" style="padding-bottom: 80%">
+                <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
               </div>
-              <div class="px-2 pt-1">
-                <span class="font-bold"> <%= item.price %>€ </span>
+              <div>
+                <div class="px-2 pt-4">
+                  <div class="text-gray-700 font-semibold tracking-tight truncate font-cursive"><%= item.title %></div>
+                </div>
+                <div class="px-2 pt-1">
+                  <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
+                </div>
+                <% if item.sold? %>
+                  <div class="px-2 py-2">
+                    <span class="rounded-full px-2 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
+                  </div>
+                <% else %>
+                  <div class="px-2 py-2">
+                    <span class="rounded-full px-2 py-1 bg-japonica-400 text-white text-xs font-bold">Livraison GRATUITE</span>
+                  </div>
+                <% end %>
               </div>
-              <% if item.sold? %>
-                <div class="px-2 py-2">
-                  <span class="rounded px-2 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
-                </div>
-              <% else %>
-                <div class="px-2 py-2">
-                  <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
-                </div>
-              <% end %>
             </div>
-          </div>
           <% end %>
         <% end %>
       </div>
@@ -119,7 +115,7 @@
     </div>
 
     <div class="pt-4">
-      <h2 class="text-center text-2xl font-bold tracking-tight lg:text-3xl">Vous voulez en apprendre plus sur la céramique ?</h2>
+      <h2 class="text-center text-2xl text-gray-800 font-cursive font-black tracking-tight lg:text-3xl">Vous voulez en apprendre plus sur la céramique ?</h2>
     </div>
 
 
@@ -134,17 +130,17 @@
         </div>
         <div class="px-3 flex flex-col">
           <div class="pt-2">
-            <span class="text-japonica-500 font-medium text-base"> <%= Article.last.category %> </span>
+            <span class="text-japonica-500 font-medium text-sm"> <%= Article.last.category %> </span>
           </div>
           <div>
-            <span class="font-bold text-lg tracking-tight"><%= Article.last.title %></span>
+            <span class="font-bold text-gray-700 font-cursive text-xl tracking-tight"><%= Article.last.title %></span>
           </div>
-          <div class="pt-4">
+          <div class="pt-3">
             <span class="text-gray-500"><%= Article.last.content %></span>
           </div>
-          <div class="pt-2 pb-1 space-x-2">
-            <span class="text-gray-600 text-xs"><%= (Article.last.created_at).strftime("%b %d, %Y") %></span>
-            <span class="text-gray-600 text-xs">6 min de lecture</span>
+          <div class="pt-5 pb-1 space-x-2">
+            <span class="text-gray-500 text-xs"><%= (Article.last.created_at).strftime("%b %d, %Y") %></span>
+            <span class="text-gray-500 text-xs">6 min de lecture</span>
           </div>
         </div>
       </div>
@@ -161,11 +157,11 @@
             <span class="text-japonica-500 font-medium text-sm"> <%= @articles[1].category %> </span>
           </div>
           <div class="flex-grow">
-            <span class="font-bold text-base tracking-tight "><%= @articles[1].title %></span>
+            <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[1].title %></span>
           </div>
           <div class="pb-1 space-x-2">
-            <span class="text-gray-600 text-xs"><%= (@articles[1].created_at).strftime("%b %d, %Y") %></span>
-            <span class="text-gray-600 text-xs">6 min de lecture</span>
+            <span class="text-gray-500 text-xs"><%= (@articles[1].created_at).strftime("%b %d, %Y") %></span>
+            <span class="text-gray-500 text-xs">6 min de lecture</span>
           </div>
         </div>
       </div>
@@ -179,11 +175,11 @@
             <span class="text-japonica-500 font-medium text-sm"> <%= @articles[2].category %> </span>
           </div>
           <div class="flex-grow">
-            <span class="font-bold text-base tracking-tight "><%= @articles[2].title %></span>
+            <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[2].title %></span>
           </div>
           <div class="pb-1 space-x-2">
-            <span class="text-gray-600 text-xs"><%= (@articles[2].created_at).strftime("%b %d, %Y") %></span>
-            <span class="text-gray-600 text-xs">6 min de lecture</span>
+            <span class="text-gray-500 text-xs"><%= (@articles[2].created_at).strftime("%b %d, %Y") %></span>
+            <span class="text-gray-500 text-xs">6 min de lecture</span>
           </div>
         </div>
       </div>
@@ -239,7 +235,7 @@
 <!--   instagram section avec la gallery de post -->
   <section class="pt-14 pb-16 lg:pt-24">
     <div>
-      <h2 class="text-center text-2xl font-bold tracking-tight lg:text-3xl">Pour en voir plus...</h2>
+      <h2 class="text-center text-2xl text-gray-800 font-cursive font-bold tracking-tight lg:text-3xl">Pour en voir plus...</h2>
     </div>
 
     <div class="px-4 pt-6 lg:grid lg:grid-cols-3 lg:gap-3 lg:pt-16 xl:px-0 max-w-7xl mx-auto">
