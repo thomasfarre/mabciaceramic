@@ -3,14 +3,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to mabciaceramic.com, <%= @user.name %></h1>
+    <h1>Bienvenue sur mabciaceramic.com, <%= @user.name %></h1>
+    <p>Avoir un compte vous permet de commander sur la boutique ou vous trouverez des objets d'ornement et des articles à usage quotidien qui embelliront vos intérieurs, vos extérieurs mais aussi vos aquariums !</p>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @user.email %>.<br>
+      Pour vous connecter, <%= link_to "Cliquer ici", root_url %>.
     </p>
-    <p>
-      To login to the site, just: <%= link_to "Click here", root_url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+    <p>Merci de votre intérêt pour mon travail et bonne exploration !</p>
   </body>
 </html>
