@@ -73,9 +73,15 @@
               <div class="px-2">
                 <span class="font-bold"> <%= item.price %>€ </span>
               </div>
-              <div class="px-2">
-                <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
-              </div>
+              <% if item.sold? %>
+                <div class="px-2 py-2">
+                  <span class="rounded px-2 py-1 bg-japonica-900 text-white text-xs font-bold">Vendu</span>
+                </div>
+              <% else %>
+                <div class="px-2 py-2">
+                  <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+                </div>
+              <% end %>
             </div>
         <% end %>
       <% end %>
@@ -98,9 +104,15 @@
             <div class="px-2">
               <span class="font-bold"> <%= item.price %>€ </span>
             </div>
-            <div class="px-2">
-              <span class="rounded-full py-1 px-2 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
-            </div>
+            <% if item.sold? %>
+              <div class="px-2 py-2">
+                <span class="rounded px-2 py-1 bg-japonica-900 text-white text-xs font-bold">Vendu</span>
+              </div>
+            <% else %>
+              <div class="px-2 py-2">
+                <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+              </div>
+            <% end %>
           </div>
           <% end %>
         <% end %>

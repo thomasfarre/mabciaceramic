@@ -81,9 +81,15 @@
       <div class="pt-4">
         <%= @item.description[0...197] %>
       </div>
-      <div class="pt-4">
-        <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-black text-white rounded-3xl' %>
-      </div>
+      <% if @item.sold? %>
+        <div class="pt-4">
+          <button class="w-full py-3 bg-black text-white rounded focus:outline-none font-medium cursor-default"> Vendu </button>
+        </div>
+      <% else %>
+        <div class="pt-4">
+          <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-black text-white rounded-3xl focus:outline-none' %>
+        </div>
+      <% end %>
     </div>
 
     <div class="md:flex md:flex-col max-w-2xl md:mr-2 md:w-3/5">
