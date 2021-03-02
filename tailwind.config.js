@@ -180,7 +180,11 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      cursive: [
+        'Overlock'
+      ],
       sans: [
+        'Nunito',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',

@@ -131,15 +131,15 @@ export default class extends Controller {
         }
 
         for (var page = maxLeft; page <= maxRight; page++) {
-          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-gray-800 text-white font-bold">${page}</button>`
+          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-gray-700 text-white font-bold">${page}</button>`
         }
 
         if (state.page != 1) {
-            wrapper.innerHTML = `<button value=${1} class="page px-2 py-1 bg-gray-800 text-white font-bold"> First </button>` + wrapper.innerHTML
+            wrapper.innerHTML = `<button value=${1} class="page px-2 py-1 bg-gray-700 text-white font-bold"> First </button>` + wrapper.innerHTML
         }
 
         if (state.page != pages) {
-            wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-gray-800 text-white font-bold">Last </button>`
+            wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-gray-700 text-white font-bold">Last </button>`
         }
 
         $('.page').on('click', function() {
