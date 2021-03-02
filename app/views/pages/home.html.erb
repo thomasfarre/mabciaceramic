@@ -10,6 +10,8 @@
       <h1 class="text-white font-semibold tracking-tight text-3xl lg:text-4xl xl:text-5xl">Objets en céramiques fait main</h1>
     </div>
     <div>
+
+
       <%= link_to items_path do %>
         <button class="px-6 py-4 uppercase tracking-tight text-sm text-white font-semibold border-2 border-white rounded-xl hover:bg-white hover:text-japonica-500">Découvrir</button>
       <% end %>
@@ -74,7 +76,7 @@
     </div> -->
 
     <!-- last articles section -->
-    <div class="py-8 overflow-x-auto scrollbars-hidden lg:pt-8 lg:overflow-x-hidden">
+    <div class="py-8 overflow-x-auto scrollbars-hidden lg:pt-16 lg:overflow-x-hidden">
       <div class="px-4 inline-flex space-x-2 md:px-8 lg:justify-center lg:grid lg:grid-cols-3 lg:space-x-0 lg:gap-3 lg:px-16 xl:px-0.5">
         <% @items.first(6).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
@@ -95,7 +97,7 @@
               </div>
               <% if item.sold? %>
                 <div class="px-2 py-2">
-                  <span class="rounded px-2 py-1 bg-japonica-900 text-white text-xs font-bold">Vendu</span>
+                  <span class="rounded px-2 py-1 bg-gray-800 text-white text-xs font-bold">Vendu</span>
                 </div>
               <% else %>
                 <div class="px-2 py-2">
