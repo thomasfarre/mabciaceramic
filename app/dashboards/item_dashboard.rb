@@ -72,6 +72,7 @@ class ItemDashboard < Administrate::BaseDashboard
     diameter
     description
     content
+    status
   ].freeze
 
   # COLLECTION_FILTERS

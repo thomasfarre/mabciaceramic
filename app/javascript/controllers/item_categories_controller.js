@@ -73,7 +73,7 @@ export default class extends Controller {
     var state = {
       'querySet': arr,
       'page': 1,
-      'rows': 6,
+      'rows': 8,
       'window': 5,
     }
 
