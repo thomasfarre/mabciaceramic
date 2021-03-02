@@ -1,6 +1,6 @@
 
 
-<div class="px-2 py-20 lg:flex lg:justify-center space-x-12 lg:px-12">
+<div class="px-2 py-16 lg:flex lg:justify-center lg:space-x-12 lg:px-12">
   <div class="max-w-md pr-12 lg:w-2/5">
     <h1 class="text-3xl font-medium text-left text-gray-700 lg:text-4xl">Contactez-moi</h1>
     <p class="pt-4 text-sm text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
@@ -17,7 +17,7 @@
       <span class="text-sm text-gray-500">Intéressez par mon travail ? <span class="underline text-gray-800"><%= link_to "Toutes mes oeuvres", items_path %></span> </span>
     </div>
   </div>
-  <div class="pt-8 max-w-xl lg:w-3/5 lg:pt-0">
+  <div class="pt-8 max-w-xl mx-auto lg:w-3/5 lg:pt-0">
     <%= simple_form_for @contact do |f| %>
       <div class="space-y-4">
 
@@ -26,19 +26,19 @@
                       autofocus: true,
                       label: false,
                       placeholder: 'Patrick',
-                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg"} %>
+                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
 
           <%= f.input :email,
                       required: false,
                       label: false,
                       placeholder: "patricycles@gmail.com",
-                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg"} %>
+                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
 
           <%= f.input :message,
                       required: false,
                       label: false,
-                      placeholder: "Bonjour, je souhaite vous contacter pour vous demander de réaliser un objet sur mesure...",
-                      input_html: { class: "px-2 py-32 text-sm border-2 border-gray-200 w-full rounded-lg"} %>
+                      placeholder: "Ecrivez votre message ici...",
+                      input_html: { class: "px-2 pt-2 pb-32 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
 
 
         <%= f.button :submit, "Envoyer", class:'w-full font-medium bg-black text-white py-3 rounded-3xl' %>
