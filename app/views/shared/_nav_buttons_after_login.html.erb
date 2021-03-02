@@ -1,4 +1,4 @@
-<div class="flex space-x-2 xl:space-x-6">
+<div class="flex space-x-2 xl:space-x-4">
   <div>
     <%= link_to items_path, class:"" do %>
       <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Magasin</button>
@@ -12,6 +12,11 @@
   <div>
     <%= link_to about_path, class:'' do %>
     <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">A propos</button>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_contact_path, class:'' do %>
+    <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Contactez-moi</button>
     <% end %>
   </div>
   <div>

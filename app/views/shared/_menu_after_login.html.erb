@@ -1,36 +1,52 @@
-<div data-menu-target="toggleable" class="hidden flex flex-col py-2">
-  <!-- <div class="border-b border-gray-800"> -->
+<div data-menu-target="toggleable" class=" flex flex-col py-2 bg-gray-100">
 
+  <div class="pb-3 border-b border-gray-200">
     <div>
       <%= link_to items_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
-        <svg  class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 6a3.6 3.6 0 016-2.683A3.6 3.6 0 0117.796 7.2H19.2a2.4 2.4 0 010 4.8h-6v-1.2a1.2 1.2 0 10-2.4 0V12h-6a2.4 2.4 0 010-4.8h1.404A3.615 3.615 0 016 6zm4.8 1.2V6a1.2 1.2 0 10-1.2 1.2h1.2zm3.6 0A1.2 1.2 0 1013.2 6v1.2h1.2z" fill="#D97862"/><path d="M10.8 13.2H3.6v6A2.4 2.4 0 006 21.6h4.8v-8.4zm2.4 8.4H18a2.4 2.4 0 002.4-2.4v-6h-7.2v8.4z" fill="#D97862"/></svg>
-        <span class="text-lg font-semibold text-gray-700 ">Magasin</span>
+        <svg class="w-6 h-6 text-japonica-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+        <span class="font-semibold text-gray-700 ">Magasin</span>
       <% end %>
     </div>
     <div>
       <%= link_to articles_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
-      <svg class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="#D97862" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span class="text-lg font-semibold text-gray-700 ">Blog</span>
+      <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="#D97862" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="font-semibold text-gray-700 ">Blog</span>
       <% end %>
     </div>
     <div>
       <%= link_to about_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
-        <svg class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8 2.4a2.4 2.4 0 00-2.4 2.4V18a3.6 3.6 0 107.2 0V4.8a2.4 2.4 0 00-2.4-2.4H4.8zM6 19.2a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4zm6-2.108l5.88-5.88a2.4 2.4 0 000-3.394L16.182 6.12a2.4 2.4 0 00-3.394 0L12 6.908v10.184zm7.2 4.508h-8.315l7.2-7.2H19.2a2.4 2.4 0 012.4 2.4v2.4a2.4 2.4 0 01-2.4 2.4z" fill="#D97862"/></svg>
-        <span class="text-lg font-semibold text-gray-700 ">A propos</span>
+        <svg class="w-6 h-6 text-japonica-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+        <span class="font-semibold text-gray-700 ">A propos</span>
       <% end %>
     </div>
     <div>
+      <%= link_to new_contact_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
+      <svg class="w-6 h-6 text-japonica-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span class="font-semibold text-gray-700 ">Contactez-moi</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="pt-3">
+    <div class="px-2 py-2 flex items-center">
+      <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full' %>
+      <span class="ml-4 font-bold text-gray-700 text-lg"> <%= current_user.name %> </span>
+    </div>
+    <div>
       <%= link_to orders_path, class:'flex items-center space-x-4 hover:bg-white rounded px-2 py-2' do %>
-      <svg class="w-8 h-8 text-japonica-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>        <span class="text-lg font-semibold text-gray-700 ">Carnet de commande</span>
+      <svg class="w-6 h-6 text-japonica-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      <span class="font-medium text-gray-700 ">Mes commandes</span>
       <% end %>
     </div>
 
     <div>
       <%= link_to destroy_user_session_path, class:"flex items-center space-x-4 hover:bg-white rounded px-2 py-2", method: :delete do %>
-        <svg class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 16v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1m4 8l4-4-4 4zm4-4l-4-4 4 4zm0 0H7h14z" stroke="#D97862" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text-lg font-semibold text-gray-700 ">Se déconnecter</span>
+        <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 16v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1m4 8l4-4-4 4zm4-4l-4-4 4 4zm0 0H7h14z" stroke="#D97862" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="font-medium text-gray-700 ">Se déconnecter</span>
       <% end %>
     </div>
+  </div>
+
   <!-- </div> -->
   <!-- <div class="px-6 py-4">
     <div class="flex items-center  space-x-4">
