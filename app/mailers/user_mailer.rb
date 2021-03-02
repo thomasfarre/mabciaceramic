@@ -8,13 +8,14 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @user = user
 
-    mail(to: @user.email, subject: 'Welcome to MabciaCeramic')
+    mail(to: @user.email, subject: 'Bienvenue sur MabciaCeramic')
   end
 
-  def order_confirmation(user, baught_items)
+  def order_confirmation(user, bought_items, order)
     @user = user
-    @baught_items = baught_items
+    @bought_items = bought_items
+    @order = order
 
-    mail(to: @user.email, subject: 'Order confirmation at MabciaCeramic')
+    mail(to: @user.email, subject: 'Confirmation de votre commande sur MabciaCeramic')
   end
 end
