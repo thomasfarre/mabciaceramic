@@ -34,10 +34,10 @@ module Admin
       @order = Order.find(params[:id])
       @user = @order.user
 
-      if !@order.tracking_number.nil? && @order.status == "deliver"
+      if !@order.tracking_number.nil? && @order.status == "checked"
         UserMailer.deliver_confirmation(@user, @order).deliver_now
       end
-      @order.update(status: 'close')
+      @order.update(status: 'envoyé')
     end
 
     # Override `resource_params` if you want to transform the submitted

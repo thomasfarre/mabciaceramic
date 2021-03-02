@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def create
     cart = Cart.find(params[:cart_id])
-    order = Order.create(user_id: current_user.id, cart: cart, amount: cart.total_price, status: 'pending')
+    order = Order.create(user_id: current_user.id, cart: cart, amount: cart.total_price)
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],

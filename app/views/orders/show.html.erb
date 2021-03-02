@@ -1,4 +1,10 @@
 
+<% if @order.status.nil? %>
+
+  <p>Oops ! Vous n'êtes pas aller jusqu'au bout du paiement ! Vous pouvez recommencer en visualisant votre panier en haut de votre écran si vous le souhaitez ! Si vous avez des questions, n'hésitez pas à me contacter</p>
+
+<% else %>
+
 <div class="px-4 pt-10">
   <h2 class="font-bold text-xl">Commande n°<%= @order.id %>(<%= @order.status %>)</h2>
   <div class="pt-4">
@@ -23,6 +29,7 @@
   <div class="pt-10 font-medium text-gray-700">TOTAL : <%= humanized_money_with_symbol @order.amount %></div>
 </div>
 
+<% end %>
 
 
 <%#= link_to "Go back", cart_path(@cart) %>

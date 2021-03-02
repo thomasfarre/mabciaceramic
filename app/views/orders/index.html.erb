@@ -8,11 +8,13 @@
 
   <div>
     <% @orders.each do |order| %>
-      <%= link_to order_path(order) do %>
-        <div class="pt-8 px-3 flex flex-col">
-          <span>Commande n°<%=  order.id  %>(<%=order.status %>)</span>
-          <span><%= order.updated_at.strftime("%d/%m/%Y") %> </span>
-        </div>
+      <% unless order.status.nil? %>
+        <%= link_to order_path(order) do %>
+          <div class="pt-8 px-3 flex flex-col">
+            <span>Commande n°<%=  order.id  %>(<%=order.status %>)</span>
+            <span><%= order.updated_at.strftime("%d/%m/%Y") %> </span>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
 
