@@ -6,11 +6,11 @@ export default class extends Controller {
 
 // my 3 way of displaying items, first is when i arrived on the page you see all items, second is when you click on a category and last when you click back to all items
   connect() {
-    this.allButtonTarget.classList.remove('text-japonica-500')
+    this.allButtonTarget.classList.remove('text-japonica-400')
     this.allButtonTarget.classList.add('text-white', 'bg-japonica-500')
     this.categoryButtonTargets.forEach(categoryButton => {
       categoryButton.classList.remove('text-white', 'bg-japonica-500')
-      categoryButton.classList.add('text-japonica-500')
+      categoryButton.classList.add('text-japonica-400')
     })
 
     let state = this.setupPagination(this.getAll())
@@ -22,15 +22,15 @@ export default class extends Controller {
   display(event) {
 
     let type = event.target.getAttribute("data-type")
-    event.currentTarget.classList.remove('text-japonica-500')
+    event.currentTarget.classList.remove('text-japonica-400')
     event.currentTarget.classList.add('text-white', 'bg-japonica-500')
 
     this.categoryButtonTargets.filter(categoryButton => {
      if (categoryButton.getAttribute("data-type") != type){
       categoryButton.classList.remove('text-white', 'bg-japonica-500')
-      categoryButton.classList.add('text-japonica-500') }})
+      categoryButton.classList.add('text-japonica-400') }})
     this.allButtonTarget.classList.remove('text-white', 'bg-japonica-500')
-    this.allButtonTarget.classList.add('text-japonica-500')
+    this.allButtonTarget.classList.add('text-japonica-400')
 
 
 
@@ -73,7 +73,7 @@ export default class extends Controller {
     var state = {
       'querySet': arr,
       'page': 1,
-      'rows': 3,
+      'rows': 6,
       'window': 5,
     }
 

@@ -1,10 +1,10 @@
 
 <div data-controller="item-categories">
 
-  <div class="py-20 lg:py-20 max-w-6xl mx-auto">
-    <div class="px-2 md:px-4">
-      <h2 class="text-3xl font-medium text-left text-gray-700 lg:text-4xl">Mes créations du moment</h2>
-      <p class="pt-2 text-sm text-gray-600">Explorez ma séléction personnelle d'objet que j'ai réalisée à la main dans mon ateliers. Des objets du quotidiens, décoratifs, pour votre intérieur ou votre aquarium, il y en a pour tous les goûts.</p>
+  <div class="py-24 lg:py-36 max-w-7xl mx-auto">
+    <div class="px-2 md:px-6">
+      <h2 class="text-3xl font-medium text-left text-gray-800 lg:text-4xl">Mes créations du moment</h2>
+      <p class="pt-2 text-sm text-gray-600 max-w-md">Explorez ma séléction personnelle d'objet que j'ai réalisée à la main dans mon ateliers. Des objets du quotidiens, décoratifs, pour votre intérieur ou votre aquarium, il y en a pour tous les goûts.</p>
     </div>
 
 
@@ -48,20 +48,21 @@
 
 <!-- Catégories filtrer en front en JS  -->
 
-    <div class="py-4 mt-10 mx-2 overflow-x-auto scrollbars-hidden md:mx-4">
+    <div class="pt-4 pb-10  mt-10 ml-2 overflow-x-auto scrollbars-hidden md:ml-6">
       <div class="px-4 inline-flex items-center text-center space-x-2">
 
-        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="px-3 py-2 text-sm text-white rounded-full  border border-gray-200 whitespace-nowrap focus:outline-none">Tout voir</button>
+        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="px-4 py-3 text-sm font-medium text-white rounded-full  border border-gray-200 whitespace-nowrap focus:outline-none">Tout voir</button>
         <% @categories.each do |category| %>
-          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="px-3 py-2 text-sm rounded-full border border-gray-200 text-japonica-500 whitespace-nowrap focus:outline-none"> <%= category %> </button>
+          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="px-4 py-3 text-sm font-medium rounded-full border border-gray-200 whitespace-nowrap focus:outline-none"> <%= category %> </button>
         <% end %>
       </div>
     </div>
+    <div class="border-b border-gray-200 mx-2 md:mx-6"></div>
 
 
     <!-- All items reserve grid -->
 
-    <div data-item-categories-target="allCategory" class="hidden px-2 pt-6 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+    <div data-item-categories-target="allCategory" class="hidden px-2 pt-6 grid grid-cols-2 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
         <%= link_to item_path(item), class:"group" do %>
             <div class="shadow-3xl rounded pb-2">
@@ -80,7 +81,7 @@
                 </div>
               <% else %>
                 <div class="px-2 py-1">
-                  <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+                  <span class="rounded-full px-2 py-1 bg-japonica-300 text-white text-xs font-bold">Livraison GRATUITE</span>
                 </div>
               <% end %>
             </div>
@@ -92,7 +93,7 @@
     <!-- Filtrage des items par category reserve grid  -->
 
     <% @categories.each do |category| %>
-      <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+      <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
         <% @items.where(category: category).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
           <div class="shadow-3xl rounded pb-2">
@@ -111,7 +112,7 @@
               </div>
             <% else %>
               <div class="px-2 py-1">
-                <span class="rounded-full px-2 py-1 bg-japonica-300 text-gray-800 text-xs font-bold">Livraison GRATUITE</span>
+                <span class="rounded-full px-2 py-1 bg-japonica-300 text-white text-xs font-bold">Livraison GRATUITE</span>
               </div>
             <% end %>
           </div>
@@ -122,12 +123,12 @@
 
 
  <!--    My display grid is here, it is where cards finish their course  -->
-    <div id="table" class="px-2 pt-8 grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+    <div id="table" class="px-2 pt-8 grid grid-cols-2 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
 
     </div>
 
 <!--     container where dynamic pagination button are displayed   -->
-    <div data-item-categories-target="pageButtons" class="pt-12 px-2">
+    <div data-item-categories-target="pageButtons" class="pt-12 px-2 md:px-6">
 
     </div>
 
