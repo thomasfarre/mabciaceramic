@@ -18,4 +18,11 @@ class UserMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Confirmation de votre commande sur MabciaCeramic')
   end
+
+  def deliver_confirmation(user, order)
+    @user = user
+    @order = order
+
+    mail(to: @user.email, subject: 'Confirmation de votre commande sur MabciaCeramic')
+  end
 end

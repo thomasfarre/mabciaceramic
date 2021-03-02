@@ -8,18 +8,14 @@ class Item < ApplicationRecord
 
   monetize :price_cents
   validates :title, :description, :status, presence: true
-  validates :status, inclusion: { in: ['pending', 'transit', 'removed'] }
+  validates :status, inclusion: { in: ['available', 'sold'] }
 
-  def pending?
-    status == 'pending'
+  def available?
+    status == 'available'
   end
 
-  def transit?
-    status == 'transit'
-  end
-
-  def removed?
-    status == 'removed'
+  def sold?
+    status == 'sold'
   end
 
   private

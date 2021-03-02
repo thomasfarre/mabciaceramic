@@ -1,9 +1,13 @@
 
-Hey, <%= @user.name %>
+Bonjour, <%= @user.name %>
 
-You have successfully Ordered : (items list)
+Vous avez commandé avec succès :
+<% @bought_items.each do |bought_item| %>
+<%= bought_item.item.title %>
+<%= bought_item.item.price %>€
+<% end %>
 
+Total : <%= @order.amount %>€
+Je m'occupe d'envoyer tout ça le plus rapidement possible ! Vous recevrez un email pour vous confirmer l'expedition ainsi qu'un numéro de suivis pour votre colis
 
-The items will arrived soon
-
-Thanks and have a great day!
+Merci pour votre commande et passez une bonne journée!

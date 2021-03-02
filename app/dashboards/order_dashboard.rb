@@ -8,6 +8,7 @@ class OrderDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    tracking_number: Field::String,
     cart: Field::BelongsTo,
     user: Field::BelongsTo,
     id: Field::Number,
@@ -32,6 +33,7 @@ class OrderDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     status
+    tracking_number
     user
     cart
     amount_cents
@@ -42,6 +44,7 @@ class OrderDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     status
+    tracking_number
     user
     cart
     amount_cents

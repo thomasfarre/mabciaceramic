@@ -1,12 +1,12 @@
 module Admin
   class OrdersController < Admin::ApplicationController
+    after_action :deliver_confirmation, only: [:update]
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
-    # def update
-    #   super
-    #   send_foo_updated_email(requested_resource)
-    # end
+    def update
+      super
+    end
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
@@ -28,6 +28,13 @@ module Admin
     #     resource_class.with_less_stuff
     #   end
     # end
+    private
+
+    def deliver_confirmation
+      @order = Order.find(params[:id])
+      @user = @order.user
+      UserMailer.deliver_confirmation(@user, @order).deliver_now
+    end
 
     # Override `resource_params` if you want to transform the submitted
     # data before it's persisted. For example, the following would turn all

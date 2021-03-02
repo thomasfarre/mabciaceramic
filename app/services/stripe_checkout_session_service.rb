@@ -7,7 +7,7 @@ class StripeCheckoutSessionService
 
     bought_items = []
     order.cart.cart_items.each do |cart_item|
-      cart_item.item.update(status: 'removed')
+      cart_item.item.update(status: 'sold')
       bought_items << cart_item
     end
 

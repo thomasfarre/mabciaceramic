@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour, <%= @user.name %></h1>
+    <p>
+      Votre commande n°<%= @order.id %> à été emballer avec le plus grand soin et envoyé par la poste !
+    </p>
+    <p>Vous la recevrez d'ici quelques jours, vous pouvez suivre son déplacement avec le numéro de suivis suivant : <%= @order.tracking_number %> </p>
+
+    <p>Encore merci ! Bonne journée à vous</p>
+  </body>
+</html>
+
