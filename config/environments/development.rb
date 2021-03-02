@@ -37,9 +37,19 @@ Rails.application.configure do
 
   # Contact Form try
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
-  config.action_mailer.default_url_options = { host: "localhost:3000" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp-relay.sendinblue.com",
+    port: 587,
+    user_name: ENV['SENDINBLUE_EMAIL'],
+    password: ENV['SENDINBLUE_PASSWORD'],
+    authentication: login,
+    enable_starttls_auto: true
+  }
+
+  # config.action_mailer.delivery_method     = :postmark
+  # config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
+  # config.action_mailer.default_url_options = { host: "localhost:3000" }
 
 
   # Print deprecation notices to the Rails logger.
