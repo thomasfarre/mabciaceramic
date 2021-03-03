@@ -37,7 +37,7 @@
 <nav class="hidden lg:contents">
 
   <div class="sticky top-0 z-50 bg-white">
-    <div class="px-4 py-3 flex justify-between items-center border-b-2 border-gray-200 border-opacity-20 max-w-7xl mx-auto">
+    <div class="px-4 py-3 flex justify-between items-center border-b-2 border-gray-200 border-opacity-30 max-w-7xl mx-auto">
       <div class="flex items-baseline space-x-8 xl:space-x-14">
         <div>
           <%= link_to root_path do %>
@@ -60,7 +60,7 @@
         <% else %>
           <div data-controller="pic-menu" class="relative">
             <button data-action="click->pic-menu#toggle" class="focus:outline-none rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500">
-              <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500' %>
+              <%= cl_image_tag current_user.profil_pic, class:'w-14 rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500' %>
             </button>
             <div data-pic-menu-target="toggleable" class="hidden absolute z-40 right-0 mr-1 w-60 flex flex-col items-start rounded overflow-hidden">
               <%= link_to "Mes comandes", orders_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100' %>
