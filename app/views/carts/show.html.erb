@@ -15,8 +15,8 @@
           <span class="text-gray-600 text-xs lg:text-sm">Livraison GRATUITE, aucun frais supplémentaires</span>
         </div>
         <div class="pt-6 order-2 lg:order-3 flex justify-between lg:pt-2">
-          <span class="font-bold text-gray-800">Total (<%= pluralize(cart_count_over_one, 'article') %>)</span>
-          <span class="font-bold text-gray-800"><%= @cart.total_price %>€</span>
+          <span class="font-bold text-gray-800 xl:text-lg">Total (<%= pluralize(cart_count_over_one, 'article') %>)</span>
+          <span class="font-bold text-gray-800 xl:text-lg"><%= @cart.total_price %>€</span>
         </div>
         <div class="pb-5 order-4 border-b border-gray-300 lg:border-transparent lg:pb-0 lg:pt-4">
           <%= form_tag orders_path do %>
@@ -38,7 +38,7 @@
               <%= cl_image_tag cart_item.item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow' %>
             </div>
             <span class="pt-2 text-japonica-500 text-xs lg:text-sm"><%= cart_item.item.category %></span>
-            <span class="pt-1 text-sm font-bold text-gray-800 font-cursive text-left lg:text-base"><%= cart_item.item.title %></span>
+            <span class="pt-1 text-sm font-bold text-gray-800 font-cursive text-left lg:text-base 2xl:text-lg"><%= cart_item.item.title %></span>
           </div>
           <div class="w-3/5 text-justify pt-2">
             <span class="pt-4 text-sm text-gray-600 lg:text-base"><%= cart_item.item.description[0..100] %></span>
