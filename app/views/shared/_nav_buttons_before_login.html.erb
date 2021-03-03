@@ -1,32 +1,17 @@
 <div class="flex space-x-2 xl:space-x-4">
-  <div>
-    <%= link_to items_path, class:"" do %>
-      <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Magasin</button>
-    <% end %>
+  <div class="<%= params[:controller] == "items" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+    <%= link_to "Magasin", items_path %>
   </div>
-  <div>
-    <%= link_to articles_path, class:'' do %>
-    <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Blog</button>
-    <% end %>
+  <div class="<%= params[:controller] == "articles" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+    <%= link_to "Journal", articles_path %>
   </div>
-  <div>
-    <%= link_to about_path, class:'' do %>
-    <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">A propos</button>
-    <% end %>
+  <div class="<%= params[:action] == "about" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+    <%= link_to "A propos", about_path %>
   </div>
-  <div>
-    <%= link_to new_contact_path, class:'' do %>
-    <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Contactez-moi</button>
-    <% end %>
+  <div class="<%= params[:controller] == "contacts" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+    <%= link_to "Contactez-moi", new_contact_path %>
   </div>
-  <div>
-    <%= link_to  new_user_session_path, class:"" do %>
-      <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Se connecter</button>
-    <% end %>
+  <div class="<%= params[:controller] == "users" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+    <%= link_to "Se connecter", new_user_session_path %>
   </div>
-<!--   <div>
-    <%#= link_to  new_user_registration_path, class:"" do %>
-      <button class="w-full rounded px-2 py-1 text-base font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none xl:text-lg">Créer un compte</button>
-    <%# end %>
-  </div> -->
 </div>
