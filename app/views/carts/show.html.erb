@@ -1,45 +1,56 @@
 
-<div class="px-2 pt-2 max-w-5xl mx-auto lg:pt-20">
-  <div class="flex justify-between">
-    <%= link_to "Continuer mes achats", items_path, class:'text-gray-500' %>
-    <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" }, class:'bg-white text-gray-500' %>
+<div class="px-2 pt-2 max-w-7xl mx-auto lg:px-4">
+  <div class="flex justify-between lg:flex-row-reverse">
+    <%= link_to "Continuer mes achats", items_path, class:'text-gray-500 underline' %>
+    <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" }, class:'bg-white text-gray-500 underline' %>
   </div>
-  <div class="pt-8">
-    <span class="text-xl font-medium"><%= pluralize(cart_count_over_one, 'article') %> dans votre panier</span>
-  </div>
-  <div class="pt-6 flex justify-between">
-    <span class="font-medium">Total(<%= pluralize(cart_count_over_one, 'article') %>)</span>
-    <span class="font-medium"><%= @cart.total_price %>€</span>
-  </div>
-  <div class="pt-4">
-    <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'cart_id', @cart.id %>
-    <%= submit_tag 'Finaliser la commande', class:'w-full font-medium bg-black text-white py-3 rounded-3xl' %>
-    <% end %>
-  </div>
+  <div class="lg:pt-4 lg:flex lg:flex-row-reverse lg:items-start">
 
-  <div class="pt-4 px-2 flex flex-col">
-    <% @cart.cart_items.each do |cart_item| %>
-      <div class="pt-8 flex space-x-6">
-        <div class="flex flex-col justify-start ">
-          <%= cl_image_tag cart_item.item.photos[0].key, class:'w-20 h-20 object-cover rounded-xl' %>
-          <span class="pt-2 text-sm font-bold text-left"><%= cart_item.item.title %></span>
-          <span class="pt-1 text-japonica-500 text-sm"><%= cart_item.item.category %></span>
-
-
+    <div class="lg:w-1/3">
+      <div class="px-2 lg:bg-white lg:shadow-total lg:rounded-xl xl:px-4 flex flex-col">
+        <div class="pt-8">
+          <span class="text-2xl text-gray-800 font-medium"><%= pluralize(cart_count_over_one, 'article') %> dans votre panier</span>
         </div>
-        <div class="text-justify pt-2">
-          <span class="pt-4"><%= cart_item.item.description[0..180] %></span>
-
-          <div class="flex justify-between pt-4">
-            <span class="font-bold text-gray-500"><%= link_to 'Supprimer', cart_item, method: :delete, data:{ confirm: "are you sure?" } %></span>
-            <span class="font-bold"> <%= cart_item.item.price %>€</span>
-
-
-          </div>
+        <div class="order-3 lg:order-2 lg:pt-4 pb-2 lg:border-b lg:border-gray-300">
+          <span class="text-gray-600 text-xs lg:text-sm">Livraison GRATUITE, aucun frais supplémentaires</span>
+        </div>
+        <div class="pt-6 order-2 lg:order-3 flex justify-between lg:pt-2">
+          <span class="font-bold text-gray-800">Total (<%= pluralize(cart_count_over_one, 'article') %>)</span>
+          <span class="font-bold text-gray-800"><%= @cart.total_price %>€</span>
+        </div>
+        <div class="pb-5 order-4 border-b border-gray-300 lg:border-transparent lg:pb-0 lg:pt-4">
+          <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'cart_id', @cart.id %>
+          <%= submit_tag 'Finaliser la commande', class:'w-full font-bold bg-black text-white py-3 rounded-3xl' %>
+          <% end %>
+        </div>
+        <div class="hidden lg:order-5 lg:flex justify-center pt-2 pb-5 ">
+          <span class="text-gray-600 text-xs ">TVA incluse(si applicable)</span>
         </div>
       </div>
-    <% end %>
+    </div>
+
+    <div class="px-2 flex flex-col lg:w-2/3 lg:mr-14">
+      <% @cart.cart_items.each do |cart_item| %>
+        <div class="pt-8 flex space-x-6">
+          <div class="w-2/5 flex flex-col justify-start ">
+            <div class="relative" style="padding-bottom: 80%">
+              <%= cl_image_tag cart_item.item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow' %>
+            </div>
+            <span class="pt-2 text-japonica-500 text-xs lg:text-sm"><%= cart_item.item.category %></span>
+            <span class="pt-1 text-sm font-bold text-gray-800 font-cursive text-left lg:text-base"><%= cart_item.item.title %></span>
+          </div>
+          <div class="w-3/5 text-justify pt-2">
+            <span class="pt-4 text-sm text-gray-600 lg:text-base"><%= cart_item.item.description[0..100] %></span>
+
+            <div class="flex justify-between pt-4">
+              <span class="text-sm text-gray-500 underline"><%= link_to 'Supprimer', cart_item, method: :delete, data:{ confirm: "are you sure?" } %></span>
+              <span class="font-bold text-gray-800"> <%= cart_item.item.price %>€</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
