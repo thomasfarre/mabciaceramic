@@ -1,7 +1,7 @@
 
 <div data-controller="item-categories">
 
-  <div class="py-16 lg:py-36 max-w-7xl mx-auto">
+  <div class="py-16 lg:py-32 max-w-7xl mx-auto">
     <div class="px-2 md:px-6">
       <h2 class="text-3xl font-medium font-cursive text-left text-gray-800 tracking-tight lg:text-4xl">Mes créations du moment</h2>
       <p class="pt-2 text-sm text-gray-500 max-w-md">Explorez ma séléction personnelle d'objet que j'ai réalisée à la main dans mon ateliers. Des objets du quotidiens, décoratifs, pour votre intérieur ou votre aquarium, il y en a pour tous les goûts.</p>
@@ -72,16 +72,18 @@
               <div class="px-2 pt-2 ">
                 <div class="text-gray-700 font-semibold tracking-tight truncate font-cursive" ><%= item.title %></div>
               </div>
-              <div class="px-2 pt-1">
-                <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
-              </div>
               <% if item.sold? %>
-                <div class="px-2 py-1">
-                  <span class="rounded-full px-2 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
+                <div class='flex justify-between items-center'>
+                  <div class="px-2 pt-2">
+                    <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
+                  </div>
+                  <div class="px-2">
+                    <span class="rounded px-1 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
+                  </div>
                 </div>
               <% else %>
-                <div class="px-2 py-1">
-                  <span class="rounded-full px-2 py-1 bg-japonica-400 text-white text-xs font-bold">Livraison GRATUITE</span>
+                <div class="px-2 pt-2">
+                  <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
                 </div>
               <% end %>
             </div>
@@ -103,16 +105,18 @@
             <div class="px-2 pt-2">
               <div class="text-gray-700 font-semibold tracking-tight truncate font-cursive"><%= item.title %></div>
             </div>
-            <div class="px-2 pt-1">
-              <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
-            </div>
             <% if item.sold? %>
-              <div class="px-2 py-1">
-                <span class="rounded-full px-2 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
+              <div class='flex justify-between items-center'>
+                <div class="px-2 pt-2">
+                  <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
+                </div>
+                <div class="px-2">
+                  <span class="rounded px-1 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
+                </div>
               </div>
             <% else %>
-              <div class="px-2 py-1">
-                <span class="rounded-full px-2 py-1 bg-japonica-400 text-white text-xs font-bold">Livraison GRATUITE</span>
+              <div class="px-2 pt-2">
+                <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
               </div>
             <% end %>
           </div>
