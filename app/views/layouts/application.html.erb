@@ -25,11 +25,11 @@
 
   <body>
 
-    <% if !current_page?(controller: 'devise/sessions', action: 'new') && !current_page?(controller: 'registrations', action: 'new') %>
+    <% if !current_page?(controller: 'devise/sessions', action: 'new') && !current_page?(controller: 'registrations', action: 'new') && !current_page?(controller: 'registrations', action: 'edit')%>
       <%= render "shared/navbar" unless @disable_nav %>
     <% end %>
     <%= yield %>
-    <% if !current_page?(controller: 'devise/sessions', action: 'new') && !current_page?(controller: 'registrations', action: 'new') %>
+    <% if !current_page?(controller: 'devise/sessions', action: 'new') && !current_page?(controller: 'registrations', action: 'new') && !current_page?(controller: 'registrations', action: 'edit') %>
       <%= render "shared/footer" unless @disable_footer %>
     <% end %>
   </body>
