@@ -21,7 +21,7 @@
         <div class="pb-5 order-4 border-b border-gray-300 lg:border-transparent lg:pb-0 lg:pt-4">
           <%= form_tag orders_path do %>
           <%= hidden_field_tag 'cart_id', @cart.id %>
-          <%= submit_tag 'Finaliser la commande', class:'w-full font-bold bg-gray-900 text-white py-3 rounded-3xl' %>
+          <%= submit_tag 'Finaliser la commande', class:'w-full font-bold bg-gray-900 text-white py-3 rounded-3xl focus:outline-none' %>
           <% end %>
         </div>
         <div class="hidden lg:order-5 lg:flex justify-center pt-2 pb-5 ">
