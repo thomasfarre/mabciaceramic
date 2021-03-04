@@ -110,7 +110,7 @@
     </div>
   </section>
 
-<!--   blog section -->
+<!--   journal section -->
   <section class="px-4 py-12 bg-gray-200 lg:pb-2 lg:pt-8 max-w-7xl mx-auto">
     <div class="flex justify-center">
       <svg class="w-16 h-16 lg:w-24 lg:h-24" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24 12.506v26m0-26C21.664 10.954 18.492 10 15 10s-6.664.954-9 2.506v26C8.336 36.954 11.508 36 15 36s6.664.954 9 2.506m0-26C26.336 10.954 29.508 10 33 10c3.494 0 6.664.954 9 2.506v26C39.664 36.954 36.494 36 33 36c-3.492 0-6.664.954-9 2.506" stroke="#D97862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -132,13 +132,13 @@
         </div>
         <div class="px-3 flex flex-col">
           <div class="pt-2">
-            <span class="text-japonica-500 font-medium text-sm"> <%= Article.last.category %> </span>
+            <span class="text-japonica-500 font-bold"> <%= Article.last.category %> </span>
           </div>
           <div>
             <span class="font-bold text-gray-700 font-cursive text-xl tracking-tight"><%= Article.last.title %></span>
           </div>
           <div class="pt-3">
-            <span class="text-gray-500"><%= Article.last.content %></span>
+            <span class="text-gray-600"><%= Article.last.content %></span>
           </div>
           <div class="pt-5 pb-1 space-x-2">
             <span class="text-gray-500 text-xs"><%= (Article.last.created_at).strftime("%b %d, %Y") %></span>
@@ -156,7 +156,7 @@
         </div>
         <div class="px-3 flex flex-col h-36">
           <div class="pt-2">
-            <span class="text-japonica-500 font-medium text-sm"> <%= @articles[1].category %> </span>
+            <span class="text-japonica-500 font-bold text-sm"> <%= @articles[1].category %> </span>
           </div>
           <div class="flex-grow">
             <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[1].title %></span>
@@ -174,7 +174,7 @@
         </div>
         <div class="flex flex-col px-3 h-36">
           <div class="pt-2">
-            <span class="text-japonica-500 font-medium text-sm"> <%= @articles[2].category %> </span>
+            <span class="text-japonica-500 font-bold text-sm"> <%= @articles[2].category %> </span>
           </div>
           <div class="flex-grow">
             <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[2].title %></span>
