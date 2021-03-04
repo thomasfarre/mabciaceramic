@@ -27,11 +27,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.order("created_at desc")
   end
 
   private

@@ -36,8 +36,8 @@ module Admin
 
       if !@order.tracking_number.nil? && @order.status == "checked"
         UserMailer.deliver_confirmation(@user, @order).deliver_now
+        @order.update(status: 'envoyé')
       end
-      @order.update(status: 'envoyé')
     end
 
     # Override `resource_params` if you want to transform the submitted
