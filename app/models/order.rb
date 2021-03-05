@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   belongs_to :user
   monetize :amount_cents
 
-  validates :status, inclusion: { in: ['paid', 'checked', 'envoyé', 'reçu', nil] }
+  validates :status, inclusion: { in: ['checked', 'paid', 'envoyé', 'reçu', 'new'] }
 
   def paid?
     status == 'paid'
