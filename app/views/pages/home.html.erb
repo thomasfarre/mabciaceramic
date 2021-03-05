@@ -80,7 +80,7 @@
       <div class="px-4 inline-flex space-x-2 md:px-8 lg:justify-center lg:grid lg:grid-cols-3 lg:space-x-0 lg:gap-3 lg:px-16 2xl:px-0.5">
         <% @items.first(6).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
-            <div class="shadow-3xl rounded pb-2 w-60 lg:w-full hover:opacity-80 focus:outline-none">
+            <div class="shadow-3xl rounded pb-2 w-60 lg:w-full focus:outline-none">
               <div class="relative h-64 lg:h-72 xl:h-60" style="padding-bottom: 80%">
                 <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
               </div>
