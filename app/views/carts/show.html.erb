@@ -1,9 +1,9 @@
 <% if cart_has_items %>
 
-  <div class="px-2 pt-4 max-w-7xl mx-auto lg:px-4">
-    <div class="flex justify-between lg:flex-row-reverse">
-      <%= link_to "Continuer mes achats", items_path, class:'text-gray-500 underline focus:outline-none' %>
+  <div class="px-2 pt-4 pb-24 max-w-7xl mx-auto lg:px-4">
+    <div class="flex justify-between">
       <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Etes-vous sur?" }, class:'bg-white text-gray-500 underline focus:outline-none' %>
+      <%= link_to "Continuer mes achats", items_path, class:'text-gray-500 underline focus:outline-none' %>
     </div>
     <div class="lg:pt-4 lg:flex lg:flex-row-reverse lg:items-start">
 
