@@ -8,7 +8,6 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find(params[:id])
   end
 
   def new
@@ -41,7 +40,7 @@ class CartsController < ApplicationController
   private
 
   def set_cart
-    @cart = Cart.find(params[:id])
+    @cart = Cart.friendly.find(params[:id])
   end
 
   def disable_footer
