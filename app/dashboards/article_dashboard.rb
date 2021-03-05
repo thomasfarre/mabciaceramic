@@ -12,7 +12,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     category: Field::String,
-    content: Field::Text,
+    rich_body: RichTextAreaField,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -37,7 +37,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     id
     title
     category
-    content
+    rich_body
     description
     created_at
     updated_at
@@ -50,7 +50,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     photo
     title
     category
-    content
+    rich_body
     description
   ].freeze
 
