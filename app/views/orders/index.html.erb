@@ -4,7 +4,7 @@
     <h1 class="text-center font-bold text-2xl text-gray-800">Toutes mes commandes</h1>
   </div> -->
 
-<% if @orders.count > 0 %>
+<% if (@orders.count - @orders.where(status: 'new').count) > 0 %>
   <div class="lg:flex lg:space-x-24">
     <div class="lg:w-1/2">
       <h1 class="pt-12 text-center font-bold text-2xl text-gray-700">Toutes mes commandes</h1>
