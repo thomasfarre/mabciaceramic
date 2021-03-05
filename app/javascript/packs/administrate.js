@@ -15,5 +15,3 @@ require("channels")
 // The next two lines you only need if you want ActionText support
 require("trix")
 require("@rails/actiontext")
-
-require("../administrate/index")
