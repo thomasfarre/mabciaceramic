@@ -1,4 +1,9 @@
 class Cart < ApplicationRecord
+  extend FriendlyId
+  friendly_id :hashid, use: :slugged
+
+  before_validation :set_hashid, prepend: true, if: Proc.new { |cart| cart.hashid.nil? }
+
   belongs_to :user, optional: true
 
   has_one :order, dependent: :nullify
@@ -20,5 +25,11 @@ class Cart < ApplicationRecord
 
   def total_price
     cart_items.to_a.sum { |item| item.total_price }
+  end
+
+  private
+
+  def set_hashid
+    self.hashid = SecureRandom.urlsafe_base64(6)
   end
 end
