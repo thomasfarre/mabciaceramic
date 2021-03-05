@@ -17,4 +17,8 @@ class Order < ApplicationRecord
   def reçu?
     status == 'reçu'
   end
+
+  def new?
+    status == 'new'
+  end
 end
