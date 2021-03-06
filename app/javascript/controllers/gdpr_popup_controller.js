@@ -24,23 +24,21 @@ export default class extends Controller {
     const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
     const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
-    window.onload = () => {
+    const acceptFn = event => {
+        saveToStorage(storageType);
+        consentPopup.classList.add('hidden');
+    }
+    const consentPopup = this.popupTarget;
+    const acceptBtn = document.getElementById('accept');
+    acceptBtn.addEventListener('click', acceptFn);
 
-        const acceptFn = event => {
-            saveToStorage(storageType);
-            consentPopup.classList.add('hidden');
-        }
-        const consentPopup = this.popupTarget;
-        const acceptBtn = document.getElementById('accept');
-        acceptBtn.addEventListener('click', acceptFn);
+    if (shouldShowPopup(storageType)) {
+        setTimeout(() => {
+            consentPopup.classList.remove('hidden');
+        }, 2000);
+    }
 
-        if (shouldShowPopup(storageType)) {
-            setTimeout(() => {
-                consentPopup.classList.remove('hidden');
-            }, 2000);
-        }
 
-    };
+  }
 
-   }
 }
