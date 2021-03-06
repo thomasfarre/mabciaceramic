@@ -30,11 +30,7 @@
       <%= render "shared/navbar" unless @disable_nav %>
     <% end %>
 
-    <div data-gdpr-popup-target="popup" class="hidden px-2 py-4 bg-japonica-400 max-w-7xl mx-auto">
-      <p class="text-gray-100 italic text-sm font-bold max-w-2xl mx-auto">By using this site you agree to our <a href="#" class="underline">Terms and Conditions</a>.
-        Please <a id="accept" class="underline" href="#">Accept</a> these before using the site.
-      </p>
-    </div>
+    <%= render "shared/gdpr_popup" %>
 
     <%= yield %>
 

@@ -28,7 +28,7 @@
 
   </div>
   <div class="sticky">
-    <%= current_user.nil? ? (render 'shared/menu_before_login') : (render 'shared/menu_after_login') %>
+    <%= current_user.nil? ? (render 'shared/menu/menu_before_login') : (render 'shared/menu/menu_after_login') %>
   </div>
 </nav>
 
@@ -37,7 +37,7 @@
 <nav class="hidden lg:contents">
 
   <div class="sticky top-0 z-10 bg-white">
-    <div class="px-4 py-3 flex justify-between items-center border-b-2 border-gray-200 border-opacity-30 max-w-7xl mx-auto">
+    <div class="px-4 py-4 flex justify-between items-center border-b-2 border-gray-200 border-opacity-30 max-w-7xl mx-auto">
       <div class="flex items-baseline space-x-8 xl:space-x-14">
         <div>
           <%= link_to root_path do %>
@@ -48,7 +48,7 @@
           <% end %>
         </div>
 
-        <%= current_user.nil? ? (render 'shared/nav_buttons_before_login') : (render 'shared/nav_buttons_after_login') %>
+        <%= current_user.nil? ? (render 'shared/navbar/nav_buttons_before_login') : (render 'shared/navbar/nav_buttons_after_login') %>
 
       </div>
 
