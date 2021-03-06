@@ -27,22 +27,30 @@
                       autofocus: true,
                       label: false,
                       placeholder: 'Patrick',
-                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
+                      input_html: { class: "px-2 py-4 text-sm text-gray-600 border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
 
           <%= f.input :email,
                       required: false,
                       label: false,
                       placeholder: "patricycles@gmail.com",
-                      input_html: { class: "px-2 py-4 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
+                      input_html: { class: "px-2 py-4 text-sm text-gray-600 border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
 
           <%= f.input :message,
                       required: false,
                       label: false,
                       placeholder: "Ecrivez votre message ici...",
-                      input_html: { class: "px-2 pt-2 pb-32 text-sm border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
+                      input_html: { class: "px-2 pt-2 pb-32 text-sm text-gray-600 border-2 border-gray-200 w-full rounded-lg focus:outline-none"} %>
+
+          <%= f.input :accept,
+                      as: :boolean,
+                      checked_value: true,
+                      unchecked_value: false,
+                      label: "Veuillez accepter les conditions d'utilisation avant d'envoyer votre message",
+                      label_html: { class: "text-sm text-gray-500 italic" },
+                      input_html: { class:"mr-2"} %>
 
 
-        <%= f.button :submit, "Envoyer", class:'w-full font-medium bg-black text-white py-3 rounded-3xl' %>
+        <%= f.button :submit, "Envoyer", class:'w-full font-medium bg-gray-900 text-white py-3 rounded-3xl' %>
       </div>
     <% end %>
   </div>
