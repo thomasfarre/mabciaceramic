@@ -83,4 +83,3 @@ gem 'redis'
 
 gem 'friendly_id'
 
-gem 'sib-api-v3-sdk'
