@@ -23,6 +23,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @order = order
 
-    mail(to: @user.email, subject: 'Confirmation de votre commande sur MabciaCeramic')
+    mail(to: @user.email, subject: 'Votre commande sur MabciaCeramic à été envoyé !')
   end
 end
