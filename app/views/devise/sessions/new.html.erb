@@ -29,8 +29,8 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" },
-                      label: "Email addresse",
+                      error: 'Adresse mail obligatoire',
+                      label: "Email",
                       label_html: { class:"text-gray-600"},
                       input_html: { class: "px-2 py-2 border-2 border-gray-200 w-full rounded-lg  focus:outline-none focus:border-japonica-300"} %>
           <%= f.input :password,
@@ -38,6 +38,7 @@
                       input_html: { autocomplete: "current-password" },
                       label: "Mot de passe",
                       error_html: { id: 'password_error'},
+                      error: 'Adresse mail obligatoire',
                       label_html: { class:"text-gray-600 "},
                       input_html: { class: "px-2 py-2 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
 
