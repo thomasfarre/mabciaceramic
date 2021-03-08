@@ -4,8 +4,12 @@
 
 <!-- header with background and CTA-->
 
+<!-- background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80) -->
+
+<%#= image_url('wave-background.svg') %>
+
 <header class="h-screen">
-  <div class="flex flex-col items-center justify-evenly bg-cover bg-center h-95/100 max-w-7xl mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80);">
+  <div class="flex flex-col items-center justify-evenly bg-cover bg-center h-95/100 max-w-7xl mx-auto" style="background-image: url(<%= image_url('wave-background.svg') %>);">
     <div class="px-4 text-center max-w-xs lg:max-w-sm xl:max-w-lg">
       <h1 class="text-white font-bold font-cursive tracking-tight text-3xl lg:text-4xl xl:text-5xl">Objets en céramiques fait main</h1>
     </div>
@@ -110,7 +114,7 @@
   </section>
 
 <!--   journal section -->
-  <section class="px-4 py-12 bg-gray-200 lg:pb-2 lg:pt-8 max-w-7xl mx-auto">
+  <section class="px-4 py-12 bg-gray-100 lg:pb-2 lg:pt-8 max-w-7xl mx-auto">
     <div class="flex justify-center">
       <svg class="w-16 h-16 lg:w-24 lg:h-24" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24 12.506v26m0-26C21.664 10.954 18.492 10 15 10s-6.664.954-9 2.506v26C8.336 36.954 11.508 36 15 36s6.664.954 9 2.506m0-26C26.336 10.954 29.508 10 33 10c3.494 0 6.664.954 9 2.506v26C39.664 36.954 36.494 36 33 36c-3.492 0-6.664.954-9 2.506" stroke="#D97862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>

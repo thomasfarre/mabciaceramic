@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     if @contact.deliver
       redirect_to root_path
     else
-      render :create
+      render :new
     end
   end
 
