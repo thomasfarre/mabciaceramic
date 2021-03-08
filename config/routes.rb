@@ -15,10 +15,11 @@ Rails.application.routes.draw do
 
       root to: "orders#index"
     end
-  resources :cart_items
-  resources :carts
-  resources :items
-  resources :articles
+
+  resources :cart_items, only: [:new, :create, :destroy]
+  resources :carts, only: [:show, :new, :destroy]
+  resources :items, only: [:show, :index]
+  resources :articles, only: [:show, :index, :new]
   # resources :adresses
   resources :orders, only: [:show, :create, :index] do
     resources :payments, only: :new
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:create, :new]
 
   resources :users, only: [] do
-    resources :adresses
+    resources :adresses, only: [:edit, :update]
   end
 
   require "sidekiq/web"
