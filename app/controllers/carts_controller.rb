@@ -1,30 +1,12 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  # before_action :disable_footer, only: [:show]
-
-  def index
-    @carts = Cart.all
-  end
+  before_action :set_cart, only: [:show, :destroy]
 
   def show
   end
 
   def new
     @cart = Cart.new
-  end
-
-  def edit
-  end
-
-  def create
-    @cart = Cart.new(cart_params)
-
-    if @cart.save
-      redirect_to @cart, 'Panier crée avec succès'
-    else
-      render :new
-    end
   end
 
   def destroy
@@ -34,17 +16,13 @@ class CartsController < ApplicationController
       @cart.destroy if @cart.id == session[:cart_id]
       session[:cart_id] = nil
     end
-    redirect_to root_path, notice: 'Le panier à été détruit'
+    redirect_to root_path
   end
 
   private
 
   def set_cart
     @cart = Cart.friendly.find(params[:id])
-  end
-
-  def disable_footer
-    @disable_footer = true
   end
 
   def cart_params

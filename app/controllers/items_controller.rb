@@ -10,19 +10,19 @@ class ItemsController < ApplicationController
   def index
     @categories = Item::CATEGORY
 
-    if params[:query].present?
-      sql_query = "title ILIKE :query OR category ILIKE :query"
-      @items = Item.where(sql_query, query: "%#{params[:query]}%")
+    # if params[:query].present?
+    #   sql_query = "title ILIKE :query OR category ILIKE :query"
+    #   @items = Item.where(sql_query, query: "%#{params[:query]}%")
       # @items = Item.where("title ILIKE ? OR category ILIKE ?", params[:query], params[:query])
-    else
+    # else
       # if(params.key?(:category))
       #   @items = Item.where(category: params[:category]).order("created_at desc")
       # else
-        @items = Item.all.order("created_at desc")
+      @items = Item.all.order("created_at desc")
       # end
       # @page = params.fetch(:page, 0).to_i
       # @items = @items.offset(@page * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
-    end
+    # end
   end
 
   private

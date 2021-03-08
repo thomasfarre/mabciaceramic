@@ -1,20 +1,10 @@
 class CartItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
-  before_action :set_cart, only: [:create]
-
-  def index
-    @cart_items = CartItem.all
-  end
-
-  def show
-  end
+  before_action :set_cart_item, only: :destroy
+  before_action :set_cart, only: :create
 
   def new
     @cart_item = CartItem.new
-  end
-
-  def edit
   end
 
   def create
@@ -25,7 +15,7 @@ class CartItemsController < ApplicationController
       redirect_to item_path(item)
     else
       if @cart_item.save
-        redirect_to @cart_item.cart, notice: 'Objet à été ajouté au panier'
+        redirect_to @cart_item.cart
       else
         redirect_to item_path(item)
       end
