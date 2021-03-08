@@ -11,7 +11,7 @@ class StripeCheckoutSessionService
 
     order.cart.update(status: 'inactive')
 
-    # UserMailer.order_confirmation(user, bought_items, order).deliver_now if order.status.new?
+    UserMailer.order_confirmation(user, bought_items, order).deliver_now if order.status.new?
     order.update(status: 'paid')
   end
 end
