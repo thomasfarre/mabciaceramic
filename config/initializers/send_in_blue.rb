@@ -1,5 +1,3 @@
-require 'sib-api-v3-sdk'
-
 # Setup authorization
 SibApiV3Sdk.configure do |config|
   # Configure API key authorization: api-key
