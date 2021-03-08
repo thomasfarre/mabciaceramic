@@ -4,18 +4,18 @@ class Order < ApplicationRecord
   belongs_to :user
   monetize :amount_cents
 
-  validates :status, inclusion: { in: ['checked', 'paid', 'envoyé', 'reçu', 'new'] }
+  validates :status, inclusion: { in: %w[new checked paid send received] }
 
   def paid?
     status == 'paid'
   end
 
-  def envoyé?
-    status == 'envoyé'
+  def send?
+    status == 'send'
   end
 
-  def reçu?
-    status == 'reçu'
+  def received?
+    status == 'received'
   end
 
   def new?

@@ -4,11 +4,13 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many_attached :photos
 
-  CATEGORY = ["Aquarium", "Photophores", "Sculptures", "Pots, coupes", "Cuisine", "Décoration", "Extérieur"]
+ #items category display in index items
+  CATEGORY = %w[Aquarium Photophores Sculptures Pots coupes Cuisine Décoration Extérieur]
 
   monetize :price_cents
-  validates :title, :description, :status, presence: true
-  validates :status, inclusion: { in: ['available', 'sold'] }
+
+  validates :title, :description, :category, :status, :price_cents, presence: true
+  validates :status, inclusion: { in: %w[available sold] }
 
   def available?
     status == 'available'
