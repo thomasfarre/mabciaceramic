@@ -12,8 +12,9 @@ class Cart < ApplicationRecord
   def add_item(item)
     current_item = cart_items.find_by(item_id: item.id)
 
-    if current_item ||= current_item
+    if current_item
 
+      current_item
       # put this to implement quantity
 
       # current_item.increment(:quantity)
