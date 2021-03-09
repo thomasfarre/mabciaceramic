@@ -1,3 +1,5 @@
+require 'open-uri'
+
 puts "Cleaning database..."
 
 Article.destroy_all
