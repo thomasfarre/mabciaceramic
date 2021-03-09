@@ -35,7 +35,7 @@ module Admin
       @user = @order.user
 
       if !@order.tracking_number.nil? && @order.status == "checked"
-        UserMailer.deliver_confirmation(@user, @order).deliver_now
+        UserMailer.deliver_confirmation(@user, @order).deliver_later
         @order.update(status: 'send')
       end
     end

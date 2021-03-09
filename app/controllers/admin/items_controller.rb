@@ -2,7 +2,14 @@ module Admin
   class ItemsController < Admin::ApplicationController
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
-    #
+    before_action :category
+
+
+    private
+
+    def category
+      instance_variable_set("@categories", Item.used_category)
+    end
     # def update
     #   super
     #   send_foo_updated_email(requested_resource)

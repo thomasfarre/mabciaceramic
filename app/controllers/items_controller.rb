@@ -8,7 +8,8 @@ class ItemsController < ApplicationController
 
   # possibility to sorting in back with query but for now its not implemented, doing sorting in front with JS
   def index
-    @categories = Item::CATEGORY
+    # @categories = Item::CATEGORY
+    @categories = Item.used_category
 
     # if params[:query].present?
     #   sql_query = "title ILIKE :query OR category ILIKE :query"

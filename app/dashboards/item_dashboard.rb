@@ -65,6 +65,7 @@ class ItemDashboard < Administrate::BaseDashboard
     photos
     title
     price_cents
+    category
     materials
     width
     length

@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_many_attached :photos
 
  #items category display in index items
-  CATEGORY = %w[Aquarium Photophores Sculptures Pots coupes Cuisine Décoration Extérieur]
+  # CATEGORY = %w[Aquarium Photophores Sculptures Pots coupes Cuisine Décoration Extérieur]
 
   monetize :price_cents
 
@@ -18,6 +18,10 @@ class Item < ApplicationRecord
 
   def sold?
     status == 'sold'
+  end
+
+  def self.used_category
+    Item.all.map { |item| item.category }.uniq
   end
 
   private
