@@ -2,6 +2,17 @@ class ApplicationController < ActionController::Base
   include CurrentCart
   skip_before_action :verify_authenticity_token
   before_action :set_cart
+  before_action :disable_nav, if: :devise_controller?
+  before_action :disable_footer, if: :devise_controller?
+
+
+  def disable_nav
+    @disable_nav = true
+  end
+
+  def disable_nav
+    @disable_footer = true
+  end
 
   # For futur version with persistent cart everywhere
 
