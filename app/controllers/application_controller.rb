@@ -5,12 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :disable_nav, if: :devise_controller?
   before_action :disable_footer, if: :devise_controller?
 
-
   def disable_nav
     @disable_nav = true
   end
 
-  def disable_nav
+  def disable_footer
     @disable_footer = true
   end
 
