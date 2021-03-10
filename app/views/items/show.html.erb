@@ -66,7 +66,7 @@
         </div>
         <% @item.photos.each do |photo| %>
           <div data-slideshow-target="slide" class="mt-4 relative max-w-4xl h-20 mx-auto" style="padding-bottom: 80%">
-            <%= cl_image_tag photo.key, class:'absolute w-full h-2/3 inset-0 object-cover object-center shadow rounded-xl xl:max-h-1/2'  %>
+            <%= cl_image_tag photo.key, class:'absolute inset-0 object-cover mx-auto object-center shadow rounded-xl xl:max-h-1/2'  %>
           </div>
         <% end %>
       </div>
@@ -75,27 +75,32 @@
 
   <div class="md:flex md:flex-row-reverse md:justify-between">
     <div class="md:flex md:flex-col max-w-lg md:ml-2 md:w-2/5">
-      <div class="-mt-4 lg:pt-6 lg:mt-0">
-        <span class="font-medium text-gray-800 font-cursive text-2xl"><%= @item.price %>€</span>
-      </div>
-      <div class="pt-2 text-gray-600">
-        <%= @item.description[0...197] %>
-      </div>
-      <% if @item.sold? %>
-        <div class="pt-4">
-          <button class="w-full py-3 bg-gray-900 font-bold text-white rounded-3xl focus:outline-none font-medium cursor-default"> Vendu </button>
+      <div class="lg:border-2 lg:border-gray-200 lg:rounded-xl lg:border-opacity-70 lg:px-4 lg:pt-2 lg:pb-4 lg:mt-6 lg:sticky lg:top-5">
+        <div class="-mt-4 lg:mt-0">
+          <span class="font-medium text-gray-800 font-cursive text-2xl"><%= @item.price %>€</span>
         </div>
-      <% else %>
-        <div class="pt-4">
-          <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-gray-900 font-bold text-lg tracking-tight text-white rounded-3xl focus:outline-none' %>
+        <div class="pt-1">
+          <span class="text-xs text-white tracking-wide bg-japonica-400 px-2 py-1 rounded-full font-bold">Livraison GRATUITE</span>
         </div>
-      <% end %>
+        <div class="pt-2 text-gray-600">
+          <%= @item.description[0...197] %>
+        </div>
+        <% if @item.sold? %>
+          <div class="pt-4">
+            <button class="w-full py-3 bg-gray-900 font-bold text-white rounded-3xl focus:outline-none font-medium cursor-default"> Vendu </button>
+          </div>
+        <% else %>
+          <div class="pt-4">
+            <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-gray-900 font-bold text-lg tracking-tight text-white rounded-3xl focus:outline-none' %>
+          </div>
+        <% end %>
+      </div>
     </div>
 
 
     <div class="md:flex md:flex-col max-w-3xl md:mr-2 md:w-3/5">
       <div data-controller="item-descriptions">
-        <div class="mt-4 md:-mt-4 flex justify-between items-center lg:mt-4">
+        <div class="mt-4 md:-mt-6 flex justify-between items-center lg:mt-6">
           <button data-action="click->item-descriptions#descriptionToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full focus:outline-none">
             <span class="text-gray-900 text-lg font-bold">Détails de l'article</span>
             <svg data-item-descriptions-target="descriptionClose" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
@@ -107,26 +112,26 @@
             <div class="">
               <div class="space-y-2">
                 <div class="flex items-center space-x-2">
-                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/></svg>
-                  <span class="text-gray-900 font-bold">Pièce unique</span>
+                  <svg class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/></svg>
+                  <span class="text-gray-700 font-bold">Pièce unique</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                  <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 23"><path d="M12.605 13.1l2.273-4.409-1.623-1.686-4.042-4.226a.68.68 0 00-.481-.202.68.68 0 00-.482.202.748.748 0 00-.172.48c0 .176.061.346.172.478L12.037 8.3l-.652.68-5.408-5.52a.704.704 0 00-.5-.217.679.679 0 00-.499.217.756.756 0 00-.194.508c0 .189.07.37.194.508l5.06 5.913-.641.68-4.722-4.896a.653.653 0 00-1.008 0 .748.748 0 00-.172.479c0 .176.06.346.172.479l4.4 5.328-.642.68-3.758-3.325a.688.688 0 00-.459-.176.688.688 0 00-.458.176.756.756 0 00-.207.522c0 .196.075.384.207.522l3.392 3.537 5.188 5.424c.17.179.372.32.595.417a1.762 1.762 0 001.405 0c.223-.096.425-.238.595-.417l4.583-4.744.495-.518c.24-.252.41-.57.487-.916a2 2 0 00-.047-1.048L16.5 4.964l-.55.192a.708.708 0 00-.32.24.757.757 0 00-.147.382l.367 3.93-2.595 4.073-.65-.681z" fill="#222"/></svg>
-                  <span class="text-gray-900 font-bold">Fait main</span>
+                  <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 23"><path d="M12.605 13.1l2.273-4.409-1.623-1.686-4.042-4.226a.68.68 0 00-.481-.202.68.68 0 00-.482.202.748.748 0 00-.172.48c0 .176.061.346.172.478L12.037 8.3l-.652.68-5.408-5.52a.704.704 0 00-.5-.217.679.679 0 00-.499.217.756.756 0 00-.194.508c0 .189.07.37.194.508l5.06 5.913-.641.68-4.722-4.896a.653.653 0 00-1.008 0 .748.748 0 00-.172.479c0 .176.06.346.172.479l4.4 5.328-.642.68-3.758-3.325a.688.688 0 00-.459-.176.688.688 0 00-.458.176.756.756 0 00-.207.522c0 .196.075.384.207.522l3.392 3.537 5.188 5.424c.17.179.372.32.595.417a1.762 1.762 0 001.405 0c.223-.096.425-.238.595-.417l4.583-4.744.495-.518c.24-.252.41-.57.487-.916a2 2 0 00-.047-1.048L16.5 4.964l-.55.192a.708.708 0 00-.32.24.757.757 0 00-.147.382l.367 3.93-2.595 4.073-.65-.681z" fill="#374151"/></svg>
+                  <span class="text-gray-700 font-bold">Fait main</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                  <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.1 5.76c.7 1.632.9 3.456.4 5.376-.8 3.264-3.5 5.856-6.9 6.624-2 .48-3.9.192-5.6-.384v1.344l1.5 1.44h12l1.5-1.44V7.2l-1.5-1.44h-1.4z" fill="#000"/><path d="M9.5 1.92C5.4 1.92 2 5.184 2 9.12c0 3.936 3.4 7.2 7.5 7.2s7.5-3.264 7.5-7.2c0-3.936-3.4-7.2-7.5-7.2zM7.8 14.4a5.64 5.64 0 01-1.7-.864l8-7.68c.4.48.7 1.056.9 1.632L7.8 14.4zm3.4-10.56c.6.192 1.2.48 1.7.864l-8 7.68c-.4-.48-.7-1.056-.9-1.632l7.2-6.912zM9 3.648L3.8 8.64C4 5.952 6.2 3.84 9 3.648zm1 10.944L15.2 9.6c-.2 2.688-2.4 4.8-5.2 4.992z" fill="#000"/>
-                  <span class="text-gray-900 font-bold">Matériaux</span>
+                  <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.1 5.76c.7 1.632.9 3.456.4 5.376-.8 3.264-3.5 5.856-6.9 6.624-2 .48-3.9.192-5.6-.384v1.344l1.5 1.44h12l1.5-1.44V7.2l-1.5-1.44h-1.4z" fill="#374151"/><path d="M9.5 1.92C5.4 1.92 2 5.184 2 9.12c0 3.936 3.4 7.2 7.5 7.2s7.5-3.264 7.5-7.2c0-3.936-3.4-7.2-7.5-7.2zM7.8 14.4a5.64 5.64 0 01-1.7-.864l8-7.68c.4.48.7 1.056.9 1.632L7.8 14.4zm3.4-10.56c.6.192 1.2.48 1.7.864l-8 7.68c-.4-.48-.7-1.056-.9-1.632l7.2-6.912zM9 3.648L3.8 8.64C4 5.952 6.2 3.84 9 3.648zm1 10.944L15.2 9.6c-.2 2.688-2.4 4.8-5.2 4.992z" fill="#374151"/>
+                  <span class="text-gray-700 font-bold">Matériaux</span>
                 </div>
                 <div class="pt-2">
-                  <span class="text-lg text-gray-800 font-medium">  <%= @item.materials.join(', ') %> </span>
+                  <span class="text-lg text-gray-700 font-medium">  <%= @item.materials.join(', ') %> </span>
                 </div>
               </div>
             </div>
 
             <div class="flex items-start space-x-2 md:space-x-0">
               <div class="w-2/3 flex flex-col">
-                <span class="py-4 text-gray-900 font-semibold">Dimension</span>
+                <span class="py-4 text-gray-700 font-semibold">Dimension</span>
                 <% if @item.width %>
                   <span class="text-gray-700">Largeur: <%= @item.width / 10 %> cm</span>
                 <% end %>
@@ -148,7 +153,7 @@
             </div>
 
             <div class="pt-6">
-              <span class="font-semibold text-gray-900">Description</span>
+              <span class="font-semibold text-gray-700">Description</span>
               <div class="pt-4">
                 <span class="text-gray-600"><%= @item.description %></span>
               </div>
@@ -167,8 +172,26 @@
           </button>
         </div>
         <div data-item-descriptions-target="deliveryToggleable" class="hidden px-4 pt-4 flex flex-col">
-          <span>Livraison gratuite</span>
-          <span>Date d'arrivée estimée : <%= Date.today.next_day(7).strftime("%a, %d, %B") %>  </span>
+          <div class="flex flex-col space-y-2">
+            <span class="font-semibold text-gray-700">Date d'arrivée estimée </span>
+            <span class="text-xl text-gray-700"> <%= l(Date.today.next_day(7), format: "%A, %d, %B") %> </span>
+          </div>
+
+          <div class="pt-4">
+            <p class="text-gray-600">Dès que votre commande est effectuée je la prépare le plus rapidement possible, puis je la remet au transporteur qui vous livre dans les meilleurs délais !</p>
+          </div>
+          <div class="pt-8 flex items-center space-x-2">
+            <svg class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path fill="#fff" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+            <span class="text-gray-700">La livraison est gratuite et les retours sont acceptés</span>
+          </div>
+          <div class="pt-2 flex items-center space-x-2">
+            <svg class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-gray-700">Je ne livre que vers la France Métropolitaine et la Corse pour le moment </span>
+          </div>
+          <span class="ml-7 text-sm text-gray-500 italic">si vous souhaitez une livraison vers l'étranger vous pouvez commander sur <a class="underline" href="https://www.etsy.com/shop/MabciaCeramic?fbclid=IwAR1IaEV7kL_xu4hx3AiwyW42GUl9WY52lkLpDG_fNmu2PevAS0vOAvHt3H0">ma boutique Etsy</a></span>
+          <div class="pt-8">
+            <button class="text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200">Voir les Conditions de vente</button>
+          </div>
         </div>
 
         <div class="mt-6 flex justify-between items-center">
@@ -178,8 +201,14 @@
             <svg data-item-descriptions-target="contactOpen" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
         </div>
-        <div data-item-descriptions-target="contactToggleable" class="hidden">
-          titi
+        <div data-item-descriptions-target="contactToggleable" class="hidden px-4 pt-4 flex flex-col">
+          <div class="pt-2 flex items-center space-x-2">
+            <svg class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span class="text-gray-700">contact@mabciaceramic.com</span>
+          </div>
+          <%= link_to new_contact_path, class:'mt-2 ml-8' do %>
+            <span class="text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200">Envoyer moi un message</span>
+          <% end %>
         </div>
       </div>
     </div>

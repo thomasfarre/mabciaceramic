@@ -150,6 +150,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       '3xl': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 -10px 0 #f0c9c0',
+      underline: 'inset 0 -10px 0 #E5E7EB',
       none: 'none',
     },
     container: {},
