@@ -10,11 +10,13 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    if !current_user.nil?
-      @cart.destroy
-    else
-      @cart.destroy if @cart.id == session[:cart_id]
-      session[:cart_id] = nil
+    if @cart.status == 'active'
+      if !current_user.nil?
+        @cart.destroy
+      else
+        @cart.destroy if @cart.id == session[:cart_id]
+        session[:cart_id] = nil
+      end
     end
     redirect_to root_path
   end
