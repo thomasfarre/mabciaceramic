@@ -1,36 +1,15 @@
-<div class="px-4">
+<div class="pt-8 px-2">
 
-  <div class="px-6 pt-8 flex items-start justify-between">
-    <div>
-      <%= link_to root_path do %>
-      <button class="outline-none"><svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
-      <% end %>
-    </div>
+  <%= render "shared/forms/form_header" %>
 
-    <div>
-      <%= image_tag 'Logo.png', alt:'logo', class:'w-14 h-14 rounded-full' %>
-    </div>
+  <div class="pt-5">
+    <h1 class="text-2xl text-gray-800 font-bold text-center">Je crée mon compte</h1>
 
-
- <!--    bricolage pour avoir le logo parfaitement centré -->
-    <div class="invisible">
-      <div class="">
-        <%= link_to root_path do %>
-        <button class="outline-none"><svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-
-
-    <h1 class="px-8 pt-5 text-center text-2xl text-gray-800 font-bold">Je crée mon compte</h1>
-
-    <div class="py-12 max-w-xs mx-auto">
+    <div class="py-8 max-w-xs mx-auto">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="space-y-3">
+        <div class="space-y-2">
 
           <%= f.input :first_name,
                         required: false,
@@ -66,34 +45,35 @@
                         label: false,
                         input_html: { class: "text-sm px-2 py-2 border-2 border-gray-200 w-full rounded-lg"} %>
 
-          <div class="pt-2 flex items-center">
+          <!-- To let user add a photo for later version -->
+
+          <!-- <div class="pt-2 flex items-center">
             <div class="mr-5 bg-gray-100 rounded-full h-12 overflow-hidden">
               <svg class="w-12 h-12 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             </div>
 
 
-            <%= f.input :photo, as: :file,
+            <%#= f.input :photo, as: :file,
                           label:  "Change",
                           label_html: { class:"bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-600"},
                           input_html: { class:"hidden"},
                           id: "file-upload" %>
+          </div> -->
+
+
+          <div class="pt-2">
+            <%= f.button :submit, "Valider", class:"py-4 w-full text-lg text-white font-bold bg-gray-900 rounded-xl focus:outline-none" %>
           </div>
         </div>
-
-        <div class="form-actions pt-6">
-          <%= f.button :submit, "Valider", class:"w-full py-4 rounded-xl bg-gray-900 text-white font-bold text-lg focus:outline-none" %>
-        </div>
-
       <% end %>
       <%#= render "devise/shared/links" %>
       <div class="flex justify-between items-center">
-        <svg class="w-24 h-16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 1"><path stroke="#A09F9F" d="M0 .5h89"/></svg>
+        <svg class="w-20 h-20" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 1"><path stroke="#A09F9F" d="M0 .5h89"/></svg>
         <span class="text-sm text-center text-gray-700">Déjà inscris ?</span>
-        <svg class="w-24 h-16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 1"><path stroke="#A09F9F" d="M0 .5h89"/></svg>
+        <svg class="w-20 h-20" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 1"><path stroke="#A09F9F" d="M0 .5h89"/></svg>
       </div>
-      <div class="flex justify-center pb-12">
-        <%= link_to  new_user_session_path do %>
-          <button class="px-6 py-4 rounded-xl text-gray-400 border-2 border-gray-200 font-medium hover:bg-gray-50 hover:text-japonica-500">Se connecter</button>
-        <% end %>
+      <div class="flex justify-center">
+        <%= link_to "Se connecter",  new_user_session_path, class:'py-4 px-6 text-gray-400 font-medium border-2 border-gray-200 rounded-xl hover:bg-gray-50 hover:text-japonica-500' %>
       </div>
     </div>
+  </div>
