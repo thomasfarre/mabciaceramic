@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get '/about/', to: 'pages#about'
+  get '/terms/', to: 'pages#terms'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks' # provide a custom path
 
