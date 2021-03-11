@@ -10,13 +10,13 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
-      <div class="space-y-4 text-left">
+      <div class="space-y-2 text-left">
         <%= f.input :email,
                     label: "Email",
-                    label_html: { class:"text-sm text-gray-600 tracking-tight"},
+                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
                     required: true,
                     autofocus: true,
-                    input_html: { class: "px-2 py-3 border-2  border-gray-200 w-full rounded-lg" } %>
+                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -26,45 +26,45 @@
                       required: false,
                       label: "Prénom",
                       placeholder: 'Prénom*',
-                      label_html: { class:"text-sm text-gray-600 tracking-tight"},
-                      input_html: { class: " text-sm text-sm px-2 py-2 border-2 border-gray-200 w-full rounded-lg"} %>
+                      label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                      input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
 
         <%= f.input :last_name,
                       required: false,
                       label: "Nom",
-                      label_html: { class:"text-sm text-gray-600 tracking-tight"},
+                      label_html: { class:"text-sm text-gray-500 tracking-tight"},
                       placeholder: 'Nom*',
-                      input_html: { class: "text-sm px-2 py-2 border-2 border-gray-200 w-full rounded-lg"} %>
+                      input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
 
         <%= f.input :password,
                     hint: "laisser vide si vous ne voulez pas le changer",
-                    hint_html: { class:"text-xs italic text-gray-600"},
+                    hint_html: { class:"text-xs italic text-gray-500"},
                     label: "Mot de passe",
-                    label_html: { class:"text-sm text-gray-600 tracking-tight"},
+                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
                     required: false,
-                    input_html: { class: "px-2 py-2 border-2 border-gray-200 w-full rounded-lg" } %>
+                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <%= f.input :password_confirmation,
                     required: false,
                     label: "Mot de passe confirmation",
-                    label_html: { class:"text-sm text-gray-600 tracking-tight"},
-                    input_html: { class: "px-2 py-2 border-2 border-gray-200 w-full rounded-lg" } %>
+                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <%= f.input :current_password,
                     hint: "Nous avons besoin de votre mot de passe actuel pour confirmer le changement",
-                    hint_html: { class:"text-xs italic text-gray-600"},
+                    hint_html: { class:"text-xs italic text-gray-500"},
                     label: "Mot de passe actuel",
-                    label_html: { class:"text-sm text-gray-600 tracking-tight"},
+                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
                     required: true,
-                    input_html: { class: "px-2 py-2 border-2 border-gray-200 w-full rounded-lg" } %>
+                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
       </div>
 
       <div class="pt-4">
-        <%= f.button :submit, "Mettre à jour", class:"w-full py-4 rounded-xl bg-gray-900 text-white font-medium text-lg" %>
+        <%= f.button :submit, "Mettre à jour", class:"py-4 w-full text-lg text-white font-bold tracking-wide bg-gray-900 rounded-xl focus:outline-none" %>
       </div>
     <% end %>
-
-
-    <p class="pt-2">Vous souhaitez supprimer votre compte ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"underline" %></p>
+    <div class="pt-2">
+      <p class="text-gray-800">Vous souhaitez supprimer votre compte ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sur ? Cette action est irréversible" }, method: :delete, class:"underline" %></p>
+    </div>
   </div>
 </div>
