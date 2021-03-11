@@ -1,27 +1,12 @@
-<div class="px-4 pb-8">
+<div class="pt-8 px-2">
 
-  <div class="px-6 pt-8 flex items-center justify-between">
-      <div>
-        <%= link_to root_path do %>
-        <button class="outline-none"><svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
-        <% end %>
-      </div>
+  <%= render "shared/forms/form_header" %>
 
-      <div>
-        <%= image_tag 'Logo.png', alt:'logo', class:'w-14 h-14 rounded-full' %>
-      </div>
+  <div class="pt-5">
+    <h1 class="text-center text-2xl font-medium">Paramètres</h1>
+  </div>
 
-  <!--    bricolage pour avoir le logo parfaitement centré -->
-      <div class="invisible">
-        <%= link_to root_path do %>
-        <button class="outline-none"><svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
-        <% end %>
-      </div>
-    </div>
-
-  <h1 class="px-8 pt-4 text-center text-2xl font-medium">Paramètres</h1>
-
-  <div class="py-6 text-center max-w-xs mx-auto">
+  <div class="py-4 text-center max-w-xs mx-auto">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 

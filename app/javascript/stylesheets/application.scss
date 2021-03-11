@@ -14,6 +14,8 @@
   }
 }
 
+
+// Need to style a bit post from instagram embed in home page
 .instagram-media {
   min-width: 240px !important;
   width: 100% !important;
@@ -22,6 +24,12 @@
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+
+// This is for hidding widget from osano to open panel to modify preference in cookie consent (replace by link in footer)
+.osano-cm-widget { display: none; }
+
+
 // .shop-cards {
 //   &:hover {
 //     transition: all 0.2s ease-out;
