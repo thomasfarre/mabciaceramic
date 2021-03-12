@@ -391,6 +391,7 @@ module.exports = {
       full: '100%',
       screen: '100vh',
       almostscreen: '92vh',
+      threequarterscreen: '75vh',
     }),
     inset: (theme, { negative }) => ({
       auto: 'auto',
