@@ -2,7 +2,7 @@
 
 <header class="lg:flex lg:justify-between lg:overflow-hidden lg:h-screen relative">
   <div class="lg:h-5/6 lg:w-360 lg:mx-auto ">
-    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full ">
+    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full lg:px-16 2xl:px-0.5">
       <div class="pt-8 px-4 text-center lg:text-left">
         <h1 class="text-gray-700 font-bold font-cursive tracking-tight text-3xl xl:text-4xl">Objets en céramiques <br> fait main</h1>
       </div>
@@ -75,10 +75,10 @@
 
     <!-- last items section -->
     <div class="py-8 overflow-x-auto scrollbars-hidden lg:pt-16 lg:overflow-x-hidden">
-      <div class="px-4 inline-flex space-x-2 md:px-8 lg:justify-center lg:grid lg:grid-cols-3 lg:space-x-0 lg:gap-3 lg:px-16 2xl:px-0.5">
+      <div class="px-4 inline-flex space-x-2 md:px-8 lg:justify-center lg:grid lg:grid-cols-3 lg:space-x-0 lg:gap-4 lg:px-16 2xl:px-0.5">
         <% @items.first(6).each do |item| %>
-          <%= link_to item_path(item), class:"group" do %>
-            <div class="pb-2 w-60 shadow-3xl rounded lg:w-full focus:outline-none">
+          <%= link_to item_path(item), class:"" do %>
+            <div class="pb-2 w-60 rounded-lg lg:w-full border-gray-200 border border-opacity-70 hover:shadow-3xl focus:outline-none">
               <div class="relative h-64 lg:h-72 xl:h-60" style="padding-bottom: 80%">
                 <%= cl_image_tag item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow'  %>
               </div>
@@ -89,7 +89,7 @@
                 <% if item.sold? %>
                   <div class='flex justify-between items-center'>
                     <div class="pt-2 px-2">
-                      <span class="font-medium text-gray-800"> <%= item.price %>€ </span>
+                      <span class="font-medium text-gray-800 line-through"> <%= item.price %>€ </span>
                     </div>
                     <div class="px-2">
                       <span class="rounded px-1 py-1 bg-gray-700 text-white text-xs font-bold">Vendu</span>
