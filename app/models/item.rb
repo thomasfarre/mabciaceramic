@@ -4,9 +4,6 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many_attached :photos
 
- #items category display in index items
-  # CATEGORY = %w[Aquarium Photophores Sculptures Pots coupes Cuisine Décoration Extérieur]
-
   monetize :price_cents
 
   validates :title, :description, :category, :status, :price_cents, presence: true
