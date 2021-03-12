@@ -1,22 +1,26 @@
 <!-- header with background and CTA-->
 
-<!-- background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1609502514041-98e64ceb92a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80) -->
-
-<header class="h-screen">
-  <div class="flex flex-col items-center justify-evenly bg-cover bg-center h-91/100 max-w-7xl mx-auto" style="background-image: url(<%= image_url('wave-background.svg') %>);">
-    <div class="px-4 text-center max-w-xs lg:max-w-sm xl:max-w-lg">
-      <h1 class="text-white font-bold font-cursive tracking-tight text-3xl lg:text-4xl xl:text-5xl">Objets en céramiques fait main</h1>
+<header class="lg:flex lg:justify-between lg:overflow-hidden lg:h-screen relative">
+  <div class="lg:h-5/6 lg:w-360 lg:mx-auto ">
+    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full ">
+      <div class="pt-8 px-4 text-center lg:text-left">
+        <h1 class="text-gray-700 font-bold font-cursive tracking-tight text-3xl xl:text-4xl">Objets en céramiques <br> fait main</h1>
+      </div>
+      <div class="pt-6 flex justify-center lg:justify-start px-4 lg:pt-16">
+        <%= link_to "Découvrir", items_path, class:'py-3 px-4 text-base text-gray-700 font-black tracking-tight bg-japonica-400 border-2 border-white rounded-xl hover:bg-gray-900 hover:text-white focus:outline-none xl:px-6 xl:py-4 xl:text-lg' %>
+      </div>
     </div>
-    <div>
-      <%= link_to "Découvrir", items_path, class:'py-4 px-6 uppercase text-sm text-white font-semibold tracking-tight border-2 border-white rounded-xl hover:bg-white hover:text-japonica-500 focus:outline-none' %>
+    <div class="pt-8 flex justify-center lg:absolute lg:pt-0 lg:-top-16 lg:-right-52 lg:w-3/4 xl:-top-40 2xl:-right-72">
+      <%= image_tag 'background.png', class:'h-72 object-cover md:h-96 lg:w-full lg:h-full' %>
     </div>
   </div>
+
 </header>
 
 <main>
 
   <!-- first section with shop category buttons and last articles -->
-  <section data-controller="category-buttons" class="pb-12 max-w-7xl mx-auto">
+  <section data-controller="category-buttons" class="py-12 max-w-7xl mx-auto">
     <div class=" px-4 lg:pt-12">
       <h2 class="text-2xl font-black text-gray-800 font-cursive text-center tracking-tight lg:text-3xl xl:text-4xl">Les dernières créations de mon atelier</h2>
     </div>
