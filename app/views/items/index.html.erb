@@ -51,9 +51,9 @@
     <div class="pt-4 pb-10  mt-10 ml-2 overflow-x-auto scrollbars-hidden md:ml-6">
       <div class="px-4 inline-flex items-center text-center space-x-2">
 
-        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="px-4 py-3 text-sm font-bold text-white rounded-full  border border-gray-200 whitespace-nowrap focus:outline-none">Tout voir</button>
+        <button data-action="click->item-categories#displayAll" data-item-categories-target="allButton" class="px-4 py-3 text-sm font-bold text-white rounded-full  border border-gray-200 whitespace-nowrap tracking-wide focus:outline-none">Tout voir</button>
         <% @categories.each do |category| %>
-          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="px-4 py-3 text-sm font-bold rounded-full border border-gray-200 whitespace-nowrap focus:outline-none"> <%= category %> </button>
+          <button data-action="click->item-categories#display" data-type="<%= category %>" data-item-categories-target="categoryButton" class="px-4 py-3 text-sm font-bold rounded-full border border-gray-200 tracking-wide whitespace-nowrap focus:outline-none"> <%= category %> </button>
         <% end %>
       </div>
     </div>
