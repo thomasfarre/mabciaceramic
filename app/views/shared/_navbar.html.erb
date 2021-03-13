@@ -58,7 +58,7 @@
             <%= link_to "Se connecter", new_user_session_path %>
           </div>
         <% else %>
-          <div data-controller="pic-menu" class="relative flex items-center">
+          <div data-controller="pic-menu" class="relative ">
             <button data-action="click->pic-menu#toggle" class="focus:outline-none rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500">
               <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full border border-gray-300 focus:border-2 focus:border-japonica-500' %>
             </button>
