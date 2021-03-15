@@ -2,10 +2,10 @@ class AdressesController < ApplicationController
   before_action :disable_nav, :disable_footer
 
   def edit
-    if current_user.adresses.empty?
+    if current_user.adress.empty?
       @adress = Adress.new
     else
-      @adress = current_user.adresses.first
+      @adress = current_user.adress.first
     end
   end
 

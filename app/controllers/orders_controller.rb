@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     )
     order.update(checkout_session_id: session.id)
 
-    redirect_to edit_user_adress_path(current_user, current_user.adresses)
+    redirect_to edit_user_adress_path(current_user, current_user.adress)
     # redirect_to new_order_payment_path(order)
   end
 
