@@ -15,6 +15,8 @@ class CartItemsController < ApplicationController
       redirect_to item_path(item)
     else
       if @cart_item.save
+        flash[:success] = "#{@cart_item.item.title} à été ajouté à votre panier"
+
         redirect_to @cart_item.cart
       else
         redirect_to item_path(item)
@@ -25,6 +27,9 @@ class CartItemsController < ApplicationController
   def destroy
     @cart = Cart.find(session[:cart_id])
     @cart_item.destroy
+
+    flash[:alert] = "#{@cart_item.item.title} à été supprimé de votre panier"
+
     redirect_to @cart
   end
 

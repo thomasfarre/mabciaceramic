@@ -29,6 +29,16 @@
 // This is for hidding widget from osano to open panel to modify preference in cookie consent (replace by link in footer)
 .osano-cm-widget { display: none; }
 
+
+
+@keyframes notification-countdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
 // .shop-cards {
 //   &:hover {
 //     transition: all 0.2s ease-out;
