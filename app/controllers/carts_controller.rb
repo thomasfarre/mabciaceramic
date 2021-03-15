@@ -18,6 +18,7 @@ class CartsController < ApplicationController
         session[:cart_id] = nil
       end
     end
+    flash[:success] = "Votre panier a été détruit avec succès !"
     redirect_to root_path
   end
 

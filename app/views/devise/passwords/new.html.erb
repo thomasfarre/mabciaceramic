@@ -1,18 +1,30 @@
-<h2>Forgot your password?</h2>
+<div class="pt-8 px-2">
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+  <%= render "shared/forms/form_header" %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+  <div class="pt-5">
+    <h1 class="text-2xl text-gray-800 font-bold text-center">Mot de passe oublié ?</h1>
+
+    <div class="py-8 max-w-xs mx-auto">
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="space-y-2">
+
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { class: " text-sm text-sm px-2 py-2 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
+        </div>
+
+        <div class="pt-4">
+          <%= f.button :submit, "Réinitialiser mon mot de passe", class:"py-2 w-full text-lg text-white font-bold bg-gray-900 rounded-xl focus:outline-none" %>
+        </div>
+      <% end %>
+<!--       <div class='text-center pt-4'>
+        <%#= render "devise/shared/links" %>
+
+      </div> -->
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

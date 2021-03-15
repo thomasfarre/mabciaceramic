@@ -7,8 +7,10 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.deliver
+      flash[:success] = "Votre message à bien été envoyé !"
       redirect_to root_path
     else
+      flash[:error] = "Une erreur c'est produite, veuillez réessayer !"
       render :new
     end
   end
