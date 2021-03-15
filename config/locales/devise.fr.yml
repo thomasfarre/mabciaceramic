@@ -1,4 +1,6 @@
-fr:
+# Little tricks "en" not "fr" at top of this file for devise
+
+en:
   devise:
     confirmations:
       confirmed: "Votre compte a été validé."
