@@ -13,7 +13,7 @@ class NotificationComponent < ViewComponent::Base
     @icon_class = icon_class
     @icon_color_class = icon_color_class
 
-    @data[:timeout] ||= 3600
+    @data[:timeout] ||= 4
   end
 
   private

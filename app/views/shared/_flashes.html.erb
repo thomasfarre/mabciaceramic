@@ -1,4 +1,4 @@
-<div class="top-28 px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end" style="position: fixed;left: 50%;transform: translate(-50%, -50%);">
+<div class="top-16 fixed left-1/2 px-4 z-50 w-full lg:top-20 lg:w-auto" style="transform: translateX(-50%);">
   <div id="notifications" class="flex flex-col items-end justify-center">
     <% flash.each do |type, data| %>
       <%= render NotificationComponent.new(type: type, data: data) %>
