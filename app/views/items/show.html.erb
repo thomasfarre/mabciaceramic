@@ -72,10 +72,7 @@
         </div>
         <% @item.photos.each do |photo| %>
           <div data-slideshow-target="slide" class="">
-            <%= cl_image_tag photo.key, class:'object-cover mx-auto object-center shadow rounded-lg h-threequarterscreen', style:'position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);'  %>
+            <%= cl_image_tag photo.key, class:'object-cover mx-auto object-center shadow rounded-lg h-threequarterscreen', style:'position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);'  %>
           </div>
         <% end %>
       </div>

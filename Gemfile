@@ -83,3 +83,4 @@ gem 'redis'
 
 gem 'friendly_id'
 
+gem "view_component", require: "view_component/engine"
