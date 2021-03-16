@@ -23,7 +23,11 @@ class AdressesController < ApplicationController
   def update
     @adress = Adress.find(params[:id])
     if @adress.update(adress_params)
-      redirect_to new_order_payment_path(@cart.order)
+      if @cart.order.nil?
+        redirect_to edit_user_registration_path(current_user)
+      else
+        redirect_to new_order_payment_path(@cart.order)
+      end
     else
       render :edit
     end

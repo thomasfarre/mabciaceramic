@@ -2,8 +2,13 @@
 
   <%= render "shared/forms/form_header" %>
 
-  <div class="pt-5">
-    <h1 class="text-center text-2xl font-medium">Paramètres</h1>
+  <div class="pt-5 text-center">
+    <h1 class="text-2xl font-medium">Paramètres</h1>
+    <% if current_user.adresses.empty? %>
+      <%= link_to "Ajouter mon adresse de livraison", new_user_adress_path(current_user), class:'underline text-gray-700' %>
+    <% else %>
+      <%= link_to "Modifier mon adresse de livraison", edit_user_adress_path(current_user, current_user.adresses.first), class:'underline text-gray-700' %>
+    <% end %>
   </div>
 
   <div class="py-4 text-center max-w-xs mx-auto">
