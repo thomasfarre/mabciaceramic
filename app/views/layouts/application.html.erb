@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" dir="ltr">
   <head>
     <title>Mabciaceramic</title>
     <meta charset="utf-8">
+    <meta name="description" content="Boutique en ligne d'articles uniques fabriqués par une artiste">
 
+<!--  Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" >
+<!-- Apple Touch Icon (at least 200x200px) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon-180x180.png">
+<!-- To run web application in full-screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- canonical -->
+     <link rel="canonical" href="<%= url_for(:only_path => false) %>" />
+<!--     Osano for cookie consent -->
     <script src="https://cmp.osano.com/169ldSSR9wHkkoZj/4484c914-cafd-47a7-8632-4eaf1832bcfc/osano.js"></script>
 
-    <!-- Google Analytics -->
+<!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-32N0L2H7X5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -41,9 +52,7 @@
 
   <body>
 
-
     <%= render "shared/navbar" unless @disable_nav %>
-
 
     <%= render "shared/flashes" %>
 
