@@ -4,7 +4,7 @@ class Cart < ApplicationRecord
 
   before_validation :set_hashid, prepend: true, if: Proc.new { |cart| cart.hashid.nil? }
 
-  has_many :orders, dependent: :destroy
+  has_one :order, dependent: :destroy
   has_many :cart_items, dependent: :destroy
 
   belongs_to :user, optional: true

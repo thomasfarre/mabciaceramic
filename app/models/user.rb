@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :cart
   has_one_attached :photo
-  has_many :adress, dependent: :destroy
+  has_many :adresses, dependent: :destroy
   has_many :orders, dependent: :destroy
 
   validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 25 }

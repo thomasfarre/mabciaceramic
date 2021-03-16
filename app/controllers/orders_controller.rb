@@ -3,7 +3,12 @@ class OrdersController < ApplicationController
 
   def create
     cart = Cart.find(params[:cart_id])
-    order = Order.create(user: current_user, cart: cart, amount: cart.total_price, status: 'new')
+
+    begin
+      order = Order.find_by!(cart: cart)
+    rescue ActiveRecord::RecordNotFound
+      order = Order.create(user: current_user, cart: cart, amount: cart.total_price, status: 'new')
+    end
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -21,7 +26,11 @@ class OrdersController < ApplicationController
     )
     order.update(checkout_session_id: session.id)
 
-    redirect_to edit_user_adress_path(current_user, current_user.adress)
+    if current_user.adresses.empty?
+      redirect_to new_user_adress_path(current_user)
+    else
+      redirect_to edit_user_adress_path(current_user, current_user.adresses.first)
+    end
     # redirect_to new_order_payment_path(order)
   end
 

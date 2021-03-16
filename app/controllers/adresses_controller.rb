@@ -1,12 +1,23 @@
 class AdressesController < ApplicationController
   before_action :disable_nav, :disable_footer
 
-  def edit
-    if current_user.adress.empty?
-      @adress = Adress.new
+  def new
+    @adress = Adress.new
+  end
+
+  def create
+    @adress = Adress.new(adress_params)
+    @adress.user = current_user
+
+    if @adress.save
+      redirect_to new_order_payment_path(@cart.order)
     else
-      @adress = current_user.adress.first
+      render :new
     end
+  end
+
+  def edit
+    @adress = current_user.adresses.first
   end
 
   def update
