@@ -118,6 +118,7 @@
   </section>
 
 <!--   journal section -->
+<%= if Article.all.count >= 3 %>
   <section class="py-12 px-4 bg-gray-100 lg:pb-2 lg:pt-12">
     <div class="max-w-7xl mx-auto">
 
@@ -191,6 +192,7 @@
       </div>
     </div>
   </section>
+<% end %>
 
  <!--  section sur les "features" avec icones et petit texte explicatif -->
   <section class="px-4 py-10 bg-gray-900 lg:py-14 ">
