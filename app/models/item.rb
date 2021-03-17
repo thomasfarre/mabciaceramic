@@ -3,6 +3,7 @@ class Item < ApplicationRecord
 
   has_many :cart_items
   has_many_attached :photos
+  has_rich_text :rich_body
 
   monetize :price_cents
 

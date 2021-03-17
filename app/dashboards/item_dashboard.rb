@@ -23,7 +23,7 @@ class ItemDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     price_cents: Field::Number,
     diameter: Field::Number,
-    content: Field::Text,
+    rich_body: RichTextAreaField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -55,7 +55,7 @@ class ItemDashboard < Administrate::BaseDashboard
     updated_at
     price_cents
     description
-    content
+    rich_body
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -72,7 +72,7 @@ class ItemDashboard < Administrate::BaseDashboard
     height
     diameter
     description
-    content
+    rich_body
     status
   ].freeze
 
