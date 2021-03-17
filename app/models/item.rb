@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   monetize :price_cents
 
   validates :title, :description, :category, :status, :price_cents, presence: true
-  validates :status, inclusion: { in: %w[available sold] }
+  # validates :status, inclusion: { in: %w[available sold] }
 
   def available?
     status == 'available'
