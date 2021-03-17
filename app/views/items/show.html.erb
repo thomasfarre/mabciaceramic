@@ -1,5 +1,5 @@
 
-<div class="max-w-7xl mx-auto">
+<div class="max-w-6xl mx-auto">
   <%= render "shared/navbar/navbar_light" %>
 </div>
 
@@ -9,7 +9,7 @@
 </div> -->
 
 
-<div class="pb-24 max-w-7xl mx-auto">
+<div class="pb-24 max-w-6xl mx-auto">
   <div class="px-2 flex flex-col">
     <span class="text-japonica-500 text-sm font-semibold lg:text-lg"><%= @item.category %></span>
     <span class="text-gray-700 text-xl font-bold font-cursive lg:text-2xl 2xl:text-3xl"><%= @item.title %></span>
@@ -21,7 +21,7 @@
     <div class="px-2 inline-flex h-full space-x-2">
       <% @item.photos.each do |photo| %>
         <div class="w-72 h-80">
-          <div class="relative h-full" style="padding-bottom: 80%">
+          <div class="relative h-full" style="padding-bottom: 100%">
             <%= cl_image_tag photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded'  %>
           </div>
         </div>
@@ -34,13 +34,13 @@
 
 <!-- grid de photos sur desktop -->
   <div data-controller="slideshow" class="hidden max-h-screen lg:pt-2 lg:px-2 lg:grid lg:grid-rows-2 lg:grid-cols-5 lg:gap-2">
-    <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 80%">
+    <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 100%">
       <%= cl_image_tag @item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-l-lg' %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+    <div class="relative h-full col-span-1" style="padding-bottom: 100%">
       <%= cl_image_tag @item.photos[2].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+    <div class="relative h-full col-span-1" style="padding-bottom: 100%">
       <%= cl_image_tag @item.photos[3].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-tr-lg' %>
     </div>
 
