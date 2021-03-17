@@ -164,9 +164,11 @@
 
             <div class="pt-6">
               <span class="font-semibold text-gray-700">Description</span>
+              <% if @item.rich_body %>
               <div class="pt-4">
-                <span class="text-gray-600"><%= @item.content %></span>
+                <span class="text-gray-600"><%= @item.rich_body %></span>
               </div>
+              <% end %>
             </div>
 
           </div>
