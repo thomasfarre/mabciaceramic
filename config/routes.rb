@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/about/', to: 'pages#about'
   get '/terms/', to: 'pages#terms'
   get '/privacy/', to: 'pages#privacy'
+  get '/legals/', to: 'pages#legals'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks' # provide a custom path
 

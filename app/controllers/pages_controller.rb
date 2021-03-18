@@ -12,4 +12,7 @@ class PagesController < ApplicationController
 
   def privacy
   end
+
+  def legals
+  end
 end
