@@ -10,7 +10,11 @@ class AdressesController < ApplicationController
     @adress.user = current_user
 
     if @adress.save
-      redirect_to new_order_payment_path(@cart.order)
+      if @cart.order.nil?
+        redirect_to edit_user_registration_path(current_user)
+      else
+        redirect_to new_order_payment_path(@cart.order)
+      end
     else
       render :new
     end
@@ -28,6 +32,16 @@ class AdressesController < ApplicationController
       else
         redirect_to new_order_payment_path(@cart.order)
       end
+    else
+      render :edit
+    end
+  end
+
+
+  def destroy
+    @adress = Adress.find(params[:id])
+    if @adress.destroy
+      redirect_to edit_user_registration_path
     else
       render :edit
     end

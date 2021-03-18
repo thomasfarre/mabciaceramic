@@ -18,10 +18,10 @@
       <div class="space-y-2 text-left">
         <%= f.input :email,
                     label: "Email",
-                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                    label_html: { class:" text-gray-600 text-sm"},
                     required: true,
                     autofocus: true,
-                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
+                    input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -31,37 +31,37 @@
                       required: false,
                       label: "Prénom",
                       placeholder: 'Prénom*',
-                      label_html: { class:"text-sm text-gray-500 tracking-tight"},
-                      input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
+                      label_html: { class:" text-gray-600 text-sm"},
+                      input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
 
         <%= f.input :last_name,
                       required: false,
                       label: "Nom",
-                      label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                      label_html: { class:" text-gray-600 text-sm"},
                       placeholder: 'Nom*',
-                      input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
+                      input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200"} %>
 
         <%= f.input :password,
                     hint: "laisser vide si vous ne voulez pas le changer",
                     hint_html: { class:"text-xs italic text-gray-500"},
                     label: "Mot de passe",
-                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                    label_html: { class:" text-gray-600 text-sm"},
                     required: false,
-                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
+                    input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <%= f.input :password_confirmation,
                     required: false,
                     label: "Mot de passe confirmation",
-                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
-                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
+                    label_html: { class:" text-gray-600 text-sm"},
+                    input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
 
         <%= f.input :current_password,
                     hint: "Nous avons besoin de votre mot de passe actuel pour confirmer le changement",
                     hint_html: { class:"text-xs italic text-gray-500"},
                     label: "Mot de passe actuel",
-                    label_html: { class:"text-sm text-gray-500 tracking-tight"},
+                    label_html: { class:" text-gray-600 text-sm"},
                     required: true,
-                    input_html: { class: "py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
+                    input_html: { class: "mt-1 py-2 px-2 text-gray-900 w-full rounded-lg border-2 border-gray-200" } %>
       </div>
 
       <div class="pt-4">

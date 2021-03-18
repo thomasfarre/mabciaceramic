@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:create, :new]
 
   resources :users, only: [] do
-    resources :adresses, only: [:edit, :update, :new, :create]
+    resources :adresses
   end
 
   require "sidekiq/web"

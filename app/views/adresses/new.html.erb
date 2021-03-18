@@ -5,41 +5,46 @@
 
   <div class="pt-5 px-2">
     <h1 class="text-2xl text-gray-800 font-bold text-center">Adresse de livraison</h1>
-    <div class="py-8 text-center max-w-xs mx-auto">
+    <div class="py-8 max-w-xs mx-auto">
       <%= simple_form_for [current_user, @adress] do |f| %>
-        <div class="space-y-2">
+        <div class="space-y-4">
 
         <%= f.input :name,
                     required: false,
-                    label: false,
-                    placeholder: "Toto L'Asticot",
-                    input_html: { class: "px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
+                    label: "Nom",
+                    label_html: { class:" text-gray-600 text-sm" },
+                    placeholder: "Thomas TOTO",
+                    input_html: { class: "mt-1 px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
 
 
         <%= f.input :street,
                     required: false,
                     autofocus: true,
-                    label: false,
-                    placeholder: '18 rue saint marcelin',
-                    input_html: { class: "px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
+                    label: "Adresse",
+                    label_html: { class:" text-gray-600 text-sm" },
+                    placeholder: '18 rue Ambroise Croizat',
+                    input_html: { class: "mt-1 px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
 
         <%= f.input :street_detail,
                     required: false,
-                    label: false,
-                    placeholder: "Complément d'adresse",
-                    input_html: { class: "px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
+                    label: "Complément d'adresse",
+                    label_html: { class:" text-gray-600 text-sm" },
+                    placeholder: "Bâtiment 12",
+                    input_html: { class: "mt-1 px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
 
         <%= f.input :zipcode,
                     required: false,
-                    label: false,
+                    label: "Code postal",
+                    label_html: { class:" text-gray-600 text-sm" },
                     placeholder: "75000",
-                    input_html: { class: "px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
+                    input_html: { class: "mt-1 px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg focus:outline-none focus:border-japonica-300"} %>
 
         <%= f.input :city,
                     required: false,
-                    label: false,
+                    label: "Ville",
+                    label_html: { class:" text-gray-600 text-sm" },
                     placeholder: "Paris",
-                    input_html: { class: "px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg"} %>
+                    input_html: { class: "mt-1 px-2 py-2 text-gray-700 border-2 border-gray-200 w-full rounded-lg"} %>
 
         <%#= f.input :country,
                     collection: ['France(métropolitaine)'],
