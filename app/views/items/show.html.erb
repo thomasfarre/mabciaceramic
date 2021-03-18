@@ -202,7 +202,7 @@
           </div>
           <span class="pt-4 text-sm text-gray-500 italic">si vous souhaitez une livraison vers l'étranger vous pouvez commander sur <a class="underline" href="https://www.etsy.com/shop/MabciaCeramic?fbclid=IwAR1IaEV7kL_xu4hx3AiwyW42GUl9WY52lkLpDG_fNmu2PevAS0vOAvHt3H0">ma boutique Etsy</a></span>
           <div class="pt-8">
-            <button class="text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200">Voir les Conditions de vente</button>
+            <%= link_to "Conditions de vente", terms_path , class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200' %>
           </div>
         </div>
 
@@ -218,9 +218,9 @@
             <svg class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             <span class="text-gray-700">contact@mabciaceramic.com</span>
           </div>
-          <%= link_to new_contact_path, class:'mt-2 ml-8' do %>
-            <span class="text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200">Envoyer moi un message</span>
-          <% end %>
+          <div class="mt-2 ml-8">
+            <%= link_to "Envoyer moi un message", new_contact_path, class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200' %>
+          </div>
         </div>
       </div>
     </div>
