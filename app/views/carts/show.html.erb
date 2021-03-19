@@ -35,7 +35,7 @@
         <% @cart.cart_items.each do |cart_item| %>
           <div class="pt-8 flex space-x-6">
             <div class="w-2/5 flex flex-col justify-start ">
-              <div class="relative" style="padding-bottom: 80%">
+              <div class="relative pb-4/5">
                 <%= cl_image_tag cart_item.item.photos[0].key, class:'rounded-t absolute h-full w-full inset-0 object-cover shadow' %>
               </div>
               <span class="pt-2 text-japonica-500 text-xs lg:text-sm"><%= cart_item.item.category %></span>

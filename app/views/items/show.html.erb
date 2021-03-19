@@ -32,13 +32,13 @@
 
 <!-- grid de photos sur desktop -->
   <div data-controller="slideshow" class="hidden max-h-screen lg:pt-2 lg:px-2 lg:grid lg:grid-rows-2 lg:grid-cols-5 lg:gap-2">
-    <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 80%">
+    <div class="relative h-full pb-4/5 row-span-2 col-span-3">
       <%= cl_image_tag @item.photos[0].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded-l-lg" %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+    <div class="relative h-full pb-4/5 col-span-1">
       <%= cl_image_tag @item.photos[2].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow" %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+    <div class="relative h-full pb-4/5 col-span-1">
       <%= cl_image_tag @item.photos[3].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded-tr-lg" %>
     </div>
 
