@@ -20,10 +20,8 @@
   <div class="pt-2 overflow-x-auto scrollbars-hidden lg:hidden">
     <div class="px-2 inline-flex h-full space-x-2">
       <% @item.photos.each do |photo| %>
-        <div class="w-72 h-80">
-          <div class="relative h-full" style="padding-bottom: 100%">
-            <%= cl_image_tag photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded'  %>
-          </div>
+        <div class="relative h-64 w-72">
+          <%= cl_image_tag photo.key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded"  %>
         </div>
       <% end %>
     </div>
@@ -34,18 +32,18 @@
 
 <!-- grid de photos sur desktop -->
   <div data-controller="slideshow" class="hidden max-h-screen lg:pt-2 lg:px-2 lg:grid lg:grid-rows-2 lg:grid-cols-5 lg:gap-2">
-    <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 100%">
-      <%= cl_image_tag @item.photos[0].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-l-lg' %>
+    <div class="relative h-full row-span-2 col-span-3" style="padding-bottom: 80%">
+      <%= cl_image_tag @item.photos[0].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded-l-lg" %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 100%">
-      <%= cl_image_tag @item.photos[2].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %>
+    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+      <%= cl_image_tag @item.photos[2].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow" %>
     </div>
-    <div class="relative h-full col-span-1" style="padding-bottom: 100%">
-      <%= cl_image_tag @item.photos[3].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-tr-lg' %>
+    <div class="relative h-full col-span-1" style="padding-bottom: 80%">
+      <%= cl_image_tag @item.photos[3].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded-tr-lg" %>
     </div>
 
     <div class="relative h-full col-span-2">
-      <%= cl_image_tag @item.photos[1].key, class:'absolute h-full w-full inset-0 object-cover object-center shadow rounded-br-lg'  %>
+      <%= cl_image_tag @item.photos[1].key, class:"absolute h-full w-full inset-0 object-cover #{image_position(@item)} shadow rounded-br-lg"  %>
 
 <!--     this butoon hide everything and show a carousel with all photos -->
       <button data-action="slideshow#show" class="absolute px-1 py-1 text-gray-700 text-sm flex items-center space-x-2 right-2 bottom-2 bg-white rounded-xl bg-opacity-80 hover:bg-opacity-100 focus:outline-none">

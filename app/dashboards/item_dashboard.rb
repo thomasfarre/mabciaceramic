@@ -23,6 +23,7 @@ class ItemDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     price_cents: Field::Number,
     diameter: Field::Number,
+    position: Field::String,
     rich_body: RichTextAreaField,
   }.freeze
 
@@ -43,6 +44,7 @@ class ItemDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     cart_items
     photos
+    position
     title
     category
     status
@@ -63,6 +65,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     photos
+    position
     title
     price_cents
     category

@@ -17,4 +17,13 @@ module ApplicationHelper
       l(Date.today.next_day(7), format: "%A, %d, %B", locale: "fr")
     end
   end
+
+  def image_position(item)
+    case item.position
+    when "top"
+      'object-top'
+    when "bottom"
+      'object-bottom'
+    end
+  end
 end

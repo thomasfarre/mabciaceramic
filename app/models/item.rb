@@ -9,6 +9,7 @@ class Item < ApplicationRecord
 
   validates :title, :description, :category, :status, :price_cents, presence: true
   validates :status, inclusion: { in: %w[available sold] }
+  validates :position, inclusion: { in: %w[center top bottom] }
 
   def available?
     status == 'available'
@@ -16,6 +17,14 @@ class Item < ApplicationRecord
 
   def sold?
     status == 'sold'
+  end
+
+  def top?
+    position == 'top'
+  end
+
+  def bottom?
+    position == 'bottom'
   end
 
   def self.used_category
