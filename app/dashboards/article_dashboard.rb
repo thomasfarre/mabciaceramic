@@ -14,7 +14,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     category: Field::String,
     rich_body: RichTextAreaField,
     description: Field::Text,
-    duration: Field::Integer,
+    duration: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
