@@ -148,7 +148,7 @@
             </div>
             <div class="pt-5 pb-1 space-x-2">
               <span class="text-gray-500 text-xs"><%= (Article.last.created_at).strftime("%b %d, %Y") %></span>
-              <span class="text-gray-500 text-xs">6 min de lecture</span>
+              <span class="text-gray-500 text-xs"><%= Article.last.duration %> min de lecture</span>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@
             </div>
             <div class="pb-1 space-x-2">
               <span class="text-gray-500 text-xs"><%= (@articles[1].created_at).strftime("%b %d, %Y") %></span>
-              <span class="text-gray-500 text-xs">6 min de lecture</span>
+              <span class="text-gray-500 text-xs"><%= @articles[1].duration %> min de lecture</span>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
             </div>
             <div class="pb-1 space-x-2">
               <span class="text-gray-500 text-xs"><%= (@articles[2].created_at).strftime("%b %d, %Y") %></span>
-              <span class="text-gray-500 text-xs">6 min de lecture</span>
+              <span class="text-gray-500 text-xs"><%= @articles[2].duration %> min de lecture</span>
             </div>
           </div>
         </div>

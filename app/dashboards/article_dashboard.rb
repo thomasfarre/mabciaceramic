@@ -14,6 +14,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     category: Field::String,
     rich_body: RichTextAreaField,
     description: Field::Text,
+    duration: Field::Integer,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -37,8 +38,9 @@ class ArticleDashboard < Administrate::BaseDashboard
     id
     title
     category
-    rich_body
     description
+    duration
+    rich_body
     created_at
     updated_at
   ].freeze
@@ -50,8 +52,9 @@ class ArticleDashboard < Administrate::BaseDashboard
     photo
     title
     category
-    rich_body
     description
+    duration
+    rich_body
   ].freeze
 
   # COLLECTION_FILTERS
