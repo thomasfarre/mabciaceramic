@@ -99,7 +99,7 @@ export default class extends Controller {
       var trimmedData = querySet.slice(trimStart, trimEnd)
 
 
-      var pages = Math.round(querySet.length / rows);
+      var pages = Math.ceil(querySet.length / rows);
 
       return {
           'querySet': trimmedData,
