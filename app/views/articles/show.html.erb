@@ -1,0 +1,19 @@
+<div class="pt-8 px-4 pb-24 max-w-6xl mx-auto">
+
+  <div class="pb-2 flex items-center justify-between">
+    <%= render "shared/navbar/navbar_light" %>
+    <div class="flex flex-col items-end">
+      <span class="text-japonica-500 text-sm font-semibold lg:text-lg"><%= @article.category %></span>
+      <span class="text-gray-700 text-xl font-bold font-cursive lg:text-2xl"><%= @article.title %></span>
+    </div>
+  </div>
+  <div class="relative h-80 w-full">
+    <%= cl_image_tag @article.photo.key, class:'absolute h-full w-full inset-0 object-cover shadow rounded' %>
+  </div>
+
+  <div class="pt-4 text-gray-600 max-w-3xl">
+    <p> <%= @article.rich_body %> </p>
+  </div>
+</div>
+
+
