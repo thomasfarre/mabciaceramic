@@ -42,11 +42,6 @@
 
 .attachment {
 
-  .attachment-gallery {
-    display: content !important;
-    flex-wrap: nowrap !important;
-  }
-
   img {
 
     width: 400px;
@@ -54,3 +49,7 @@
   }
 }
 
+.trix-content .attachment-gallery {
+    display: content !important;
+    flex-wrap: nowrap !important;
+  }
