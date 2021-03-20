@@ -129,11 +129,11 @@
 
 
   <!--     grid des articles(3 pour l'instant) -->
-      <div class="pt-8 grid grid-cols-2 gap-2 max-w-xl mx-auto lg:pt-0 lg:grid-cols-4 lg:gap-4 lg:max-w-4xl">
+      <div class="pt-8 grid grid-cols-2 gap-2 lg:flex lg:justify-center max-w-xl mx-auto lg:pt-0 lg:max-w-4xl">
 
   <!--       premier article le plus récent -->
 
-        <div class="col-span-2 bg-white overflow-hidden shadow-lg rounded lg:order-2 lg:my-12">
+        <div class="col-span-2 bg-white lg:w-1/2 overflow-hidden shadow-lg rounded lg:order-2 lg:my-12">
           <div class="relative" style="padding-bottom: 85%;">
             <span> <%= cl_image_tag Article.last.photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow', alt:'article illustration' %> </span>
           </div>
@@ -156,7 +156,7 @@
 
   <!-- deux autres article les plus récent après celui au dessus en petit en dessous -->
         <% if Article.all.count >= 3 %>
-          <div class="bg-white overflow-hidden shadow-lg rounded lg:order-1 lg:my-48">
+          <div class="bg-white lg:w-1/4 lg:mx-4 overflow-hidden shadow-lg rounded lg:order-1 lg:my-48">
             <div class="relative pb-4/5">
               <span> <%= cl_image_tag @articles[1].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
             </div>
@@ -174,7 +174,7 @@
             </div>
           </div>
 
-          <div class="bg-white overflow-hidden shadow-lg rounded lg:order-3 lg:my-48">
+          <div class="bg-white lg:w-1/4 lg:mx-4 overflow-hidden shadow-lg rounded lg:order-3 lg:my-48">
             <div class="relative pb-4/5">
               <span> <%= cl_image_tag @articles[2].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
             </div>
