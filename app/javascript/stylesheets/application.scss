@@ -53,3 +53,8 @@
     display: contents !important;
     flex-wrap: nowrap !important;
   }
+
+.trix-content .attachment--preview {
+    width: auto !important;
+    text-align: center;
+}
