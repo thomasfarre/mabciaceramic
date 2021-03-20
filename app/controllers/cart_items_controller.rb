@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
       redirect_to item_path(item)
     else
       if @cart_item.save
-        flash[:success] = {title:"#{@cart_item.item.title}", body: "à été ajouté à votre panier"}
+        flash[:success] = { title:"#{@cart_item.item.title}", body: "à été ajouté à votre panier" }
 
         redirect_to @cart_item.cart
       else

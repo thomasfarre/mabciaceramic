@@ -73,7 +73,7 @@ export default class extends Controller {
     var state = {
       'querySet': arr,
       'page': 1,
-      'rows': 12,
+      'rows': 4,
       'window': 5,
     }
 
@@ -142,7 +142,13 @@ export default class extends Controller {
         //     wrapper.innerHTML += `<button value=${pages} class="page px-2 py-1 bg-gray-100 text-gray-700 font-bold">Last </button>`
         // }
 
+
         $('.page').on('click', function() {
+
+            document.documentElement.scrollTo({
+              top: 200,
+              behavior: "smooth"
+            })
 
             $('#table').empty()
             state.page = Number($(this).val())
