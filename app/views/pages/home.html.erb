@@ -118,7 +118,7 @@
   </section>
 
 <!--   journal section -->
-<% if Article.all.count >= 3 %>
+<% if Article.last %>
   <section class="py-12 px-4 bg-gray-100 lg:pb-2 lg:pt-12">
     <div class="max-w-7xl mx-auto">
 
@@ -132,6 +132,7 @@
       <div class="pt-8 grid grid-cols-2 gap-2 max-w-xl mx-auto lg:pt-0 lg:grid-cols-4 lg:gap-4 lg:max-w-4xl">
 
   <!--       premier article le plus récent -->
+
         <div class="col-span-2 bg-white overflow-hidden shadow-lg rounded lg:order-2 lg:my-12">
           <div class="relative" style="padding-bottom: 85%;">
             <span> <%= cl_image_tag Article.last.photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow', alt:'article illustration' %> </span>
@@ -154,45 +155,48 @@
         </div>
 
   <!-- deux autres article les plus récent après celui au dessus en petit en dessous -->
-        <div class="bg-white overflow-hidden shadow-lg rounded lg:order-1 lg:my-48">
-          <div class="relative pb-4/5">
-            <span> <%= cl_image_tag @articles[1].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+        <% if Article.all.count >= 3 %>
+          <div class="bg-white overflow-hidden shadow-lg rounded lg:order-1 lg:my-48">
+            <div class="relative pb-4/5">
+              <span> <%= cl_image_tag @articles[1].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+            </div>
+            <div class="px-3 flex flex-col h-36">
+              <div class="pt-2">
+                <span class="text-japonica-500 font-bold text-sm"> <%= @articles[1].category %> </span>
+              </div>
+              <div class="flex-grow">
+                <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[1].title %></span>
+              </div>
+              <div class="pb-1 space-x-2">
+                <span class="text-gray-500 text-xs"><%= (@articles[1].created_at).strftime("%b %d, %Y") %></span>
+                <span class="text-gray-500 text-xs"><%= @articles[1].duration %> min de lecture</span>
+              </div>
+            </div>
           </div>
-          <div class="px-3 flex flex-col h-36">
-            <div class="pt-2">
-              <span class="text-japonica-500 font-bold text-sm"> <%= @articles[1].category %> </span>
-            </div>
-            <div class="flex-grow">
-              <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[1].title %></span>
-            </div>
-            <div class="pb-1 space-x-2">
-              <span class="text-gray-500 text-xs"><%= (@articles[1].created_at).strftime("%b %d, %Y") %></span>
-              <span class="text-gray-500 text-xs"><%= @articles[1].duration %> min de lecture</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="bg-white overflow-hidden shadow-lg rounded lg:order-3 lg:my-48">
-          <div class="relative pb-4/5">
-            <span> <%= cl_image_tag @articles[2].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+          <div class="bg-white overflow-hidden shadow-lg rounded lg:order-3 lg:my-48">
+            <div class="relative pb-4/5">
+              <span> <%= cl_image_tag @articles[2].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+            </div>
+            <div class="flex flex-col px-3 h-36">
+              <div class="pt-2">
+                <span class="text-japonica-500 font-bold text-sm"> <%= @articles[2].category %> </span>
+              </div>
+              <div class="flex-grow">
+                <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[2].title %></span>
+              </div>
+              <div class="pb-1 space-x-2">
+                <span class="text-gray-500 text-xs"><%= (@articles[2].created_at).strftime("%b %d, %Y") %></span>
+                <span class="text-gray-500 text-xs"><%= @articles[2].duration %> min de lecture</span>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col px-3 h-36">
-            <div class="pt-2">
-              <span class="text-japonica-500 font-bold text-sm"> <%= @articles[2].category %> </span>
-            </div>
-            <div class="flex-grow">
-              <span class="font-bold text-gray-700 text-base tracking-tight "><%= @articles[2].title %></span>
-            </div>
-            <div class="pb-1 space-x-2">
-              <span class="text-gray-500 text-xs"><%= (@articles[2].created_at).strftime("%b %d, %Y") %></span>
-              <span class="text-gray-500 text-xs"><%= @articles[2].duration %> min de lecture</span>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </section>
 <% end %>
+
 
  <!--  section sur les "features" avec icones et petit texte explicatif -->
   <section class="px-4 py-10 bg-gray-900 lg:py-14 ">
