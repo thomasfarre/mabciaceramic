@@ -116,6 +116,7 @@ module.exports = {
       'right-bottom': 'right bottom',
       'right-top': 'right top',
       top: 'top',
+      'center-top': 'center top',
     },
     backgroundSize: {
       auto: 'auto',
