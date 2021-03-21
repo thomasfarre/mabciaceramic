@@ -24,8 +24,6 @@ module ApplicationHelper
       'object-position: top'
     when "bottom"
       'object-position: bottom'
-    else
-      'object-position: center'
     end
   end
 end
