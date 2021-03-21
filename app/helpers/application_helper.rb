@@ -24,6 +24,8 @@ module ApplicationHelper
       'object-top'
     when "bottom"
       'object-bottom'
+    else
+      'object-center'
     end
   end
 end
