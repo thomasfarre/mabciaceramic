@@ -21,7 +21,7 @@ module ApplicationHelper
   def image_position(item)
     case item.position
     when "top"
-      'object-center-top'
+      'object-right-top'
     when "bottom"
       'object-bottom'
     else
