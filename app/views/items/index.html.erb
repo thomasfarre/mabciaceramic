@@ -62,7 +62,7 @@
 
     <!-- All items reserve grid -->
 
-    <div data-item-categories-target="allCategory" class="hidden px-2 pt-6 grid grid-cols-2 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+    <div data-item-categories-target="allCategory" class="hidden px-2 pt-6 grid grid-cols-1 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
       <% @items.each do |item| %>
         <%= link_to item_path(item), class:"group" do %>
             <div class="relative shadow-3xl rounded pb-2 lg:shadow-none lg:border-gray-200 lg:border lg:border-opacity-70 lg:hover:shadow-3xl focus:outline-none">
@@ -95,7 +95,7 @@
     <!-- Filtrage des items par category reserve grid  -->
 
     <% @categories.each do |category| %>
-      <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-2 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
+      <div data-type="<%= category %>" data-item-categories-target="category" class="hidden px-2 pt-4 grid grid-cols-1 gap-2 md:px-6 lg:grid-cols-3 xl:grid-cols-4 lg:gap-4">
         <% @items.where(category: category).each do |item| %>
           <%= link_to item_path(item), class:"group" do %>
           <div class="relative shadow-3xl rounded pb-2 lg:shadow-none lg:border-gray-200 lg:border lg:border-opacity-70 lg:hover:shadow-3xl focus:outline-none">
