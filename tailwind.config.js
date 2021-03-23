@@ -394,6 +394,7 @@ module.exports = {
       '4/6': '66.666667%',
       '5/6': '83.333333%',
       '91/100': '91%',
+      menu: 'calc(-64px + 100vh)',
       full: '100%',
       screen: '100vh',
       almostscreen: '92vh',
