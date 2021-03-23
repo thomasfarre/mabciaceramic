@@ -516,6 +516,7 @@ module.exports = {
       full: '100%',
       screen: '100vh',
       almostscreen: '92vh',
+      threequarterscreen: '75vh',
     },
     minWidth: {
       0: '0px',
