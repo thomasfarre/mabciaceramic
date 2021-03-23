@@ -48,7 +48,7 @@
       <% if @orders.where(status: 'paid').count > 0 %>
         <div class="text-center">
 
-          <div class="pt-6 max-w-xs mx-auto">
+          <div class="pt-6 max-w-sm mx-auto">
             <span class="text-gray-700 text-xl font-bold shadow-inner">  <%= @orders.where(status: 'paid').count %> Commandes en préparation </span>
             <div class="pt-2">
               <span class="text-gray-500 text-sm italic">Vous souhaitez éditer ou annuler votre commande ? <%= link_to "Contactez-moi", new_contact_path, class:'underline' %> </span>
@@ -81,7 +81,7 @@
       <% if @orders.where(status: 'received').count > 0 %>
 
         <div class="text-center">
-          <div class="pt-6 max-w-xs mx-auto">
+          <div class="pt-6 max-w-sm mx-auto">
             <span class="text-gray-700 text-xl font-bold shadow-inner"> <%= @orders.where(status: 'received').count %> Commandes termnées </span> </div>
           <div>
             <% @orders.where(status: 'received').each do |order| %>
