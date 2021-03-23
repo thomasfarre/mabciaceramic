@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def profil_pic
-    photo.attached? ? photo.key : '1_W35QUSvGpcLuxPo3SRTH4w_lzy6tr'
+    photo.attached? ? photo.key : 'https://res.cloudinary.com/dbdoadukm/image/upload/v1616515719/photo-1583818412016-5596e47a618a_qishcy.jpg'
   end
 
   private
