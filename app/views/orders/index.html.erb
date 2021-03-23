@@ -41,8 +41,8 @@
                 <% end %>
             <% end %>
           </div>
-        <% end %>
         </div>
+      <% end %>
 
 
       <% if @orders.where(status: 'paid').count > 0 %>
@@ -74,21 +74,22 @@
                 <% end %>
             <% end %>
           </div>
-        <% end %>
         </div>
+      <% end %>
 
 
       <% if @orders.where(status: 'received').count > 0 %>
 
         <div class="text-center">
           <div class="pt-6 max-w-sm mx-auto">
-            <span class="text-gray-700 text-xl font-bold shadow-inner"> <%= @orders.where(status: 'received').count %> Commandes termnées </span> </div>
+            <span class="text-gray-700 text-xl font-bold shadow-inner"> <%= @orders.where(status: 'received').count %> Commandes termnées </span>
+          </div>
           <div>
             <% @orders.where(status: 'received').each do |order| %>
               <% order.cart.cart_items.each do |cart_item| %>
                 <% unless order.status.nil? %>
                   <%= link_to order_path(order) do %>
-                    <div class="px-4 py-4 mt-4 flex flex-col bg-white shadow-total rounded max-w-xs mx-auto lg:mx-0">
+                    <div class="px-4 py-4 mt-4 flex flex-col bg-white shadow-total rounded max-w-xs mx-auto">
                       <span class="text-gray-700 font-bold">Commande n°<%=  order.id  %></span>
                       <div class="flex flex-wrap justify-center">
                         <% order.cart.cart_items.each do |cart_item| %>
