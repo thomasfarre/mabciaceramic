@@ -10,6 +10,7 @@ export default class extends Controller {
 
   show() {
     this.allSlidesTarget.classList.toggle("hidden")
+    document.body.classList.toggle('overflow-hidden')
   }
 
   next() {
