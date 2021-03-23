@@ -59,7 +59,7 @@
             <% @orders.where(status: 'paid').each do |order| %>
                 <% unless order.status.nil? %>
                   <%= link_to order_path(order) do %>
-                    <div class="px-4 py-4 mt-4 flex flex-col bg-white shadow-total rounded max-w-xs mx-auto lg:mx-0">
+                    <div class="px-4 py-4 mt-4 flex flex-col bg-white shadow-total rounded max-w-xs mx-auto">
                       <span class="text-gray-700 font-bold">Commande n°<%=  order.id  %></span>
                       <div class="flex justify-center flex-wrap">
                         <% order.cart.cart_items.each do |cart_item| %>
