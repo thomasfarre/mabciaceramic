@@ -9,11 +9,16 @@
 @layer utilities {
   @responsive {
     .scrollbars-hidden::-webkit-scrollbar {
-      display: none;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+
     }
+
   }
 }
 
+html {overflow: -moz-scrollbars-none;}
 
 // Need to style a bit post from instagram embed in home page
 .instagram-media {
