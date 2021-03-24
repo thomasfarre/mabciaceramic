@@ -42,7 +42,7 @@
               <span class="pt-1 text-sm font-bold text-gray-800 font-cursive text-left lg:text-base 2xl:text-lg"><%= cart_item.item.title %></span>
             </div>
             <div class="w-3/5 text-justify pt-2">
-              <span class="pt-4 text-sm text-gray-600 lg:text-base"><%= cart_item.item.description[0..100] %></span>
+              <span class="pt-4 text-sm text-gray-600 lg:text-base"><%= cart_item.item.description %></span>
 
               <div class="flex justify-between pt-4">
                 <span class="text-sm text-gray-500 underline"><%= link_to 'Supprimer', cart_item, method: :delete, data:{ confirm: "are you sure?" } %></span>
