@@ -34,9 +34,9 @@ module Admin
       @order = Order.find(params[:id])
       @user = @order.user
 
-      if !@order.tracking_number.nil? && @order.status == "paid"
+      if !@order.tracking_number.empty? && @order.status == "checked"
         UserMailer.deliver_confirmation(@user, @order).deliver_later
-        @order.update(status: 'send')
+        @order.update(status: "send")
       end
     end
 
