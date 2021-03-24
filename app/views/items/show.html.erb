@@ -46,7 +46,7 @@
       <%= cl_image_tag @item.photos[1].key, class:"absolute h-full w-full inset-0 object-cover shadow rounded-br-lg #{image_position(@item)}", alt:"présentation de l'objet"  %>
 
 <!--     this butoon hide everything and show a carousel with all photos -->
-      <button data-action="slideshow#show" class="absolute px-1 py-1 text-gray-700 text-sm flex items-center space-x-2 right-2 bottom-2 bg-white rounded-xl bg-opacity-80 hover:bg-opacity-100 focus:outline-none">
+      <button data-action="slideshow#show" class="absolute px-1 py-1 text-gray-700 text-sm flex items-center space-x-2 right-2 bottom-2 bg-white rounded-xl bg-opacity-80 hover:bg-opacity-100 focus:outline-none transition duration-300 ease-in-out">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 8a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zm6-6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 8a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
         <span class="font-bold">Afficher toutes les photos</span>
       </button>
@@ -95,7 +95,7 @@
           </div>
         <% else %>
           <div class="pt-4">
-            <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-gray-900 font-bold text-lg tracking-tight text-white rounded-3xl focus:outline-none' %>
+            <%= button_to 'Ajouter au panier', cart_items_path(item_id: @item), class:'w-full py-3 bg-gray-900 font-bold text-lg tracking-tight text-white rounded-3xl cursor-pointer focus:outline-none' %>
           </div>
         <% end %>
       </div>
@@ -105,7 +105,7 @@
     <div class="md:flex md:flex-col max-w-3xl md:mr-2 md:w-3/5">
       <div data-controller="item-descriptions">
         <div class="mt-4 md:-mt-6 flex justify-between items-center lg:mt-6">
-          <button data-action="click->item-descriptions#descriptionToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full focus:outline-none">
+          <button data-action="click->item-descriptions#descriptionToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full hover:bg-gray-200 focus:outline-none transition duration-500 ease-in-out">
             <span class="text-gray-900 text-lg font-bold">Détails de l'article</span>
             <svg data-item-descriptions-target="descriptionClose" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
             <svg data-item-descriptions-target="descriptionOpen" class=" w-6 hidden text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -173,7 +173,7 @@
 
 
         <div class="mt-6 flex justify-between items-center">
-          <button data-action="click->item-descriptions#deliveryToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full focus:outline-none">
+          <button data-action="click->item-descriptions#deliveryToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full hover:bg-gray-200 focus:outline-none transition duration-500 ease-in-out">
             <span class="text-gray-900 text-lg font-bold">Conditions de livraison</span>
             <svg data-item-descriptions-target="deliveryClose" class=" w-6 hidden text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
             <svg data-item-descriptions-target="deliveryOpen" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -198,12 +198,12 @@
           </div>
           <span class="pt-4 text-sm text-gray-500 italic">si vous souhaitez une livraison vers l'étranger vous pouvez commander sur <a class="underline" href="https://www.etsy.com/shop/MabciaCeramic?fbclid=IwAR1IaEV7kL_xu4hx3AiwyW42GUl9WY52lkLpDG_fNmu2PevAS0vOAvHt3H0">ma boutique Etsy</a></span>
           <div class="pt-8">
-            <%= link_to "Conditions de vente", terms_path , class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200' %>
+            <%= link_to "Conditions de vente", terms_path , class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200 transition duration-200 ease-in-out' %>
           </div>
         </div>
 
         <div class="mt-6 flex justify-between items-center">
-          <button data-action="click->item-descriptions#contactToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full focus:outline-none">
+          <button data-action="click->item-descriptions#contactToggle" class="py-3 px-4 focus:bg-gray-200 rounded-3xl flex justify-between w-full hover:bg-gray-200 focus:outline-none transition duration-500 ease-in-out">
             <span class="text-gray-900 text-lg font-bold">Contactez-moi</span>
             <svg data-item-descriptions-target="contactClose" class=" w-6 hidden text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
             <svg data-item-descriptions-target="contactOpen" class=" w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -215,7 +215,7 @@
             <span class="text-gray-700">contact@mabciaceramic.com</span>
           </div>
           <div class="mt-2 ml-8">
-            <%= link_to "Envoyer moi un message", new_contact_path, class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200' %>
+            <%= link_to "Envoyer moi un message", new_contact_path, class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200 hover:bg-gray-200 transition duration-200 ease-in-out' %>
           </div>
         </div>
       </div>

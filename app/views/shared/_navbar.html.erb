@@ -54,23 +54,23 @@
 
       <div class="py-2 flex items-center space-x-2">
         <% if current_user.nil? %>
-          <div class="<%= params[:controller] == "users" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none xl:text-base' %>">
+          <div class="<%= params[:controller] == "users" ? 'px-2 py-1 rounded text-sm font-semibold text-gray-600 bg-gray-200 focus:outline-none xl:text-base' : 'px-2 py-1 rounded text-sm font-semibold text-gray-600 hover:bg-gray-100 focus:outline-none transition duration-200 ease-in-out xl:text-base' %>">
             <%= link_to "Se connecter", new_user_session_path %>
           </div>
         <% else %>
           <div data-controller="pic-menu" class="relative ">
-            <button data-action="click->pic-menu#toggle" class="focus:outline-none rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500">
-              <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full border border-gray-300 focus:border-2 focus:border-japonica-500' %>
+            <button data-action="click->pic-menu#toggle" class="focus:outline-none rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500 transition duration-300 ease-in-out ">
+              <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full border border-gray-300 focus:border-2 focus:border-japonica-500 transition duration-300 ease-in-out' %>
             </button>
             <div data-pic-menu-target="toggleable" class="hidden absolute z-40 right-0 mr-1 w-60 flex flex-col items-start rounded overflow-hidden">
-              <%= link_to "Mes comandes", orders_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100' %>
-              <%= link_to "Paramètres", edit_user_registration_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100' %>
-              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100' %>
+              <%= link_to "Mes comandes", orders_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100 transition duration-300 ease-in-out' %>
+              <%= link_to "Paramètres", edit_user_registration_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100 transition duration-300 ease-in-out' %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100 transition duration-300 ease-in-out' %>
             </div>
             <button data-action="click->pic-menu#toggle" data-pic-menu-target="invisible" class="hidden fixed inset-0 w-full h-full cursor-default focus:outline-none"></button>
           </div>
         <% end %>
-        <%= link_to cart_path(@cart), class:'flex items-start hover:bg-gray-100 rounded py-2 px-2' do %>
+        <%= link_to cart_path(@cart), class:'flex items-start hover:bg-gray-100 rounded py-2 px-2 transition duration-300 ease-in-out' do %>
           <svg class="w-8 text-japonica-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" /></svg>
           <% if cart_has_items %>
             <span class="text-xxs -ml-2 -mt-1 font-black text-white bg-gray-700 px-1 rounded-full"><%= cart_count_over_one %></span>
