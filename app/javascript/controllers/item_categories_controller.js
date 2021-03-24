@@ -131,7 +131,7 @@ export default class extends Controller {
         }
 
         for (var page = maxLeft; page <= maxRight; page++) {
-          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-gray-100 text-gray-700 font-bold">${page}</button>`
+          wrapper.innerHTML += `<button value=${page} class="page px-2 py-1 bg-gray-100 text-gray-700 font-bold focus:outline-none">${page}</button>`
         }
 
         // if (state.page != 1) {
