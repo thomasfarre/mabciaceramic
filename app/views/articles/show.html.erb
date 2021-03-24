@@ -3,10 +3,10 @@
   <%= render "shared/navbar" %>
 </div>
 
-<div class="px-4 pt-8 pb-60 max-w-6xl mx-auto lg:px-12">
+<div class="px-4 pt-8 pb-36 max-w-6xl mx-auto lg:px-12">
 
-  <div class="pb-2 flex items-center justify-between">
-    <div class="py-2 px-2 lg:py-4">
+  <div class="pb-2 flex items-start justify-between">
+    <div class="-mt-2">
       <%= link_to articles_path, class:'text-gray-700 focus:outline-none hover:text-gray-400' do %>
         <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
       <% end %>
@@ -21,7 +21,7 @@
     <%= cl_image_tag @article.photo.key, class:'absolute h-full w-full inset-0 object-cover shadow rounded' %>
   </div>
 
-  <div class="pt-8 text-gray-600 max-w-prose float-right">
-    <p> <%= @article.rich_body %> </p>
+  <div class="pt-8 text-gray-600 max-w-prose">
+     <%= @article.rich_body %>
   </div>
 </div>
