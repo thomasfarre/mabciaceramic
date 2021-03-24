@@ -63,6 +63,16 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "mabciaceramic_production"
 
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp-relay.sendinblue.com",
+    port: 587,
+    user_name: ENV['SENDINBLUE_EMAIL'],
+    password: ENV['SENDINBLUE_PASSWORD'],
+    authentication: 'login',
+    enable_starttls_auto: true
+  }
+
+
   config.action_mailer.perform_caching = false
 
   config.action_mailer.perform_deliveries = true
