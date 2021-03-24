@@ -12,6 +12,7 @@
 
     <%= link_to root_path do %>
       <div class="flex">
+
         <h2 class="text-gray-700 font-black text-xl">Mabcia</h2>
         <h2 class="text-japonica-500 font-black text-xl">Ceramic</h2>
       </div>
@@ -37,12 +38,13 @@
 <nav class="hidden lg:contents">
 
   <div class="sticky py-1 top-0 z-20 bg-white shadow">
-    <div class="px-4 flex justify-between items-center max-w-7xl mx-auto">
-      <div class="py-4 flex items-baseline space-x-8 xl:space-x-14">
+    <div class="px-2 flex justify-between items-center max-w-7xl mx-auto ">
+      <div class="py-4 flex items-center space-x-8 xl:space-x-14">
         <div>
           <%= link_to root_path do %>
-            <div class="flex">
-              <h2 class="text-gray-700 font-bold text-2xl">Mabcia</h2>
+            <div class="flex items-center">
+              <%= image_tag "Logo.png", class:'w-12 rounded-full' %>
+              <h2 class="pl-4 text-gray-700 font-bold text-2xl">Mabcia</h2>
               <h2 class="text-japonica-500 font-bold text-2xl">Ceramic</h2>
             </div>
           <% end %>
