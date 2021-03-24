@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :disable_nav, :disable_footer, only: [:show]
+  # before_action :disable_nav, :disable_footer, only: [:show]
 
   def new
     @article = Article.new
