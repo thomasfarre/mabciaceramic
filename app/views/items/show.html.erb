@@ -1,13 +1,15 @@
+<div class="max-w-6xl mx-auto">
+  <%= render "shared/navbar/navbar_light" %>
+</div>
 
 
 
-<!-- Try to not show navbar on this page
 <div class="hidden lg:block">
-  <%#= render "shared/navbar" %>
-</div> -->
+  <%= render "shared/navbar" %>
+</div>
 
 
-<div class="pb-24 pt-8 max-w-6xl mx-auto">
+<div class="pb-24 max-w-6xl mx-auto">
   <div class="px-2 flex flex-col">
     <span class="text-japonica-500 text-sm font-semibold lg:text-lg"><%= @item.category %></span>
     <span class="text-gray-800 text-xl font-bold font-cursive lg:text-2xl 2xl:text-3xl"><%= @item.title %></span>
