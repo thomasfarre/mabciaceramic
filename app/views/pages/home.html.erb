@@ -92,7 +92,7 @@
           <%= link_to item_path(item), class:"" do %>
             <div class="relative pb-2 w-72 rounded-lg lg:w-full border-gray-200 border border-opacity-70 hover:shadow-3xl focus:outline-non transition duration-300 ease-in-out">
               <div class="relative h-68 lg:h-full pb-4/5">
-               <%= cl_image_tag item.photos[0].key, class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:'objet en céramique' %>
+               <%= cl_image_tag item.photos[0].key, :quality=>"auto:low", class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:'objet en céramique' %>
               </div>
               <div>
                 <div class="pt-4 px-2">
@@ -138,7 +138,7 @@
   <!--       premier article le plus récent -->
         <%= link_to article_path(Article.last), class:"col-span-2 bg-white lg:w-1/2 overflow-hidden rounded border-gray-200 border border-opacity-70 hover:shadow-3xl focus:outline-none transition duration-300 ease-in-out lg:order-2 lg:my-12" do %>
           <div class="relative" style="padding-bottom: 85%;">
-            <span> <%= cl_image_tag Article.last.photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow', alt:'article illustration' %> </span>
+            <span> <%= cl_image_tag Article.last.photo.key, :quality=>"auto:low", class:'absolute h-full w-full inset-0 object-cover object-center shadow', alt:'article illustration' %> </span>
           </div>
           <div class="px-3 flex flex-col">
             <div class="pt-2">
@@ -161,7 +161,7 @@
         <% if Article.all.count >= 3 %>
         <%= link_to article_path(@articles[1]), class:"bg-white lg:w-1/4 lg:mx-4 overflow-hidden rounded border-gray-200 border border-opacity-70 hover:shadow-3xl focus:outline-none transition duration-300 ease-in-out lg:order-1 lg:my-48" do %>
             <div class="relative pb-4/5">
-              <span> <%= cl_image_tag @articles[1].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+              <span> <%= cl_image_tag @articles[1].photo.key, :quality=>"auto:low", class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
             </div>
             <div class="px-3 flex flex-col h-36">
               <div class="pt-2">
@@ -179,7 +179,7 @@
 
           <%= link_to article_path(@articles[2]), class:"bg-white lg:w-1/4 lg:mx-4 overflow-hidden rounded border-gray-200 border border-opacity-70 hover:shadow-3xl focus:outline-none transition duration-300 ease-in-out lg:order-3 lg:my-48" do %>
             <div class="relative pb-4/5">
-              <span> <%= cl_image_tag @articles[2].photo.key, class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
+              <span> <%= cl_image_tag @articles[2].photo.key, :quality=>"auto:low", class:'absolute h-full w-full inset-0 object-cover object-center shadow' %> </span>
             </div>
             <div class="flex flex-col px-3 h-36">
               <div class="pt-2">
