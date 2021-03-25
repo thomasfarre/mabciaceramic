@@ -67,7 +67,7 @@
         <%= link_to item_path(item), class:"group" do %>
             <div class="relative shadow-3xl rounded pb-2 lg:shadow-none lg:border-gray-200 lg:border lg:border-opacity-70 lg:hover:shadow-3xl focus:outline-none transition duration-300 ease-in-out">
               <div class="relative pb-4/5" >
-                <%= cl_image_tag item.photos[0].key, class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:"Objet en céramique"  %>
+                <%= cl_image_tag item.photos[0].key, :quality=>"auto:low", class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:"Objet en céramique"  %>
               </div>
               <div class="px-2 pt-2 ">
                 <div class="text-gray-800 font-semibold truncate font-cursive lg:text-lg" ><%= item.title %></div>
@@ -101,7 +101,7 @@
           <%= link_to item_path(item), class:"group" do %>
           <div class="relative shadow-3xl rounded pb-2 lg:shadow-none lg:border-gray-200 lg:border lg:border-opacity-70 lg:hover:shadow-3xl focus:outline-none transition duration-300 ease-in-out">
             <div class="relative pb-4/5">
-              <%= cl_image_tag item.photos[0].key, class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:"Objet en céramique"  %>
+              <%= cl_image_tag item.photos[0].key, :quality=>"auto:low", class:"rounded-t absolute h-full w-full inset-0 object-cover #{image_position(item)} shadow", alt:"Objet en céramique"  %>
             </div>
             <div class="px-2 pt-2">
               <div class="text-gray-800 font-semibold truncate font-cursive lg:text-lg"><%= item.title %></div>

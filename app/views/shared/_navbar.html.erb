@@ -62,7 +62,7 @@
         <% else %>
           <div data-controller="pic-menu" class="relative ">
             <button data-action="click->pic-menu#toggle" class="focus:outline-none rounded-full border-2 border-transparent focus:border-2 focus:border-japonica-500 transition duration-300 ease-in-out ">
-              <%= cl_image_tag current_user.profil_pic, class:'w-12 rounded-full border border-gray-300 focus:border-2 focus:border-japonica-500 transition duration-300 ease-in-out' %>
+              <%= cl_image_tag current_user.profil_pic, :quality=>"auto:low", class:'w-12 rounded-full border border-gray-300 focus:border-2 focus:border-japonica-500 transition duration-300 ease-in-out' %>
             </button>
             <div data-pic-menu-target="toggleable" class="hidden absolute z-40 right-0 mr-1 w-60 flex flex-col items-start rounded overflow-hidden">
               <%= link_to "Mes comandes", orders_path, class:'px-3 py-3 text-gray-600 text-left w-full bg-white hover:bg-gray-100 transition duration-300 ease-in-out' %>

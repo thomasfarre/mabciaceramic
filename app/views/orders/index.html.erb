@@ -30,7 +30,7 @@
                       <div class="flex flex-wrap justify-center">
                         <% order.cart.cart_items.each do |cart_item| %>
                           <div class="px-1 pt-4">
-                            <%= cl_image_tag cart_item.item.photos[0].key, class:"w-24 h-24 object-cover rounded" %>
+                            <%= cl_image_tag cart_item.item.photos[0].key, :quality=>"auto:low", class:"w-24 h-24 object-cover rounded" %>
                           </div>
                         <% end %>
                       </div>
@@ -64,7 +64,7 @@
                       <div class="flex justify-center flex-wrap">
                         <% order.cart.cart_items.each do |cart_item| %>
                           <div class="px-1 pt-4">
-                            <%= cl_image_tag cart_item.item.photos[0].key, class:"w-24 h-24 object-cover rounded" %>
+                            <%= cl_image_tag cart_item.item.photos[0].key, :quality=>"auto:low", class:"w-24 h-24 object-cover rounded" %>
                           </div>
                         <% end %>
                       </div>
@@ -94,7 +94,7 @@
                       <div class="flex flex-wrap justify-center">
                         <% order.cart.cart_items.each do |cart_item| %>
                           <div class="px-1 pt-4">
-                            <%= cl_image_tag cart_item.item.photos[0].key, class:"w-24 h-24 object-cover rounded" %>
+                            <%= cl_image_tag cart_item.item.photos[0].key, :quality=>"auto:low", class:"w-24 h-24 object-cover rounded" %>
                           </div>
                         <% end %>
                       </div>
