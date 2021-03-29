@@ -3,7 +3,7 @@
   <%= render "shared/navbar" %>
 </div>
 
-<div class="px-4 pt-8 pb-40 max-w-prose mx-auto lg:px-12">
+<div class="px-4 pt-8 pb-40 max-w-3xl mx-auto lg:px-12">
 
   <div class="pb-2 flex flex-col items-start">
     <div class="-mt-2 lg:hidden">
@@ -21,7 +21,7 @@
     <%= cl_image_tag @article.photo.key, :quality=>"auto:low", class:'absolute h-full w-full inset-0 object-cover shadow rounded' %>
   </div>
 
-  <div class="pt-8 text-gray-600 max-w-prose mx-auto">
+  <div class="pt-8 text-gray-600 max-w-3xl mx-auto text-lg xl:text-xl">
      <%= @article.rich_body %>
   </div>
 </div>
