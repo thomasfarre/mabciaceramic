@@ -136,7 +136,7 @@
             <div class="flex items-start space-x-2 md:space-x-0">
               <div class="w-2/3 flex flex-col">
                 <% if @item.width || @item.length || @item.height || @item.diameter %>
-                  <span class="py-4 text-gray-700 font-semibold">Dimension</span>
+                  <span class="py-4 text-gray-700 font-semibold">Dimensions</span>
                   <% if @item.width %>
                     <span class="text-gray-700">Largeur: <%= @item.width / 10 %> cm</span>
                   <% end %>
@@ -186,7 +186,7 @@
           </div>
 
           <div class="pt-4">
-            <p class="text-gray-600">Dès que votre commande est effectuée je la prépare le plus rapidement possible, puis je la remet au transporteur qui vous livre dans les meilleurs délais !</p>
+            <p class="text-gray-600">Dès que votre commande est effectuée je la prépare le plus rapidement possible, puis je la remets au transporteur qui vous livre dans les meilleurs délais !</p>
           </div>
           <div class="pt-8 flex items-start lg:items-center space-x-4">
             <svg class="w-6 h-6 text-gray-700 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path fill="#fff" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
@@ -215,7 +215,7 @@
             <span class="text-gray-700">contact@mabciaceramic.com</span>
           </div>
           <div class="mt-2 ml-8">
-            <%= link_to "Envoyer moi un message", new_contact_path, class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200 hover:bg-gray-200 transition duration-200 ease-in-out' %>
+            <%= link_to "Envoyez-moi un message", new_contact_path, class:'text-gray-700 font-bold shadow-underline focus:outline-none hover:bg-gray-200 hover:bg-gray-200 transition duration-200 ease-in-out' %>
           </div>
         </div>
       </div>
